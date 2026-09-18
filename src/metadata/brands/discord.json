@@ -1,0 +1,31 @@
+{
+  "id": "discord",
+  "status": "available",
+  "selectedSourceType": "simple-icons",
+  "iconifyName": "simple-icons:discord",
+  "sourceUrl": "https://github.com/simple-icons/simple-icons/blob/develop/icons/discord.svg",
+  "retrievedAt": "2026-09-19",
+  "upstream": {
+    "package": "@iconify-json/simple-icons",
+    "version": "1.2.96",
+    "slug": "discord",
+    "assetRevision": "9d7796b8a3068f33744f39640c84b40138c81cf0"
+  },
+  "license": {
+    "spdx": "CC0-1.0",
+    "notes": "The selected geometry is consumed from the Simple Icons Iconify data package."
+  },
+  "trademarkNotes": "Discord names and marks remain the property of Discord Inc.; inclusion does not imply endorsement.",
+  "brandGuidelinesUrl": "https://discord.com/branding",
+  "permittedColorModes": [
+    "monochrome"
+  ],
+  "brandColor": null,
+  "modifications": "None; rendered from the installed Iconify collection.",
+  "redistribution": {
+    "standing": "dependency-reference",
+    "vendoredBytes": false,
+    "notes": "The package stores selection metadata and resolves geometry from its dependency."
+  },
+  "contentHash": null
+}

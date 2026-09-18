@@ -1,0 +1,48 @@
+---
+import { Icon } from "astro-icon/components";
+import type { HTMLAttributes } from "astro/types";
+import {
+  assertBrandColorMode,
+  getBrand,
+  type BrandName,
+  type IconColorMode,
+} from "../catalog/index.ts";
+
+interface Props extends Omit<HTMLAttributes<"svg">, "name" | "title"> {
+  name: BrandName;
+  /** Label an informative standalone brand mark. Leave absent for decorative use. */
+  label?: string;
+  description?: string;
+  mode?: IconColorMode;
+  size?: number | string;
+}
+
+const {
+  name,
+  label,
+  description,
+  mode = "monochrome",
+  size = 24,
+  ...attributes
+} = Astro.props;
+
+if (description && !label) {
+  throw new Error("BrandIcon description requires a label.");
+}
+
+const brand = getBrand(name);
+assertBrandColorMode(brand, mode);
+const resolvedName: any = brand.iconifyName;
+const accessibility = label
+  ? { role: "img", "aria-label": label }
+  : { "aria-hidden": "true" };
+---
+
+<Icon
+  {...attributes}
+  {...accessibility}
+  name={resolvedName}
+  size={size}
+  title={label}
+  desc={label ? description : undefined}
+/>

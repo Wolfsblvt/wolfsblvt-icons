@@ -1,0 +1,105 @@
+# Development
+
+## Meaning
+
+This guide explains how to develop, validate, and package `@wolfsblvt/icons` from a clean checkout. It owns the reproducible Node/npm bootstrap, the canonical verification command, generated-file handling, and the ordinary paths for changing aliases, brands, and custom SVGs without confusing runtime sources with review fixtures.
+
+## Prerequisites
+
+- **Node.js 22.12 or newer.** `astro-icon` 1.2 and the selected Astro toolchain require the modern Node module and runtime baseline; CI uses Node 24.
+- **npm 10 or newer.** The repository uses npm package metadata and a committed npm lockfile once bootstrap CI has produced it.
+
+No credentials, local services, browser runtime, or global package installation is required.
+
+## Bootstrap
+
+```bash
+npm install
+```
+
+After the lockfile is present, prefer the reproducible route:
+
+```bash
+npm ci
+```
+
+## Run and test
+
+| Task | Command |
+| --- | --- |
+| Canonical repository verification | `npm test` |
+| Build TypeScript declarations and JavaScript | `npm run build` |
+| Check Astro components | `npm run astro:check` |
+| Run focused behavior tests after a build | `npm run build && npm run test:unit` |
+| Validate metadata and authored SVGs | `npm run validate` |
+| Regenerate all committed artifacts | `npm run generate` |
+| Verify generated artifacts without changing them | `npm run generate:check` |
+| Generate the visual fixture | `npm run fixtures` |
+| Inspect npm package contents | `npm run build && npm run pack:check` |
+| Apply formatting | `npm run format` |
+| Remove build output | `npm run clean` |
+
+`npm test` is the root proof surface. It checks formatting, builds TypeScript, checks Astro files, runs deterministic unit tests, validates asset metadata and SVG rules, compares generated artifacts, and performs an npm pack dry run.
+
+## Visual review
+
+Run:
+
+```bash
+npm run fixtures
+```
+
+Then open `fixtures/contact-sheet.html`. It renders the starter catalogue at 16, 20, 24, and 32 pixels on light and dark surfaces. The generated file is review evidence, not a hosted application.
+
+Custom icon families require additional human comparison described in [`ICON-STANDARD.md`](ICON-STANDARD.md). Passing the structural validator is necessary and deliberately insufficient.
+
+## Generated artifacts
+
+| Path | Source | Rule |
+| --- | --- | --- |
+| `dist/` | `src/**/*.ts` via TypeScript | Never commit; publication builds it |
+| `src/generated/custom-icons.ts` | `src/icons/**/*.svg` | Commit; never hand-edit |
+| `fixtures/contact-sheet.html` | `fixtures/source-icons/**/*.svg` | Commit; never hand-edit |
+| `docs/assets/readme/icon-pop.svg` | Same visual fixture sources | Commit; never hand-edit |
+| `package-lock.json` | npm resolution | Commit and update through npm, never reconstruct manually |
+
+## Add a UI alias
+
+1. Add one semantic alias to `src/catalog/ui.ts`.
+2. Prefer an existing Lucide glyph whose meaning is already conventional.
+3. Add or update a behavior test when the alias carries shared meaning worth preserving.
+4. Run `npm test`.
+
+A one-off Lucide glyph does not need a central alias. Consumers can use `lucide:<name>` and add the slug through `createAstroIconOptions`.
+
+## Admit a brand
+
+1. Confirm the product genuinely needs a shared brand icon rather than unrestricted upstream access.
+2. Evaluate Simple Icons first, then an official vendor source when geometry or terms require it.
+3. Add complete metadata under `src/metadata/brands/`.
+4. Add the typed catalogue entry and `astro-icon` include slug.
+5. Add a visual fixture only when it materially improves review; do not grow a second vendored brand catalogue under `fixtures/`.
+6. Update `THIRD_PARTY_NOTICES.md` when distributed terms or copied material change.
+7. Run `npm test` and inspect the contact sheet.
+
+## Add a Works-authored product icon
+
+1. Read [`ICON-STANDARD.md`](ICON-STANDARD.md).
+2. Author `src/icons/products/<product>/<name>.svg` without width, height, fixed colour, transforms, or embedded accessibility text.
+3. Add matching metadata and set its status to `available` only when the geometry is accepted.
+4. Run `npm run generate`.
+5. Add behavior coverage where availability or naming changes.
+6. Inspect the icon beside Lucide references at all required sizes and both surface modes.
+7. Run `npm test`.
+
+## Safe reset
+
+```bash
+npm run clean
+```
+
+This removes only build caches and package archives. It does not remove dependencies, the package lock, authored SVGs, metadata, or committed visual fixtures.
+
+## Publication boundary
+
+The package is intentionally `private: true` and versioned `0.0.0` until separately authorized npm publication work establishes the package account, release version, provenance flow, and release communication. Do not flip that guard, publish, tag, or create a GitHub release as ordinary development cleanup.

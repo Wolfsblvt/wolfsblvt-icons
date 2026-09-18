@@ -1,0 +1,24 @@
+{
+  "id": "wolfsblvt/works",
+  "namespace": "wolfsblvt",
+  "name": "works",
+  "status": "planned",
+  "selectedSourceType": "works-provider-glyph",
+  "assetPath": "src/icons/products/wolfsblvt/works.svg",
+  "intendedUse": "Compact Wolfsblvt Works umbrella identity for social and footer icon slots where the formal lockup is unsuitable.",
+  "license": {
+    "spdx": "MIT",
+    "notes": "Applies only after original geometry is authored and accepted."
+  },
+  "permittedColorModes": [
+    "monochrome"
+  ],
+  "modifications": "No geometry exists in this repository cut.",
+  "redistribution": {
+    "standing": "original-mit-when-authored",
+    "vendoredBytes": false,
+    "notes": "The namespace and contract are reserved; final geometry is separate bounded visual-authoring work."
+  },
+  "contentHash": null,
+  "authoringNotes": "Create a compact interface glyph, not a replacement for the WOLFSBLVT / WORKS lockup or a generic WW monogram by default."
+}

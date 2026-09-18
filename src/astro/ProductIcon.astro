@@ -1,0 +1,50 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import {
+  resolveProductIcon,
+  type ProductIconName,
+} from "../catalog/index.ts";
+
+interface Props extends Omit<HTMLAttributes<"svg">, "name" | "title"> {
+  name: ProductIconName;
+  /** Label an informative standalone product icon. Leave absent for decorative use. */
+  label?: string;
+  description?: string;
+  size?: number | string;
+}
+
+const {
+  name,
+  label,
+  description,
+  size = 24,
+  ...attributes
+} = Astro.props;
+
+if (description && !label) {
+  throw new Error("ProductIcon description requires a label.");
+}
+
+const icon = resolveProductIcon(name);
+const accessibility = label
+  ? { role: "img", "aria-label": label }
+  : { "aria-hidden": "true" };
+---
+
+<svg
+  {...attributes}
+  {...accessibility}
+  data-icon={name}
+  width={size}
+  height={size}
+  viewBox={icon.viewBox}
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  {label && <title>{label}</title>}
+  {label && description && <desc>{description}</desc>}
+  <Fragment set:html={icon.body} />
+</svg>

@@ -36,7 +36,8 @@ jobs:
 
       - name: Install final read-only workflow
         run: |
-          cat > .github/workflows/test.yml <<'WORKFLOW'
+          dollar='$'
+          cat > .github/workflows/test.yml <<WORKFLOW
           name: Tests
 
           on:
@@ -49,7 +50,7 @@ jobs:
             contents: read
 
           concurrency:
-            group: ${{ github.workflow }}-${{ github.ref }}
+            group: ${dollar}{{ github.workflow }}-${dollar}{{ github.ref }}
             cancel-in-progress: true
 
           jobs:

@@ -50,7 +50,7 @@ export interface ProductIconMetadata {
     spdx: "MIT";
     notes: string;
   };
-  permittedColorModes: readonly ["monochrome"];
+  permittedColorModes: readonly IconColorMode[];
   modifications: string;
   redistribution: RedistributionStanding;
   contentHash: string | null;

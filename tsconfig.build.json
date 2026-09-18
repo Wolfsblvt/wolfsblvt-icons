@@ -10,5 +10,5 @@
     "sourceMap": true
   },
   "include": ["src/**/*.ts", "src/**/*.json"],
-  "exclude": ["src/**/*.astro"]
+  "exclude": ["src/astro/**/*"]
 }

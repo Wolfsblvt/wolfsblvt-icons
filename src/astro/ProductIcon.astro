@@ -5,7 +5,17 @@ import {
   type ProductIconName,
 } from "../catalog/index.ts";
 
-interface Props extends Omit<HTMLAttributes<"svg">, "name" | "title"> {
+interface Props
+  extends Omit<
+    HTMLAttributes<"svg">,
+    | "aria-hidden"
+    | "aria-label"
+    | "height"
+    | "name"
+    | "role"
+    | "title"
+    | "width"
+  > {
   name: ProductIconName;
   /** Label an informative standalone product icon. Leave absent for decorative use. */
   label?: string;
@@ -26,14 +36,10 @@ if (description && !label) {
 }
 
 const icon = resolveProductIcon(name);
-const accessibility = label
-  ? { role: "img", "aria-label": label }
-  : { "aria-hidden": "true" };
 ---
 
 <svg
   {...attributes}
-  {...accessibility}
   data-icon={name}
   width={size}
   height={size}
@@ -43,6 +49,9 @@ const accessibility = label
   stroke-width="2"
   stroke-linecap="round"
   stroke-linejoin="round"
+  role={label ? "img" : undefined}
+  aria-label={label}
+  aria-hidden={label ? undefined : "true"}
 >
   {label && <title>{label}</title>}
   {label && description && <desc>{description}</desc>}

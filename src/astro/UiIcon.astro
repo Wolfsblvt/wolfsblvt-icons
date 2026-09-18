@@ -3,7 +3,17 @@ import { Icon } from "astro-icon/components";
 import type { HTMLAttributes } from "astro/types";
 import { resolveUiIcon, type UiIconName } from "../catalog/index.ts";
 
-interface Props extends Omit<HTMLAttributes<"svg">, "name" | "title"> {
+interface Props
+  extends Omit<
+    HTMLAttributes<"svg">,
+    | "aria-hidden"
+    | "aria-label"
+    | "height"
+    | "name"
+    | "role"
+    | "title"
+    | "width"
+  > {
   name: UiIconName;
   /** Label an informative standalone icon. Leave absent for decorative icons. */
   label?: string;
@@ -25,16 +35,15 @@ if (description && !label) {
 }
 
 const resolvedName: any = resolveUiIcon(name);
-const accessibility = label
-  ? { role: "img", "aria-label": label }
-  : { "aria-hidden": "true" };
 ---
 
 <Icon
   {...attributes}
-  {...accessibility}
   name={resolvedName}
   size={size}
   title={label}
   desc={label ? description : undefined}
+  role={label ? "img" : undefined}
+  aria-label={label}
+  aria-hidden={label ? undefined : "true"}
 />

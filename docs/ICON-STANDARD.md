@@ -2,7 +2,7 @@
 
 ## Meaning
 
-This standard defines how `@wolfsblvt/icons` selects, names, authors, validates, reviews, and presents icons. It owns the visual contract for Works-authored geometry, the admission evidence for third-party brands, the accessibility boundary of package components, and the human qualification that automation cannot replace. The diffdevil and Wolfsblvt Works canaries currently have reserved metadata only; this document does not invent or approve their final shapes.
+This standard defines how `@wolfsblvt/icons` selects, names, authors, validates, reviews, and presents icons. It owns the visual contract for Works-authored geometry, the admission evidence for third-party brands, the accessibility boundary of package components, and the human qualification that automation cannot replace. `diffdevil/brand` is the first accepted product glyph; the Wolfsblvt Works canary remains reserved metadata rather than implied geometry.
 
 ## Source hierarchy
 
@@ -68,13 +68,13 @@ A custom product glyph may be more distinctive than a generic UI icon, but it st
 
 ### diffdevil
 
-The compact glyph should communicate diff review, guarded change, or the product’s devilish identity without tracing the favicon or shrinking a wordmark. It must remain recognisable as a monochrome interface icon and should compare cleanly with Lucide’s code, file-diff, shield, and scan-like density.
+The accepted compact glyph translates the established horned, split `− / +` identity into a monochrome Lucide-like interface mark. Its centre seam preserves the two-half construction while keeping the silhouette readable at approximately 14–16 pixels. Material revisions must retain recognisable brand ancestry, compare cleanly beside ordinary interface icons, and undergo the same bounded visual qualification as the accepted source.
 
 ### Wolfsblvt Works
 
 The compact glyph should act as a provider or social identity for Wolfsblvt Works without replacing the formal `WOLFSBLVT / WORKS` lockup. A `WW` monogram is not automatically the answer. The shape should feel like an umbrella maker mark, remain legible beside GitHub and Discord, and avoid drifting into animal-food or pet-product imagery.
 
-These are authoring constraints, not accepted geometry. Final paths require their own bounded visual contribution.
+The Wolfsblvt Works constraints are not accepted geometry. Its final path requires its own bounded visual contribution.
 
 ## Brand admission metadata
 
@@ -106,7 +106,7 @@ Before admitting an original family or a materially changed glyph, review a gene
 
 Inspect recognisability, optical centring, stroke weight, negative space, silhouette collisions, and loss of meaning at the smallest size. A green validator cannot see that the icon looks like a distressed paperclip.
 
-The committed starter contact sheet qualifies the package plumbing and upstream presentation only. It does not qualify the still-unwritten diffdevil or Wolfsblvt Works glyphs.
+The committed contact sheet qualifies the current curated catalogue, including accepted product glyphs. Reserved product names remain unrendered until their geometry is selected.
 
 ## Accessibility
 

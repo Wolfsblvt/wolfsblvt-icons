@@ -11,6 +11,7 @@ for (const id of [
   "ui-direct",
   "brand-github",
   "brand-discord",
+  "product-diffdevil",
 ]) {
   if (!html.includes(`id="${id}"`)) {
     throw new Error(`Astro consumer output is missing #${id}.`);
@@ -18,9 +19,9 @@ for (const id of [
 }
 
 const svgCount = html.match(/<svg\b/g)?.length ?? 0;
-if (svgCount < 4) {
+if (svgCount < 5) {
   throw new Error(
-    `Expected at least four inline SVGs in the Astro consumer output; found ${svgCount}.`,
+    `Expected at least five inline SVGs in the Astro consumer output; found ${svgCount}.`,
   );
 }
 

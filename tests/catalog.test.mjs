@@ -24,10 +24,16 @@ test("brands resolve only through the curated catalogue", () => {
   assert.throws(() => getBrand("npm"), /admitted to the curated catalogue/);
 });
 
-test("planned custom glyphs reserve names without pretending geometry exists", () => {
-  assert.equal(getProductIconMetadata("diffdevil/brand").status, "planned");
+test("accepted product glyphs resolve while planned names remain unavailable", () => {
+  assert.equal(getProductIconMetadata("diffdevil/brand").status, "available");
+  const icon = resolveProductIcon("diffdevil/brand");
+  assert.equal(icon.id, "products/diffdevil/brand");
+  assert.equal(icon.viewBox, "0 0 24 24");
+  assert.match(icon.body, /M4 4l3 2\.25/);
+
+  assert.equal(getProductIconMetadata("wolfsblvt/works").status, "planned");
   assert.throws(
-    () => resolveProductIcon("diffdevil/brand"),
+    () => resolveProductIcon("wolfsblvt/works"),
     /no approved geometry yet/,
   );
 });

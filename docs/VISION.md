@@ -47,7 +47,7 @@ This is not:
 - a promise that every icon family will share identical geometry; or
 - a reason to centralise product-specific art before a real consumer earns it.
 
-The diffdevil and Wolfsblvt Works compact glyphs are the first custom canaries. Their namespace, metadata contract, and authoring home belong here; their final geometry remains visual-authoring work and must not be inferred from placeholders.
+`diffdevil/brand` is the first accepted custom canary and proves the full authored-geometry route. `wolfsblvt/works` remains the next reserved canary; its final geometry must not be inferred from a placeholder.
 
 ## Long horizon
 

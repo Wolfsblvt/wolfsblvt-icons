@@ -12,18 +12,18 @@ Lucide supplies the ordinary UI language. Brands enter through an explicit catal
 
 ## Pop
 
-<img src="docs/assets/readme/icon-pop.svg" alt="Settings and verified Lucide icons beside curated GitHub and Discord brand marks." width="960">
+<img src="docs/assets/readme/icon-pop.svg" alt="Settings and verified Lucide icons beside curated GitHub and Discord brand marks and the diffdevil product glyph." width="960">
 
 The starter catalogue is deliberately small. It proves the three important routes without copying whole upstream collections into a municipal archive:
 
-| Lane           | Public names                         | Source                                                             |
-| -------------- | ------------------------------------ | ------------------------------------------------------------------ |
-| Semantic UI    | `settings`, `verified`, `warning`    | Curated aliases over Lucide                                        |
-| Direct UI      | `lucide:badge-check`                 | Explicit Lucide escape route                                       |
-| Brands         | `github`, `discord`                  | Curated Simple Icons entries                                       |
-| Product glyphs | `diffdevil/brand`, `wolfsblvt/works` | Reserved Works-authored namespaces; geometry intentionally pending |
+| Lane           | Public names                         | Source                                                        |
+| -------------- | ------------------------------------ | ------------------------------------------------------------- |
+| Semantic UI    | `settings`, `verified`, `warning`    | Curated aliases over Lucide                                   |
+| Direct UI      | `lucide:badge-check`                 | Explicit Lucide escape route                                  |
+| Brands         | `github`, `discord`                  | Curated Simple Icons entries                                  |
+| Product glyphs | `diffdevil/brand`, `wolfsblvt/works` | Works-authored; diffdevil available, Wolfsblvt Works planned |
 
-The full generated [contact sheet](fixtures/contact-sheet.html) renders the catalogue at 16, 20, 24, and 32 pixels on light and dark surfaces, beside circle and square density references.
+The generated [contact sheet](fixtures/contact-sheet.html) renders the starter UI and brand references at 16, 20, 24, and 32 pixels on light and dark surfaces, beside circle and square density references. Product-glyph selection evidence remains with the contribution that admits or changes that geometry.
 
 ## Try the source
 
@@ -81,7 +81,7 @@ import { BrandIcon, ProductIcon, UiIcon } from "@wolfsblvt/icons/astro";
 <ProductIcon name="diffdevil/brand" />
 ```
 
-The last line currently fails loudly because `diffdevil/brand` is reserved but has no approved geometry. That is intentional. A placeholder that quietly ships has a supernatural ability to become the permanent logo.~
+The final line renders the accepted monochrome `diffdevil/brand` glyph from generated local geometry.
 
 ## One system, three different obligations
 
@@ -101,10 +101,10 @@ Works-authored icons use stable `<product>/<icon>` names and live under `src/ico
 
 The first custom canaries are:
 
-- `diffdevil/brand`, a compact provider glyph for slots where the full favicon or wordmark is wrong; and
-- `wolfsblvt/works`, a compact umbrella glyph for social and footer references where the formal lockup is wrong.
+- `diffdevil/brand`, the accepted compact provider glyph for slots where the full favicon or wordmark is wrong; and
+- `wolfsblvt/works`, a reserved compact umbrella glyph for social and footer references where the formal lockup is wrong.
 
-This repository establishes their API and authoring home. It does not fake their visual design.
+The accepted diffdevil glyph proves the full authoring, metadata, generation, and consumer route. The Wolfsblvt Works mark remains deliberately unavailable until its own visual design is selected.
 
 ## Accessibility
 

@@ -1,6 +1,8 @@
 dist/
 node_modules/
 fixtures/contact-sheet.html
+fixtures/reviews/diffdevil-family/candidate-matrix.svg
+fixtures/reviews/diffdevil-family/surface-context.svg
 docs/assets/readme/icon-pop.svg
 src/generated/custom-icons.ts
 package-lock.json

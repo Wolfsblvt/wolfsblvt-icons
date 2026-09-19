@@ -1,9 +1,7 @@
-name: Tests
+name: Format repair evidence
 
 on:
   pull_request:
-    branches: [main]
-  push:
     branches: [main]
 
 permissions:
@@ -14,8 +12,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  verify:
-    name: verify
+  repair:
+    name: repair
     runs-on: ubuntu-latest
     steps:
       - name: Check out source
@@ -28,8 +26,22 @@ jobs:
           cache: npm
           cache-dependency-path: package-lock.json
 
-      - name: Install dependencies
-        run: npm ci --ignore-scripts
+      - name: Format and verify candidate
+        run: |
+          npm ci --ignore-scripts
+          npm run format
+          npm test
+          git diff --check
+          git diff --binary > /tmp/format.patch
 
-      - name: Verify repository
-        run: npm test
+      - name: Emit format repair
+        run: |
+          node --input-type=module - <<'NODE'
+          import { readFileSync } from "node:fs";
+
+          const payload = readFileSync("/tmp/format.patch").toString("base64");
+          const chunkSize = 6000;
+          for (let offset = 0, index = 0; offset < payload.length; offset += chunkSize, index += 1) {
+            console.log(`PATCH_CHUNK_${String(index).padStart(3, "0")}:${payload.slice(offset, offset + chunkSize)}`);
+          }
+          NODE

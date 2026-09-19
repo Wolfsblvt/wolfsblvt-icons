@@ -2,21 +2,21 @@
   "id": "diffdevil/brand",
   "namespace": "diffdevil",
   "name": "brand",
-  "status": "planned",
+  "status": "available",
   "selectedSourceType": "works-provider-glyph",
   "assetPath": "src/icons/products/diffdevil/brand.svg",
   "intendedUse": "Compact diffdevil identity in icon slots where the full favicon or wordmark is unsuitable.",
   "license": {
     "spdx": "MIT",
-    "notes": "Applies only after original geometry is authored and accepted."
+    "notes": "Original Wolfsblvt Works geometry."
   },
   "permittedColorModes": ["monochrome"],
-  "modifications": "No geometry exists in this repository cut.",
+  "modifications": "Purpose-authored monochrome interface translation of the established horned split diffdevil identity.",
   "redistribution": {
-    "standing": "original-mit-when-authored",
-    "vendoredBytes": false,
-    "notes": "The namespace and contract are reserved; final geometry is separate bounded visual-authoring work."
+    "standing": "original-mit",
+    "vendoredBytes": true,
+    "notes": "Original geometry is distributed from this repository with the package source."
   },
-  "contentHash": null,
-  "authoringNotes": "Author as a distinct Works provider glyph in the Lucide visual language; do not trace the favicon."
+  "contentHash": "d33cf3b1a7a8ec52706da3311ac82e0500ec6c2eee8e35baeaaa2d5ef2b9b34e",
+  "authoringNotes": "Accepted centre-seam geometry preserves the horned silhouette, split construction, and minus/plus eyes while fitting the Lucide-like interface language at 14–16 pixels."
 }

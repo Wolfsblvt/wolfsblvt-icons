@@ -4,17 +4,17 @@
 
 This record carries the durable product, package, licensing, and integration choices that shape `@wolfsblvt/icons`. It preserves why the repository has this boundary and which tempting alternatives were deliberately rejected, so later maintenance does not rediscover the current shape by accident.
 
-## Reserve custom canaries without placeholder geometry
+## Admit custom glyphs only after visual selection
 
 **Date:** 2026-09-19 · **Status:** Current
 
-The package reserves `diffdevil/brand` and `wolfsblvt/works` as planned product icons, with complete metadata and authoring homes, while shipping no geometry for either.
+The package reserves custom product names without placeholder geometry. `diffdevil/brand` has crossed that boundary: Wolf selected the centre-seam monochrome translation of the established horned split `− / +` identity, and the glyph is now available. `wolfsblvt/works` remains planned without geometry.
 
-**Why.** The two names qualify the namespace, provenance, validation, and adapter boundaries now. Their actual silhouettes require visual judgment and comparison work that should remain inspectable rather than be disguised as repository scaffolding.
+**Why.** Stable names, metadata, validation, and adapter boundaries may exist before a silhouette, but runtime geometry waits for actual visual judgment. The selected diffdevil shape keeps direct brand ancestry while reducing the filled symbol to a legible Lucide-like interface mark at approximately 14–16 pixels.
 
-**Rejected.** Temporary generic shapes or traced favicon approximations. Once consumed, placeholders become compatibility and brand debt with astonishing efficiency.
+**Rejected.** Temporary generic shapes, unrelated feature icons presented as brand identity, and direct miniature copies of the filled favicon. Once consumed, placeholders become compatibility and brand debt with astonishing efficiency.
 
-**Reopen if.** Accepted final geometry is available through bounded visual-authoring work.
+**Reopen if.** A material change to the accepted diffdevil identity or a selected final Wolfsblvt Works glyph earns another bounded visual contribution.
 
 ## Use one package with a framework-neutral core and Astro adapter
 

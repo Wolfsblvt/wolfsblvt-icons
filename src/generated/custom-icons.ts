@@ -2,6 +2,7 @@
 import type { ResolvedCustomIcon } from "../catalog/types.js";
 
 export const customIconData = Object.freeze({
+  "products/diffdevil/brand": { id: "products/diffdevil/brand", viewBox: "0 0 24 24", body: "<path d=\"M4 4l3 2.25V9h10V6.25L20 4v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z\" /><path d=\"M12 9v11\" /><path d=\"M6.5 13h3\" /><path d=\"M14.5 13h3\" /><path d=\"M16 11.5v3\" />" },
 }) satisfies Readonly<
   Record<string, ResolvedCustomIcon>
 >;

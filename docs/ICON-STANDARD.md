@@ -106,7 +106,7 @@ Before admitting an original family or a materially changed glyph, review a gene
 
 Inspect recognisability, optical centring, stroke weight, negative space, silhouette collisions, and loss of meaning at the smallest size. A green validator cannot see that the icon looks like a distressed paperclip.
 
-The committed contact sheet qualifies the current curated catalogue, including accepted product glyphs. Reserved product names remain unrendered until their geometry is selected.
+The committed contact sheet qualifies the starter UI and brand presentation. Accepted product glyphs require contribution-specific visual qualification before admission, and reserved product names remain unrendered until their geometry is selected.
 
 ## Accessibility
 

@@ -10,9 +10,7 @@
     "spdx": "MIT",
     "notes": "Applies only after original geometry is authored and accepted."
   },
-  "permittedColorModes": [
-    "monochrome"
-  ],
+  "permittedColorModes": ["monochrome"],
   "modifications": "No geometry exists in this repository cut.",
   "redistribution": {
     "standing": "original-mit-when-authored",

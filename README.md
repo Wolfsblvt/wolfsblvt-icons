@@ -16,11 +16,11 @@ Lucide supplies the ordinary UI language. Brands enter through an explicit catal
 
 The starter catalogue is deliberately small. It proves the three important routes without copying whole upstream collections into a municipal archive:
 
-| Lane | Public names | Source |
-| --- | --- | --- |
-| Semantic UI | `settings`, `verified`, `warning` | Curated aliases over Lucide |
-| Direct UI | `lucide:badge-check` | Explicit Lucide escape route |
-| Brands | `github`, `discord` | Curated Simple Icons entries |
+| Lane           | Public names                         | Source                                                             |
+| -------------- | ------------------------------------ | ------------------------------------------------------------------ |
+| Semantic UI    | `settings`, `verified`, `warning`    | Curated aliases over Lucide                                        |
+| Direct UI      | `lucide:badge-check`                 | Explicit Lucide escape route                                       |
+| Brands         | `github`, `discord`                  | Curated Simple Icons entries                                       |
 | Product glyphs | `diffdevil/brand`, `wolfsblvt/works` | Reserved Works-authored namespaces; geometry intentionally pending |
 
 The full generated [contact sheet](fixtures/contact-sheet.html) renders the catalogue at 16, 20, 24, and 32 pixels on light and dark surfaces, beside circle and square density references.
@@ -37,13 +37,15 @@ npm test
 npm run fixtures
 ```
 
-A successful `npm test` formats-checks, builds, checks the Astro components, runs contract tests, validates metadata and authored SVGs, checks generated artifacts, and performs an npm pack dry run. Open `fixtures/contact-sheet.html` for the first visible result.
+A successful `npm test` formats-checks, builds, checks the package Astro components, builds a real static Astro consumer through the public exports, verifies local inline SVG output, runs contract tests, validates metadata and authored SVGs, checks generated artifacts and documentation links, and validates the npm package boundary. Open `fixtures/contact-sheet.html` for the first visible result.
 
 After the first authorised publication, consumer installation will be:
 
 ```bash
-npm install @wolfsblvt/icons astro astro-icon
+npm install @wolfsblvt/icons astro astro-icon @iconify-json/lucide @iconify-json/simple-icons
 ```
+
+The Iconify collection packages are intentionally direct consumer dependencies too. That keeps `astro-icon` resolution explicit instead of relying on whichever dependency hoisting layout npm happened to feel like that morning.
 
 ## Astro quick start
 
@@ -70,11 +72,7 @@ Then use meaning rather than paths:
 
 ```astro
 ---
-import {
-  BrandIcon,
-  ProductIcon,
-  UiIcon,
-} from "@wolfsblvt/icons/astro";
+import { BrandIcon, ProductIcon, UiIcon } from "@wolfsblvt/icons/astro";
 ---
 
 <UiIcon name="settings" />
@@ -117,7 +115,7 @@ Components default to decorative SVG with `aria-hidden="true"`. Supply `label` o
 - **Local by construction.** Runtime SVG data comes from installed dependencies or generated package data. Nothing calls an icon CDN in the browser.
 - **Inspectably curated.** Typed catalogues expose the allowed names; machine-readable metadata preserves source and rights context.
 - **No logo laundering.** Official vendor marks retain their own rights and guidelines even when an upstream icon-data package is permissively licensed.
-- **Original work stays simple.** Authored SVGs reject transforms, filters, masks, gradients, fixed colours, embedded text, raster data, and unexplained IDs.
+- **Original work stays simple.** Authored SVGs pass a strict element-and-attribute allow-list before generated geometry can reach the Astro rendering path; transforms, scripts, event handlers, external references, filters, masks, gradients, fixed colours, embedded text, raster data, and unexplained IDs are rejected.
 - **Visual quality remains human work.** Automation catches structural violations; the contact sheet catches the distressed-paperclip problem.
 
 ## Documentation and development
@@ -130,6 +128,7 @@ Components default to decorative SVG with `aria-hidden="true"`. Supply `label` o
 - [Decisions](docs/DECISIONS.md) preserves the consequential choices and rejected alternatives.
 - [Third-party notices](THIRD_PARTY_NOTICES.md) records selected upstream material and fixture provenance.
 - [Contributing](CONTRIBUTING.md) describes the public pull-request route and evidence expected from changes.
+- [Security](SECURITY.md) describes the current private-reporting and SVG trust boundaries without inventing a support SLA.
 
 Wolfsblvt Icons is an open-source project from [Wolfsblvt Works](https://github.com/Wolfsblvt/Wolfsblvt), an independent software studio building local-first tools, open-source systems, AI integrations, and oddly useful software.
 

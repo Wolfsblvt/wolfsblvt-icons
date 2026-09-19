@@ -17,11 +17,21 @@ async function readJson(file) {
   }
 }
 
-const fixtureManifestPath = path.join(root, "fixtures", "source-icons", "manifest.json");
+const fixtureManifestPath = path.join(
+  root,
+  "fixtures",
+  "source-icons",
+  "manifest.json",
+);
 const fixtureManifest = await readJson(fixtureManifestPath);
 if (fixtureManifest) {
-  if (fixtureManifest.schemaVersion !== 1 || !Array.isArray(fixtureManifest.assets)) {
-    errors.push("fixtures/source-icons/manifest.json: expected schemaVersion 1 and an assets array.");
+  if (
+    fixtureManifest.schemaVersion !== 1 ||
+    !Array.isArray(fixtureManifest.assets)
+  ) {
+    errors.push(
+      "fixtures/source-icons/manifest.json: expected schemaVersion 1 and an assets array.",
+    );
   } else {
     for (const asset of fixtureManifest.assets) {
       const required = [
@@ -35,7 +45,9 @@ if (fixtureManifest) {
       ];
       for (const field of required) {
         if (!asset[field]) {
-          errors.push(`fixtures/source-icons/manifest.json: ${asset.id ?? "asset"} is missing ${field}.`);
+          errors.push(
+            `fixtures/source-icons/manifest.json: ${asset.id ?? "asset"} is missing ${field}.`,
+          );
         }
       }
 
@@ -45,7 +57,9 @@ if (fixtureManifest) {
         const bytes = await readFile(fixturePath);
         const actualHash = createHash("sha256").update(bytes).digest("hex");
         if (actualHash !== asset.sha256) {
-          errors.push(`${asset.path}: SHA-256 does not match fixture manifest.`);
+          errors.push(
+            `${asset.path}: SHA-256 does not match fixture manifest.`,
+          );
         }
       } catch (error) {
         if (error.code !== "ENOENT") throw error;
@@ -56,7 +70,9 @@ if (fixtureManifest) {
 }
 
 const brandRoot = path.join(root, "src", "metadata", "brands");
-for (const file of await walkFiles(brandRoot, (value) => value.endsWith(".json"))) {
+for (const file of await walkFiles(brandRoot, (value) =>
+  value.endsWith(".json"),
+)) {
   const metadata = await readJson(file);
   if (!metadata) continue;
   const expectedId = path.basename(file, ".json");
@@ -84,44 +100,66 @@ for (const file of await walkFiles(brandRoot, (value) => value.endsWith(".json")
     errors.push(`${path.relative(root, file)}: id must be ${expectedId}.`);
   }
   if (metadata.status !== "available") {
-    errors.push(`${path.relative(root, file)}: brand status must be available.`);
+    errors.push(
+      `${path.relative(root, file)}: brand status must be available.`,
+    );
   }
   if (metadata.selectedSourceType !== "simple-icons") {
-    errors.push(`${path.relative(root, file)}: starter brands must use simple-icons.`);
+    errors.push(
+      `${path.relative(root, file)}: starter brands must use simple-icons.`,
+    );
   }
   if (metadata.iconifyName !== `simple-icons:${metadata.id}`) {
-    errors.push(`${path.relative(root, file)}: iconifyName must match the curated id.`);
+    errors.push(
+      `${path.relative(root, file)}: iconifyName must match the curated id.`,
+    );
   }
   if (metadata.upstream?.slug !== metadata.id) {
     errors.push(`${path.relative(root, file)}: upstream.slug must match id.`);
   }
   if (metadata.redistribution?.vendoredBytes !== false) {
-    errors.push(`${path.relative(root, file)}: catalogue brands must remain dependency references.`);
+    errors.push(
+      `${path.relative(root, file)}: catalogue brands must remain dependency references.`,
+    );
   }
 }
 
 const productRoot = path.join(root, "src", "metadata", "products");
-for (const file of await walkFiles(productRoot, (value) => value.endsWith(".json"))) {
+for (const file of await walkFiles(productRoot, (value) =>
+  value.endsWith(".json"),
+)) {
   const metadata = await readJson(file);
   if (!metadata) continue;
   const expectedId = `${metadata.namespace}/${metadata.name}`;
   if (metadata.id !== expectedId) {
     errors.push(`${path.relative(root, file)}: id must equal namespace/name.`);
   }
-  if (!/^([a-z0-9]+(?:-[a-z0-9]+)*)\/([a-z0-9]+(?:-[a-z0-9]+)*)$/.test(metadata.id ?? "")) {
-    errors.push(`${path.relative(root, file)}: id must be stable kebab-case product/name.`);
+  if (
+    !/^([a-z0-9]+(?:-[a-z0-9]+)*)\/([a-z0-9]+(?:-[a-z0-9]+)*)$/.test(
+      metadata.id ?? "",
+    )
+  ) {
+    errors.push(
+      `${path.relative(root, file)}: id must be stable kebab-case product/name.`,
+    );
   }
   if (!["planned", "available"].includes(metadata.status)) {
-    errors.push(`${path.relative(root, file)}: status must be planned or available.`);
+    errors.push(
+      `${path.relative(root, file)}: status must be planned or available.`,
+    );
   }
   if (metadata.selectedSourceType !== "works-provider-glyph") {
-    errors.push(`${path.relative(root, file)}: product icons must declare works-provider-glyph.`);
+    errors.push(
+      `${path.relative(root, file)}: product icons must declare works-provider-glyph.`,
+    );
   }
   const asset = path.join(root, metadata.assetPath ?? "");
   try {
     const source = await readFile(asset, "utf8");
     if (metadata.status !== "available") {
-      errors.push(`${path.relative(root, file)}: an authored asset must not remain planned.`);
+      errors.push(
+        `${path.relative(root, file)}: an authored asset must not remain planned.`,
+      );
     }
     errors.push(...validateWorksSvg(source, path.relative(root, asset)));
   } catch (error) {
@@ -133,7 +171,9 @@ for (const file of await walkFiles(productRoot, (value) => value.endsWith(".json
 }
 
 const iconRoot = path.join(root, "src", "icons");
-for (const file of await walkFiles(iconRoot, (value) => value.endsWith(".svg"))) {
+for (const file of await walkFiles(iconRoot, (value) =>
+  value.endsWith(".svg"),
+)) {
   const source = await readFile(file, "utf8");
   errors.push(...validateWorksSvg(source, path.relative(root, file)));
 }

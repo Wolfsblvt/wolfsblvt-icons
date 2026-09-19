@@ -1,7 +1,9 @@
-name: Bootstrap source evidence
+name: Tests
 
 on:
   pull_request:
+    branches: [main]
+  push:
     branches: [main]
 
 permissions:
@@ -12,8 +14,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  bootstrap:
-    name: bootstrap
+  verify:
+    name: verify
     runs-on: ubuntu-latest
     steps:
       - name: Check out source
@@ -23,28 +25,11 @@ jobs:
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: 24
+          cache: npm
+          cache-dependency-path: package-lock.json
 
-      - name: Reproduce bootstrap candidate
-        run: |
-          npm install --ignore-scripts
-          npm run format
-          npm test
-          git diff --check
-          git diff --binary > /tmp/bootstrap.patch
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
 
-      - name: Emit bootstrap evidence
-        run: |
-          node --input-type=module - <<'NODE'
-          import { readFileSync } from "node:fs";
-
-          for (const [label, path] of [
-            ["LOCK", "package-lock.json"],
-            ["PATCH", "/tmp/bootstrap.patch"],
-          ]) {
-            const payload = readFileSync(path).toString("base64");
-            const chunkSize = 6000;
-            for (let offset = 0, index = 0; offset < payload.length; offset += chunkSize, index += 1) {
-              console.log(`${label}_CHUNK_${String(index).padStart(3, "0")}:${payload.slice(offset, offset + chunkSize)}`);
-            }
-          }
-          NODE
+      - name: Verify repository
+        run: npm test

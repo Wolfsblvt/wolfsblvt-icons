@@ -3,17 +3,10 @@ import { Icon } from "astro-icon/components";
 import type { HTMLAttributes } from "astro/types";
 import { resolveUiIcon, type UiIconName } from "../catalog/index.ts";
 
-interface Props
-  extends Omit<
-    HTMLAttributes<"svg">,
-    | "aria-hidden"
-    | "aria-label"
-    | "height"
-    | "name"
-    | "role"
-    | "title"
-    | "width"
-  > {
+interface Props extends Omit<
+  HTMLAttributes<"svg">,
+  "aria-hidden" | "aria-label" | "height" | "name" | "role" | "title" | "width"
+> {
   name: UiIconName;
   /** Label an informative standalone icon. Leave absent for decorative icons. */
   label?: string;
@@ -22,13 +15,7 @@ interface Props
   size?: number | string;
 }
 
-const {
-  name,
-  label,
-  description,
-  size = 24,
-  ...attributes
-} = Astro.props;
+const { name, label, description, size = 24, ...attributes } = Astro.props;
 
 if (description && !label) {
   throw new Error("UiIcon description requires a label.");

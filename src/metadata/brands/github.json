@@ -17,9 +17,7 @@
   },
   "trademarkNotes": "GitHub names and marks remain the property of GitHub, Inc.; inclusion does not imply endorsement.",
   "brandGuidelinesUrl": "https://github.com/logos",
-  "permittedColorModes": [
-    "monochrome"
-  ],
+  "permittedColorModes": ["monochrome"],
   "brandColor": null,
   "modifications": "None; rendered from the installed Iconify collection.",
   "redistribution": {

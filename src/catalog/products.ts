@@ -1,10 +1,6 @@
 import { customIconData } from "../generated/custom-icons.js";
-import diffdevilBrandJson from "../metadata/products/diffdevil/brand.json" with {
-  type: "json",
-};
-import wolfsblvtWorksJson from "../metadata/products/wolfsblvt/works.json" with {
-  type: "json",
-};
+import diffdevilBrandJson from "../metadata/products/diffdevil/brand.json" with { type: "json" };
+import wolfsblvtWorksJson from "../metadata/products/wolfsblvt/works.json" with { type: "json" };
 import type { ProductIconMetadata, ResolvedCustomIcon } from "./types.js";
 
 export type ProductIconName = "diffdevil/brand" | "wolfsblvt/works";

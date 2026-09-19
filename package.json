@@ -54,17 +54,19 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "astro:check": "astro check",
+    "astro:consumer": "astro check --root . --config tests/fixtures/astro-consumer/astro.config.mjs && astro build --root . --config tests/fixtures/astro-consumer/astro.config.mjs && node scripts/verify-astro-consumer.mjs",
     "clean": "node scripts/clean.mjs",
+    "docs:check": "node scripts/check-doc-links.mjs",
     "fixtures": "node scripts/generate-contact-sheet.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "generate": "node scripts/generate-custom-icons.mjs && node scripts/generate-contact-sheet.mjs",
     "generate:check": "node scripts/generate-custom-icons.mjs --check && node scripts/generate-contact-sheet.mjs --check",
-    "pack:check": "npm pack --dry-run --ignore-scripts",
+    "pack:check": "node scripts/check-package-boundary.mjs",
     "test": "npm run verify",
     "test:unit": "node --test tests/*.test.mjs",
     "validate": "node scripts/validate-assets.mjs",
-    "verify": "npm run format:check && npm run build && npm run astro:check && npm run test:unit && npm run validate && npm run generate:check && npm run pack:check",
+    "verify": "npm run format:check && npm run build && npm run astro:check && npm run astro:consumer && npm run test:unit && npm run validate && npm run generate:check && npm run docs:check && npm run pack:check",
     "prepare": "npm run build"
   },
   "dependencies": {

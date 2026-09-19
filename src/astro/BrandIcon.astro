@@ -8,17 +8,10 @@ import {
   type IconColorMode,
 } from "../catalog/index.ts";
 
-interface Props
-  extends Omit<
-    HTMLAttributes<"svg">,
-    | "aria-hidden"
-    | "aria-label"
-    | "height"
-    | "name"
-    | "role"
-    | "title"
-    | "width"
-  > {
+interface Props extends Omit<
+  HTMLAttributes<"svg">,
+  "aria-hidden" | "aria-label" | "height" | "name" | "role" | "title" | "width"
+> {
   name: BrandName;
   /** Label an informative standalone brand mark. Leave absent for decorative use. */
   label?: string;

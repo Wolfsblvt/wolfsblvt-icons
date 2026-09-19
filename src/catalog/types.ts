@@ -1,7 +1,5 @@
 export type BrandSourceType =
-  | "simple-icons"
-  | "official-vendor"
-  | "works-provider-glyph";
+  "simple-icons" | "official-vendor" | "works-provider-glyph";
 
 export type IconAvailability = "available" | "planned";
 export type IconColorMode = "monochrome" | "brand";

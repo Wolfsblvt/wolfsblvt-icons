@@ -4,9 +4,17 @@ import { fileURLToPath } from "node:url";
 import { walkFiles } from "./lib/files.mjs";
 import { assertValidWorksSvg, extractSvg } from "./lib/svg-contract.mjs";
 
-const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const repositoryRoot = path.resolve(
+  path.dirname(fileURLToPath(import.meta.url)),
+  "..",
+);
 const sourceRoot = path.join(repositoryRoot, "src", "icons");
-const outputPath = path.join(repositoryRoot, "src", "generated", "custom-icons.ts");
+const outputPath = path.join(
+  repositoryRoot,
+  "src",
+  "generated",
+  "custom-icons.ts",
+);
 const checking = process.argv.includes("--check");
 
 function normaliseBody(body) {
@@ -56,7 +64,9 @@ const rendered = await renderCustomIconModule();
 if (checking) {
   const existing = await readFile(outputPath, "utf8");
   if (existing !== rendered) {
-    console.error("src/generated/custom-icons.ts is stale. Run npm run generate.");
+    console.error(
+      "src/generated/custom-icons.ts is stale. Run npm run generate.",
+    );
     process.exitCode = 1;
   } else {
     console.log("Custom icon data is current.");

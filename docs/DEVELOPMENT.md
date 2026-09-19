@@ -6,8 +6,8 @@ This guide explains how to develop, validate, and package `@wolfsblvt/icons` fro
 
 ## Prerequisites
 
-- **Node.js 22.12 or newer.** `astro-icon` 1.2 and the selected Astro toolchain require the modern Node module and runtime baseline; CI uses Node 24.
-- **npm 10 or newer.** The repository uses npm package metadata and a committed npm lockfile once bootstrap CI has produced it.
+- **Node.js 22.12 or newer.** The package keeps that consumer floor; repository CI uses Node 24 so the current development dependency graph runs without older-22.x engine warnings.
+- **npm 10 or newer.** The committed npm lockfile is the reproducible dependency authority for repository verification.
 
 No credentials, local services, browser runtime, or global package installation is required.
 
@@ -17,7 +17,7 @@ No credentials, local services, browser runtime, or global package installation 
 npm install
 ```
 
-After the lockfile is present, prefer the reproducible route:
+For ordinary development after the first resolution, prefer the reproducible route:
 
 ```bash
 npm ci
@@ -25,21 +25,23 @@ npm ci
 
 ## Run and test
 
-| Task | Command |
-| --- | --- |
-| Canonical repository verification | `npm test` |
-| Build TypeScript declarations and JavaScript | `npm run build` |
-| Check Astro components | `npm run astro:check` |
-| Run focused behavior tests after a build | `npm run build && npm run test:unit` |
-| Validate metadata and authored SVGs | `npm run validate` |
-| Regenerate all committed artifacts | `npm run generate` |
-| Verify generated artifacts without changing them | `npm run generate:check` |
-| Generate the visual fixture | `npm run fixtures` |
-| Inspect npm package contents | `npm run build && npm run pack:check` |
-| Apply formatting | `npm run format` |
-| Remove build output | `npm run clean` |
+| Task                                             | Command                               |
+| ------------------------------------------------ | ------------------------------------- |
+| Canonical repository verification                | `npm test`                            |
+| Build TypeScript declarations and JavaScript     | `npm run build`                       |
+| Check Astro components                           | `npm run astro:check`                 |
+| Build the real Astro consumer fixture             | `npm run astro:consumer`              |
+| Check repository-local documentation links        | `npm run docs:check`                  |
+| Run focused behavior tests after a build         | `npm run build && npm run test:unit`  |
+| Validate metadata and authored SVGs              | `npm run validate`                    |
+| Regenerate all committed artifacts               | `npm run generate`                    |
+| Verify generated artifacts without changing them | `npm run generate:check`              |
+| Generate the visual fixture                      | `npm run fixtures`                    |
+| Inspect npm package contents                     | `npm run build && npm run pack:check` |
+| Apply formatting                                 | `npm run format`                      |
+| Remove build output                              | `npm run clean`                       |
 
-`npm test` is the root proof surface. It checks formatting, builds TypeScript, checks Astro files, runs deterministic unit tests, validates asset metadata and SVG rules, compares generated artifacts, and performs an npm pack dry run.
+`npm test` is the root proof surface. It checks formatting, builds TypeScript, checks the package Astro components, builds a real static consumer through the public package exports, verifies that consumer emits local inline SVG rather than runtime CDN references, runs deterministic contract tests, validates asset metadata and authored SVG rules, compares generated artifacts, checks repository-local documentation links, and validates the npm package boundary.
 
 ## Visual review
 
@@ -55,13 +57,13 @@ Custom icon families require additional human comparison described in [`ICON-STA
 
 ## Generated artifacts
 
-| Path | Source | Rule |
-| --- | --- | --- |
-| `dist/` | `src/**/*.ts` via TypeScript | Never commit; publication builds it |
-| `src/generated/custom-icons.ts` | `src/icons/**/*.svg` | Commit; never hand-edit |
-| `fixtures/contact-sheet.html` | `fixtures/source-icons/**/*.svg` | Commit; never hand-edit |
-| `docs/assets/readme/icon-pop.svg` | Same visual fixture sources | Commit; never hand-edit |
-| `package-lock.json` | npm resolution | Commit and update through npm, never reconstruct manually |
+| Path                              | Source                           | Rule                                                      |
+| --------------------------------- | -------------------------------- | --------------------------------------------------------- |
+| `dist/`                           | `src/**/*.ts` via TypeScript     | Never commit; publication builds it                       |
+| `src/generated/custom-icons.ts`   | `src/icons/**/*.svg`             | Commit; never hand-edit                                   |
+| `fixtures/contact-sheet.html`     | `fixtures/source-icons/**/*.svg` | Commit; never hand-edit                                   |
+| `docs/assets/readme/icon-pop.svg` | Same visual fixture sources      | Commit; never hand-edit                                   |
+| `package-lock.json`               | npm resolution                   | Commit and update through npm, never reconstruct manually |
 
 ## Add a UI alias
 

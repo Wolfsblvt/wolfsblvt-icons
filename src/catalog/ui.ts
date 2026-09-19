@@ -23,7 +23,11 @@ export const uiAliases: Readonly<Record<UiAlias, `lucide:${string}`>> =
   UI_ALIASES;
 
 export const curatedLucideNames = Object.freeze(
-  [...new Set(Object.values(UI_ALIASES).map((name) => name.slice("lucide:".length)))].sort(),
+  [
+    ...new Set(
+      Object.values(UI_ALIASES).map((name) => name.slice("lucide:".length)),
+    ),
+  ].sort(),
 );
 
 export function resolveUiIcon(name: UiIconName | string): `lucide:${string}` {

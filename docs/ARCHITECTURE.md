@@ -6,16 +6,16 @@
 
 ## Components
 
-| Component | Responsibility | Talks to |
-| --- | --- | --- |
-| UI catalogue | Maps shared aliases and validates direct Lucide references | Integration helper and `UiIcon` |
-| Brand catalogue | Admits approved brand names and exposes source metadata | Integration helper and `BrandIcon` |
-| Product catalogue | Reserves names, reports availability, and resolves accepted custom data | Generated custom icon map and `ProductIcon` |
-| Astro integration helper | Produces the explicit `astro-icon` include set | UI and brand catalogues; consumer `astro.config.*` |
-| Astro components | Apply catalogue resolution, sizing, and accessibility defaults | `astro-icon` for dependency icons; generated data for custom icons |
-| Metadata files | Record provenance, licence, trademark, colour-mode, and redistribution truth | Validation and catalogue modules |
-| SVG validator and generator | Enforce the authored source contract and generate compact runtime data | `src/icons/` and `src/generated/` |
-| Contact-sheet generator | Produces human optical-review surfaces | Small upstream fixture copies and README assets |
+| Component                   | Responsibility                                                               | Talks to                                                           |
+| --------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| UI catalogue                | Maps shared aliases and validates direct Lucide references                   | Integration helper and `UiIcon`                                    |
+| Brand catalogue             | Admits approved brand names and exposes source metadata                      | Integration helper and `BrandIcon`                                 |
+| Product catalogue           | Reserves names, reports availability, and resolves accepted custom data      | Generated custom icon map and `ProductIcon`                        |
+| Astro integration helper    | Produces the explicit `astro-icon` include set                               | UI and brand catalogues; consumer `astro.config.*`                 |
+| Astro components            | Apply catalogue resolution, sizing, and accessibility defaults               | `astro-icon` for dependency icons; generated data for custom icons |
+| Metadata files              | Record provenance, licence, trademark, colour-mode, and redistribution truth | Validation and catalogue modules                                   |
+| SVG validator and generator | Enforce the authored source contract and generate compact runtime data       | `src/icons/` and `src/generated/`                                  |
+| Contact-sheet generator     | Produces human optical-review surfaces                                       | Small upstream fixture copies and README assets                    |
 
 ## A UI icon request end to end
 

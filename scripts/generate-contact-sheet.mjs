@@ -7,10 +7,34 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const checking = process.argv.includes("--check");
 
 const icons = [
-  { id: "settings", label: "settings", family: "Lucide", kind: "stroke", file: "fixtures/source-icons/lucide/settings.svg" },
-  { id: "verified", label: "verified", family: "Lucide", kind: "stroke", file: "fixtures/source-icons/lucide/badge-check.svg" },
-  { id: "github", label: "github", family: "Simple Icons", kind: "fill", file: "fixtures/source-icons/simple-icons/github.svg" },
-  { id: "discord", label: "discord", family: "Simple Icons", kind: "fill", file: "fixtures/source-icons/simple-icons/discord.svg" },
+  {
+    id: "settings",
+    label: "settings",
+    family: "Lucide",
+    kind: "stroke",
+    file: "fixtures/source-icons/lucide/settings.svg",
+  },
+  {
+    id: "verified",
+    label: "verified",
+    family: "Lucide",
+    kind: "stroke",
+    file: "fixtures/source-icons/lucide/badge-check.svg",
+  },
+  {
+    id: "github",
+    label: "github",
+    family: "Simple Icons",
+    kind: "fill",
+    file: "fixtures/source-icons/simple-icons/github.svg",
+  },
+  {
+    id: "discord",
+    label: "discord",
+    family: "Simple Icons",
+    kind: "fill",
+    file: "fixtures/source-icons/simple-icons/discord.svg",
+  },
 ];
 
 function compact(body) {
@@ -38,11 +62,15 @@ function renderContactSheet() {
         `<symbol id="icon-${icon.id}" viewBox="0 0 24 24">${icon.body}</symbol>`,
     )
     .join("");
-  const cards = icons.map((icon) => `
+  const cards = icons
+    .map(
+      (icon) => `
       <article class="icon-card">
         <div class="identity"><strong>${icon.label}</strong><span>${icon.family}</span></div>
         <div class="sizes">${[16, 20, 24, 32].map((size) => `<span>${iconMarkup(icon, size)}<small>${size}</small></span>`).join("")}</div>
-      </article>`).join("");
+      </article>`,
+    )
+    .join("");
   const densityReferences = `
       <article class="icon-card reference-card">
         <div class="identity"><strong>density references</strong><span>basic geometry</span></div>
@@ -98,16 +126,19 @@ function renderContactSheet() {
 
 function renderReadmePop() {
   const positions = [120, 330, 540, 750];
-  const groups = icons.map((icon, index) => {
-    const paint = icon.kind === "stroke"
-      ? 'fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"'
-      : 'fill="currentColor"';
-    return `<g transform="translate(${positions[index]} 68)">
+  const groups = icons
+    .map((icon, index) => {
+      const paint =
+        icon.kind === "stroke"
+          ? 'fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"'
+          : 'fill="currentColor"';
+      return `<g transform="translate(${positions[index]} 68)">
       <rect x="-58" y="-28" width="116" height="116" rx="26" fill="#ffffff" fill-opacity=".08" stroke="#ffffff" stroke-opacity=".12"/>
       <g transform="translate(-24 0) scale(2)" ${paint}>${icon.body}</g>
       <text x="0" y="114" text-anchor="middle" fill="#e9e4ff" font-size="16" font-family="Inter, ui-sans-serif, system-ui, sans-serif">${icon.label}</text>
     </g>`;
-  }).join("\n");
+    })
+    .join("\n");
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="960" height="260" viewBox="0 0 960 260" role="img" aria-labelledby="title desc">
   <title id="title">Wolfsblvt Icons starter catalogue</title>

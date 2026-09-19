@@ -33,7 +33,9 @@ test("planned custom glyphs reserve names without pretending geometry exists", (
 });
 
 test("Astro integration options include catalogue icons and explicit Lucide extras", () => {
-  const options = createAstroIconOptions({ extraLucide: ["heart", "settings"] });
+  const options = createAstroIconOptions({
+    extraLucide: ["heart", "settings"],
+  });
   assert.deepEqual(options.include["simple-icons"], ["discord", "github"]);
   assert.ok(options.include.lucide.includes("heart"));
   assert.equal(

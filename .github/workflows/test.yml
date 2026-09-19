@@ -1,4 +1,4 @@
-name: Bootstrap lockfile evidence
+name: Bootstrap source evidence
 
 on:
   pull_request:
@@ -19,25 +19,33 @@ jobs:
       - name: Check out source
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: Use Node.js 22.12.0
+      - name: Use Node.js 24
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          node-version: 22.12.0
+          node-version: 24
 
-      - name: Resolve and verify candidate
+      - name: Reproduce bootstrap candidate
         run: |
           npm install --ignore-scripts
+          npm run format
           npm test
+          git diff --check
+          git diff --binary > /tmp/bootstrap.patch
 
-      - name: Emit compressed lockfile evidence
+      - name: Emit compressed bootstrap evidence
         run: |
           node --input-type=module - <<'NODE'
           import { readFileSync } from "node:fs";
           import { gzipSync } from "node:zlib";
 
-          const payload = gzipSync(readFileSync("package-lock.json")).toString("base64");
-          const chunkSize = 6000;
-          for (let offset = 0, index = 0; offset < payload.length; offset += chunkSize, index += 1) {
-            console.log(`LOCK_CHUNK_${String(index).padStart(3, "0")}:${payload.slice(offset, offset + chunkSize)}`);
+          for (const [label, path] of [
+            ["LOCK", "package-lock.json"],
+            ["PATCH", "/tmp/bootstrap.patch"],
+          ]) {
+            const payload = gzipSync(readFileSync(path)).toString("base64");
+            const chunkSize = 6000;
+            for (let offset = 0, index = 0; offset < payload.length; offset += chunkSize, index += 1) {
+              console.log(`${label}_CHUNK_${String(index).padStart(3, "0")}:${payload.slice(offset, offset + chunkSize)}`);
+            }
           }
           NODE

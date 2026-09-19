@@ -32,17 +32,16 @@ jobs:
           git diff --check
           git diff --binary > /tmp/bootstrap.patch
 
-      - name: Emit compressed bootstrap evidence
+      - name: Emit bootstrap evidence
         run: |
           node --input-type=module - <<'NODE'
           import { readFileSync } from "node:fs";
-          import { gzipSync } from "node:zlib";
 
           for (const [label, path] of [
             ["LOCK", "package-lock.json"],
             ["PATCH", "/tmp/bootstrap.patch"],
           ]) {
-            const payload = gzipSync(readFileSync(path)).toString("base64");
+            const payload = readFileSync(path).toString("base64");
             const chunkSize = 6000;
             for (let offset = 0, index = 0; offset < payload.length; offset += chunkSize, index += 1) {
               console.log(`${label}_CHUNK_${String(index).padStart(3, "0")}:${payload.slice(offset, offset + chunkSize)}`);

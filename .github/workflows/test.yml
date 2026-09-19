@@ -1,7 +1,9 @@
-name: Final repair evidence
+name: Tests
 
 on:
   pull_request:
+    branches: [main]
+  push:
     branches: [main]
 
 permissions:
@@ -12,8 +14,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  repair:
-    name: repair
+  verify:
+    name: verify
     runs-on: ubuntu-latest
     steps:
       - name: Check out source
@@ -26,39 +28,8 @@ jobs:
           cache: npm
           cache-dependency-path: package-lock.json
 
-      - name: Prepare and verify repair
-        run: |
-          npm ci --ignore-scripts
-          npm run format
-          node --input-type=module - <<'NODE'
-          import { readFileSync, writeFileSync } from "node:fs";
-          const path = "tests/svg-validation.test.mjs";
-          const source = readFileSync(path, "utf8");
-          const repaired = source.replace(
-            "/comments, declarations, entities, and processing instructions are forbidden/",
-            "/Comments, declarations, entities, and processing instructions are forbidden/",
-          );
-          if (repaired === source) {
-            throw new Error("Expected comment-validator assertion was not found.");
-          }
-          writeFileSync(path, repaired);
-          NODE
-          git diff --binary > /tmp/repair.patch
-          npm test
-          git diff --check
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
 
-      - name: Emit repair patch
-        if: always()
-        run: |
-          if [ ! -f /tmp/repair.patch ]; then
-            echo "Repair patch was not produced."
-            exit 1
-          fi
-          node --input-type=module - <<'NODE'
-          import { readFileSync } from "node:fs";
-          const payload = readFileSync("/tmp/repair.patch").toString("base64");
-          const chunkSize = 6000;
-          for (let offset = 0, index = 0; offset < payload.length; offset += chunkSize, index += 1) {
-            console.log(`PATCH_CHUNK_${String(index).padStart(3, "0")}:${payload.slice(offset, offset + chunkSize)}`);
-          }
-          NODE
+      - name: Verify repository
+        run: npm test

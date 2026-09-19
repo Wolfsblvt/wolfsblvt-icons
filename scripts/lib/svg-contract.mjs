@@ -22,10 +22,7 @@ const COMMON_GEOMETRY_ATTRIBUTES = new Set([
 
 const ELEMENT_ATTRIBUTES = new Map([
   ["circle", new Set(["cx", "cy", "r", ...COMMON_GEOMETRY_ATTRIBUTES])],
-  [
-    "ellipse",
-    new Set(["cx", "cy", "rx", "ry", ...COMMON_GEOMETRY_ATTRIBUTES]),
-  ],
+  ["ellipse", new Set(["cx", "cy", "rx", "ry", ...COMMON_GEOMETRY_ATTRIBUTES])],
   ["line", new Set(["x1", "y1", "x2", "y2", ...COMMON_GEOMETRY_ATTRIBUTES])],
   ["path", new Set(["d", ...COMMON_GEOMETRY_ATTRIBUTES])],
   ["polygon", new Set(["points", ...COMMON_GEOMETRY_ATTRIBUTES])],
@@ -139,7 +136,9 @@ function validateBody(body, fileName, errors) {
   for (const match of body.matchAll(token)) {
     const text = body.slice(cursor, match.index);
     if (text.trim()) {
-      errors.push(`${fileName}: text content inside authored SVGs is forbidden.`);
+      errors.push(
+        `${fileName}: text content inside authored SVGs is forbidden.`,
+      );
     }
     cursor = match.index + match[0].length;
 
@@ -158,9 +157,7 @@ function validateBody(body, fileName, errors) {
       continue;
     }
 
-    const opening = raw.match(
-      /^<\s*([A-Za-z][A-Za-z0-9:-]*)([\s\S]*?)(\/?)>$/,
-    );
+    const opening = raw.match(/^<\s*([A-Za-z][A-Za-z0-9:-]*)([\s\S]*?)(\/?)>$/);
     if (!opening) {
       errors.push(`${fileName}: malformed SVG element ${JSON.stringify(raw)}.`);
       continue;

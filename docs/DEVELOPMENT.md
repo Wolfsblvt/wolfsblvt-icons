@@ -30,8 +30,8 @@ npm ci
 | Canonical repository verification                | `npm test`                            |
 | Build TypeScript declarations and JavaScript     | `npm run build`                       |
 | Check Astro components                           | `npm run astro:check`                 |
-| Build the real Astro consumer fixture             | `npm run astro:consumer`              |
-| Check repository-local documentation links        | `npm run docs:check`                  |
+| Build the real Astro consumer fixture            | `npm run astro:consumer`              |
+| Check repository-local documentation links       | `npm run docs:check`                  |
 | Run focused behavior tests after a build         | `npm run build && npm run test:unit`  |
 | Validate metadata and authored SVGs              | `npm run validate`                    |
 | Regenerate all committed artifacts               | `npm run generate`                    |

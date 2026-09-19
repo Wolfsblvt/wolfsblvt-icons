@@ -58,10 +58,9 @@ test("rejects script elements", () => {
 
 test("rejects text content", () => {
   assert.match(
-    validateWorksSvg(
-      authored('<path d="M4 12h16"/>surprise'),
-      "text.svg",
-    ).join("\n"),
+    validateWorksSvg(authored('<path d="M4 12h16"/>surprise'), "text.svg").join(
+      "\n",
+    ),
     /text content inside authored SVGs is forbidden/,
   );
 });
@@ -111,7 +110,7 @@ test("rejects comments and declaration-like content", () => {
       authored('<!-- hidden --><path d="M4 12h16"/>'),
       "comment.svg",
     ).join("\n"),
-    /comments, declarations, entities, and processing instructions are forbidden/,
+    /Comments, declarations, entities, and processing instructions are forbidden/,
   );
 });
 

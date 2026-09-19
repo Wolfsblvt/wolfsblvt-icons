@@ -11,6 +11,7 @@ This record identifies the upstream icon and framework material selected by `@wo
 - **Upstream:** [Lucide](https://lucide.dev/)
 - **Licence:** ISC
 - **Repository fixture copies:** `settings.svg` and `badge-check.svg`, retained only to generate visual qualification surfaces and excluded from the npm package; exact source revisions and SHA-256 hashes are recorded in [`fixtures/source-icons/manifest.json`](fixtures/source-icons/manifest.json)
+- **Temporary custom-glyph review references:** Lucide `file-diff`, `shield-check`, `scan-line`, and `code-xml` geometry is embedded in the three SVG panels under `fixtures/reviews/diffdevil-brand/` solely for unresolved visual comparison and is excluded from the npm package. The fixture was retrieved from upstream commit `ba6751ac45d379f6359d75ef2228cff6ba96c122` on 2026-09-19; exact source blobs are `759e6b7cb8b71d1c62e76b610646fe913ee3772d`, `da48f664e51be4ceb800dbe4f6c10c5e7cfa800e`, `3e8da093643cb317d181a9975cdb47090f18c259`, and `74f2299eb3e31a2ea1ce971ae8b4c64bf00ede88` respectively.
 
 ## Simple Icons
 

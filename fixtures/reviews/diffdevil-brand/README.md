@@ -26,11 +26,9 @@ Together the panels render every candidate at 16, 20, 24, and 32 pixels on light
 
 ## Candidates
 
-| Candidate | Strongest reading | Tradeoff |
-| --- | --- | --- |
-| **A · Diff scan** | Most immediately legible as diff inspection; strongest survival at 16 px. | The most functional and least overtly devilish; its scan-frame silhouette is intentionally familiar. |
-| **B · Guarded change** | Communicates protected or policy-governed replacement through a shield and bidirectional change mark. | The densest candidate at 16 px and the one most likely to read as generic security tooling. |
-| **C · Devil brackets** | Most distinctive product character: code brackets with restrained horn and tail cues, without becoming a face or mascot. | The small identity details compress first; at 16 px it can initially read as unusual braces. |
+- **A · Diff scan:** Most immediately legible as diff inspection; strongest survival at 16 px. The tradeoff is that it is the most functional and least overtly devilish; its scan-frame silhouette is intentionally familiar.
+- **B · Guarded change:** Communicates protected or policy-governed replacement through a shield and bidirectional change mark. The tradeoff is density at 16 px and a higher risk of reading as generic security tooling.
+- **C · Devil brackets:** Most distinctive product character: code brackets with restrained horn and tail cues, without becoming a face or mascot. The tradeoff is that the small identity details compress first and can initially read as unusual braces.
 
 **Current recommendation: A · Diff scan.** The actual first consumer is a 14–16 px GitHub slot, and A preserves its intended meaning there with the least explanation. If stronger product character matters more than instant recognition, C is the better branch to iterate; decorating A until it impersonates C would produce the usual committee-designed soup.
 

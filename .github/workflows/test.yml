@@ -1,96 +1,43 @@
-name: Finalize repository bootstrap
+name: Bootstrap lockfile evidence
 
 on:
   pull_request:
     branches: [main]
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  finalize:
-    name: finalize
-    if: github.event.pull_request.head.repo.full_name == github.repository
+  bootstrap:
+    name: bootstrap
     runs-on: ubuntu-latest
     steps:
-      - name: Check out source branch
+      - name: Check out source
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          fetch-depth: 0
 
-      - name: Use Node.js 24
+      - name: Use Node.js 22.12.0
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          node-version: 24
+          node-version: 22.12.0
 
-      - name: Resolve and format bootstrap candidate
+      - name: Resolve and verify candidate
         run: |
           npm install --ignore-scripts
-          npm run format
           npm test
 
-      - name: Install final read-only workflow
+      - name: Emit compressed lockfile evidence
         run: |
-          dollar='$'
-          cat > .github/workflows/test.yml <<WORKFLOW
-          name: Tests
+          node --input-type=module - <<'NODE'
+          import { readFileSync } from "node:fs";
+          import { gzipSync } from "node:zlib";
 
-          on:
-            pull_request:
-              branches: [main]
-            push:
-              branches: [main]
-
-          permissions:
-            contents: read
-
-          concurrency:
-            group: ${dollar}{{ github.workflow }}-${dollar}{{ github.ref }}
-            cancel-in-progress: true
-
-          jobs:
-            verify:
-              name: verify
-              runs-on: ubuntu-latest
-              steps:
-                - name: Check out source
-                  uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-
-                - name: Use Node.js 24
-                  uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
-                  with:
-                    node-version: 24
-                    cache: npm
-                    cache-dependency-path: package-lock.json
-
-                - name: Install dependencies
-                  run: npm ci --ignore-scripts
-
-                - name: Verify repository
-                  run: npm test
-          WORKFLOW
-
-      - name: Requalify exact final tree
-        run: |
-          rm -rf node_modules
-          npm ci --ignore-scripts
-          npm test
-          git diff --check
-
-      - name: Commit final bootstrap outputs
-        run: |
-          git config user.name "Nyxara"
-          git config user.email "nyxara@agents.wolfsblvt.com"
-          git add -A
-          git commit -F - <<'MESSAGE'
-          chore: lock and qualify repository dependencies
-
-          Co-authored-via: Nyxara | ChatGPT Web | GPT-5.6 Sol | Pro
-          Co-authored-by: Nyxara <nyxara@agents.wolfsblvt.com>
-          MESSAGE
-          git push origin HEAD:${{ github.event.pull_request.head.ref }}
+          const payload = gzipSync(readFileSync("package-lock.json")).toString("base64");
+          const chunkSize = 6000;
+          for (let offset = 0, index = 0; offset < payload.length; offset += chunkSize, index += 1) {
+            console.log(`LOCK_CHUNK_${String(index).padStart(3, "0")}:${payload.slice(offset, offset + chunkSize)}`);
+          }
+          NODE

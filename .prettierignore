@@ -1,0 +1,6 @@
+dist/
+node_modules/
+fixtures/contact-sheet.html
+docs/assets/readme/icon-pop.svg
+src/generated/custom-icons.ts
+package-lock.json

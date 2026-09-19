@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "lucide/badge-check",
+      "path": "fixtures/source-icons/lucide/badge-check.svg",
+      "sourceUrl": "https://github.com/lucide-icons/lucide/blob/main/icons/badge-check.svg",
+      "sourceRevision": "011cdce0479fd7dd2cbc4bd8ba58a92ab0fcdc30",
+      "retrievedAt": "2026-09-19",
+      "license": "ISC",
+      "sha256": "a83b36e35ed35be896c5e5d39d0a63ba4368735ac22f09a26a31726259467775"
+    },
+    {
+      "id": "lucide/settings",
+      "path": "fixtures/source-icons/lucide/settings.svg",
+      "sourceUrl": "https://github.com/lucide-icons/lucide/blob/main/icons/settings.svg",
+      "sourceRevision": "4c6263af909841a3911f41a385021778eacba736",
+      "retrievedAt": "2026-09-19",
+      "license": "ISC",
+      "sha256": "0ae27fd0f81999229e3127ac96c5b32edfea448e291d509e76212b917551d66b"
+    },
+    {
+      "id": "simple-icons/discord",
+      "path": "fixtures/source-icons/simple-icons/discord.svg",
+      "sourceUrl": "https://github.com/simple-icons/simple-icons/blob/develop/icons/discord.svg",
+      "sourceRevision": "9d7796b8a3068f33744f39640c84b40138c81cf0",
+      "retrievedAt": "2026-09-19",
+      "license": "CC0-1.0",
+      "sha256": "a2625a85ff8a4aa0703ba7c9db39bc57257b3223cd8c19394e8ec491f50b9b83"
+    },
+    {
+      "id": "simple-icons/github",
+      "path": "fixtures/source-icons/simple-icons/github.svg",
+      "sourceUrl": "https://github.com/simple-icons/simple-icons/blob/develop/icons/github.svg",
+      "sourceRevision": "538ec5bf2a9a5724899daf728577cd0b8beaae90",
+      "retrievedAt": "2026-09-19",
+      "license": "CC0-1.0",
+      "sha256": "4a6b3318b5e73d259e32696463dd7fd2039250b067201866324ed95f4a04775d"
+    }
+  ]
+}

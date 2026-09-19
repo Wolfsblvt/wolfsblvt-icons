@@ -1,0 +1,29 @@
+{
+  "id": "github",
+  "status": "available",
+  "selectedSourceType": "simple-icons",
+  "iconifyName": "simple-icons:github",
+  "sourceUrl": "https://github.com/simple-icons/simple-icons/blob/develop/icons/github.svg",
+  "retrievedAt": "2026-09-19",
+  "upstream": {
+    "package": "@iconify-json/simple-icons",
+    "version": "1.2.96",
+    "slug": "github",
+    "assetRevision": "538ec5bf2a9a5724899daf728577cd0b8beaae90"
+  },
+  "license": {
+    "spdx": "CC0-1.0",
+    "notes": "The selected geometry is consumed from the Simple Icons Iconify data package."
+  },
+  "trademarkNotes": "GitHub names and marks remain the property of GitHub, Inc.; inclusion does not imply endorsement.",
+  "brandGuidelinesUrl": "https://github.com/logos",
+  "permittedColorModes": ["monochrome"],
+  "brandColor": null,
+  "modifications": "None; rendered from the installed Iconify collection.",
+  "redistribution": {
+    "standing": "dependency-reference",
+    "vendoredBytes": false,
+    "notes": "The package stores selection metadata and resolves geometry from its dependency."
+  },
+  "contentHash": null
+}

@@ -1,0 +1,26 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "05:00"
+      timezone: Europe/Berlin
+    open-pull-requests-limit: 5
+    groups:
+      astro-toolchain:
+        patterns:
+          - astro
+          - astro-icon
+          - "@astrojs/*"
+      icon-data:
+        patterns:
+          - "@iconify-json/*"
+      development-tooling:
+        dependency-type: development
+        exclude-patterns:
+          - astro
+          - astro-icon
+          - "@astrojs/*"
+          - "@iconify-json/*"

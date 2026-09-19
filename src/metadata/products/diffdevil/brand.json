@@ -1,0 +1,22 @@
+{
+  "id": "diffdevil/brand",
+  "namespace": "diffdevil",
+  "name": "brand",
+  "status": "planned",
+  "selectedSourceType": "works-provider-glyph",
+  "assetPath": "src/icons/products/diffdevil/brand.svg",
+  "intendedUse": "Compact diffdevil identity in icon slots where the full favicon or wordmark is unsuitable.",
+  "license": {
+    "spdx": "MIT",
+    "notes": "Applies only after original geometry is authored and accepted."
+  },
+  "permittedColorModes": ["monochrome"],
+  "modifications": "No geometry exists in this repository cut.",
+  "redistribution": {
+    "standing": "original-mit-when-authored",
+    "vendoredBytes": false,
+    "notes": "The namespace and contract are reserved; final geometry is separate bounded visual-authoring work."
+  },
+  "contentHash": null,
+  "authoringNotes": "Author as a distinct Works provider glyph in the Lucide visual language; do not trace the favicon."
+}

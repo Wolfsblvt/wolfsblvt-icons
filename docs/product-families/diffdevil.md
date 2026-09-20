@@ -9,11 +9,11 @@ It does not freeze the future dashboard information architecture, turn every nou
 ## Standing
 
 - `diffdevil/brand` is accepted and available.
-- `diffdevil/changed`, `diffdevil/raw-churn`, and `diffdevil/bands` are the first proposed product-family additions.
+- `diffdevil/changed`, `diffdevil/raw-churn`, and `diffdevil/bands` are accepted and available.
 - The Lucide choices below are direct product-local starting points, not new shared aliases by default.
 - The exact, bounded, unknown, unmeasurable, line-kind, and result-lane glyphs remain part of diffdevil's established information grammar rather than becoming decorative product icons.
 
-The proposed family and its visual evidence live in [`fixtures/reviews/diffdevil-family/`](../../fixtures/reviews/diffdevil-family/).
+Wolf accepted all three capability glyphs after reviewing them at 14–32 pixels across light, dark, square, circular, website, Playground, browser-extension, and dashboard contexts. The selected geometry now lives in runtime source; transient review panels remain in pull-request history rather than the package tree.
 
 ## Product grounding
 
@@ -38,7 +38,7 @@ Use the narrowest source that tells the truth:
 
 A repeated icon in diffdevil does not automatically deserve a shared UI alias. Promote it only when several Works products use the same meaning and centralizing it prevents drift.
 
-## Proposed custom product family
+## Accepted custom product family
 
 ### `diffdevil/brand`
 
@@ -78,7 +78,7 @@ A repeated icon in diffdevil does not automatically deserve a shared UI alias. P
 
 **Geometry intent:** a segmented neutral rail carries a position marker. The source glyph represents the configured-scale concept; the live component still renders the actual number of bands and selected or unresolved standing.
 
-These three proposed glyphs are a family of product meanings, not three alternatives for one slot.
+These three capability glyphs are siblings with distinct jobs, not alternatives for one slot.
 
 ## Existing information grammar stays textual
 
@@ -179,14 +179,15 @@ Charts, rails, tables, coverage gaps, ranges, and exact or bounded evidence rema
 - Direct Lucide references may change during product-local design before release. Namespaced product icons become compatibility-bearing package API once admitted.
 - GitHub Marketplace Action branding remains limited to GitHub's supported icon vocabulary. A custom package glyph cannot be placed there merely because the package owns one.
 
-## Admission consequence
+## Runtime and consumer consequence
 
-After Wolf accepts or revises the three proposed glyphs, promote only accepted geometry into:
+The accepted family is authoritative in:
 
 ```text
 src/icons/products/diffdevil/
 src/metadata/products/diffdevil/
 src/generated/custom-icons.ts
+src/catalog/products.ts
 ```
 
-Then add the names to the product catalogue, regenerate runtime data, extend the real Astro consumer, and inspect the normal package contact sheet. Until that explicit selection, the review candidates remain outside runtime source.
+Consumers resolve the stable names through `resolveProductIcon(...)` or `<ProductIcon ... />`. The website, Playground, browser extension, and dashboard may now replace their semantic slots with these package names while preserving the usage rules above. Direct Lucide choices remain product-local and may continue evolving before their own interfaces settle; the four namespaced diffdevil glyphs are compatibility-bearing package API.

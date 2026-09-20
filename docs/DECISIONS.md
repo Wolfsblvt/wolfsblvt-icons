@@ -8,13 +8,13 @@ This record carries the durable product, package, licensing, and integration cho
 
 **Date:** 2026-09-19 · **Status:** Current
 
-The package reserves custom product names without placeholder geometry. `diffdevil/brand` has crossed that boundary: Wolf selected the centre-seam monochrome translation of the established horned split `− / +` identity, and the glyph is now available. `wolfsblvt/works` remains planned without geometry.
+The package reserves custom product names without placeholder geometry. Wolf has selected and accepted the first complete family: `diffdevil/brand`, `diffdevil/changed`, `diffdevil/raw-churn`, and `diffdevil/bands` are available. `wolfsblvt/works` remains planned without geometry.
 
-**Why.** Stable names, metadata, validation, and adapter boundaries may exist before a silhouette, but runtime geometry waits for actual visual judgment. The selected diffdevil shape keeps direct brand ancestry while reducing the filled symbol to a legible Lucide-like interface mark at approximately 14–16 pixels.
+**Why.** Stable names, metadata, validation, and adapter boundaries may exist before a silhouette, but runtime geometry waits for actual visual judgment. The brand glyph preserves direct ancestry to the horned split `− / +` identity. The three capability glyphs exist only where an ordinary Lucide icon would blur a product-specific distinction: replacement-aware Changed, independent raw churn, and configured numeric bands.
 
-**Rejected.** Temporary generic shapes, unrelated feature icons presented as brand identity, and direct miniature copies of the filled favicon. Once consumed, placeholders become compatibility and brand debt with astonishing efficiency.
+**Rejected.** Temporary generic shapes, unrelated feature icons presented as brand identity, using `file-diff` as though it meant replacement-aware Changed, gauges or charts that turn bands into risk or trend, and a custom icon zoo for ordinary interface nouns. Once consumed, placeholders and blurred meanings become compatibility debt with astonishing efficiency.
 
-**Reopen if.** A material change to the accepted diffdevil identity or a selected final Wolfsblvt Works glyph earns another bounded visual contribution.
+**Reopen if.** A material change to an accepted diffdevil meaning, another genuinely product-specific recurring concept, or a selected final Wolfsblvt Works glyph earns bounded visual qualification and explicit product acceptance.
 
 ## Use one package with a framework-neutral core and Astro adapter
 

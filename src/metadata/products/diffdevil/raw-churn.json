@@ -1,0 +1,22 @@
+{
+  "id": "diffdevil/raw-churn",
+  "namespace": "diffdevil",
+  "name": "raw-churn",
+  "status": "available",
+  "selectedSourceType": "works-provider-glyph",
+  "assetPath": "src/icons/products/diffdevil/raw-churn.svg",
+  "intendedUse": "Raw additions-and-deletions metrics in diffdevil reports, diagnostics, settings, and dashboard analysis detail.",
+  "license": {
+    "spdx": "MIT",
+    "notes": "Original Wolfsblvt Works geometry."
+  },
+  "permittedColorModes": ["monochrome"],
+  "modifications": "Purpose-authored monochrome product glyph for raw churn.",
+  "redistribution": {
+    "standing": "original-mit",
+    "vendoredBytes": true,
+    "notes": "Original geometry is distributed from this repository with the package source."
+  },
+  "contentHash": "b0f5395663d47ae6f778e75c76333e1e6df3874b37d60dd87a57a3cf735b24cb",
+  "authoringNotes": "Accepted two-row geometry keeps additions and deletions independent and avoids implying pairing, cancellation, or modified-line semantics."
+}

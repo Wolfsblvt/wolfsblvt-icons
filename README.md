@@ -16,12 +16,12 @@ Lucide supplies the ordinary UI language. Brands enter through an explicit catal
 
 The starter catalogue is deliberately small. It proves the three important routes without copying whole upstream collections into a municipal archive:
 
-| Lane           | Public names                         | Source                                                       |
-| -------------- | ------------------------------------ | ------------------------------------------------------------ |
-| Semantic UI    | `settings`, `verified`, `warning`    | Curated aliases over Lucide                                  |
-| Direct UI      | `lucide:badge-check`                 | Explicit Lucide escape route                                 |
-| Brands         | `github`, `discord`                  | Curated Simple Icons entries                                 |
-| Product glyphs | `diffdevil/brand`, `wolfsblvt/works` | Works-authored; diffdevil available, Wolfsblvt Works planned |
+| Lane           | Public names                      | Source                                                       |
+| -------------- | --------------------------------- | ------------------------------------------------------------ |
+| Semantic UI    | `settings`, `verified`, `warning` | Curated aliases over Lucide                                  |
+| Direct UI      | `lucide:badge-check`              | Explicit Lucide escape route                                 |
+| Brands         | `github`, `discord`               | Curated Simple Icons entries                                 |
+| Product glyphs | `diffdevil/*`, `wolfsblvt/works`  | Works-authored; diffdevil available, Wolfsblvt Works planned |
 
 The generated [contact sheet](fixtures/contact-sheet.html) renders the starter UI and brand references at 16, 20, 24, and 32 pixels on light and dark surfaces, beside circle and square density references. Product-glyph selection evidence remains with the contribution that admits or changes that geometry.
 
@@ -79,9 +79,12 @@ import { BrandIcon, ProductIcon, UiIcon } from "@wolfsblvt/icons/astro";
 <UiIcon name="lucide:heart" label="Favourite" />
 <BrandIcon name="github" label="GitHub" />
 <ProductIcon name="diffdevil/brand" />
+<ProductIcon name="diffdevil/changed" label="Changed" />
+<ProductIcon name="diffdevil/raw-churn" label="Raw churn" />
+<ProductIcon name="diffdevil/bands" label="Policy bands" />
 ```
 
-The final line renders the accepted monochrome `diffdevil/brand` glyph from generated local geometry.
+The final four lines render the accepted monochrome diffdevil product family from generated local geometry.
 
 ## One system, three different obligations
 
@@ -99,12 +102,14 @@ GitHub and Discord are the first entries because the diffdevil website is the fi
 
 Works-authored icons use stable `<product>/<icon>` names and live under `src/icons/products/`. Related concepts should be authored together when independent approximations would drift. The canonical [icon standard](docs/ICON-STANDARD.md) defines the 24×24 canvas, two-pixel stroke language, forbidden SVG machinery, visual comparison, provenance, and acceptance evidence.
 
-The first custom canaries are:
+The first accepted product family is diffdevil:
 
-- `diffdevil/brand`, the accepted compact provider glyph for slots where the full favicon or wordmark is wrong; and
-- `wolfsblvt/works`, a reserved compact umbrella glyph for social and footer references where the formal lockup is wrong.
+- `diffdevil/brand` carries compact product identity;
+- `diffdevil/changed` names replacement-aware review surface;
+- `diffdevil/raw-churn` names independent raw additions and deletions; and
+- `diffdevil/bands` names a configured ordinal policy scale without replacing the live dynamic rail.
 
-The accepted diffdevil glyph proves the full authoring, metadata, generation, and consumer route. The Wolfsblvt Works mark remains deliberately unavailable until its own visual design is selected.
+`wolfsblvt/works` remains a reserved compact umbrella glyph for social and footer references where the formal lockup is wrong. It stays unavailable until its own visual design is selected.
 
 ## Accessibility
 

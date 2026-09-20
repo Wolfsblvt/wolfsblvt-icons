@@ -1,12 +1,23 @@
 import { customIconData } from "../generated/custom-icons.js";
+import diffdevilBandsJson from "../metadata/products/diffdevil/bands.json" with { type: "json" };
 import diffdevilBrandJson from "../metadata/products/diffdevil/brand.json" with { type: "json" };
+import diffdevilChangedJson from "../metadata/products/diffdevil/changed.json" with { type: "json" };
+import diffdevilRawChurnJson from "../metadata/products/diffdevil/raw-churn.json" with { type: "json" };
 import wolfsblvtWorksJson from "../metadata/products/wolfsblvt/works.json" with { type: "json" };
 import type { ProductIconMetadata, ResolvedCustomIcon } from "./types.js";
 
-export type ProductIconName = "diffdevil/brand" | "wolfsblvt/works";
+export type ProductIconName =
+  | "diffdevil/bands"
+  | "diffdevil/brand"
+  | "diffdevil/changed"
+  | "diffdevil/raw-churn"
+  | "wolfsblvt/works";
 
 export const productIconCatalog = Object.freeze({
+  "diffdevil/bands": diffdevilBandsJson as ProductIconMetadata,
   "diffdevil/brand": diffdevilBrandJson as ProductIconMetadata,
+  "diffdevil/changed": diffdevilChangedJson as ProductIconMetadata,
+  "diffdevil/raw-churn": diffdevilRawChurnJson as ProductIconMetadata,
   "wolfsblvt/works": wolfsblvtWorksJson as ProductIconMetadata,
 }) satisfies Readonly<Record<ProductIconName, ProductIconMetadata>>;
 

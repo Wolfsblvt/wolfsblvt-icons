@@ -23,7 +23,6 @@ This repository packages a framework-neutral icon catalogue, Astro presentation 
 - `scripts/` holds validation and deterministic generators. Repository qualification is executable and repeatable rather than hidden in contributor memory.
 - `tests/` holds catalogue and SVG-contract behavior tests. Stable public behavior and rejected asset forms are preserved cheaply.
 - `fixtures/` holds the generated contact sheet and small pinned upstream visual references. Optical review evidence remains outside the distributed npm package.
-- `fixtures/reviews/` holds bounded unresolved visual-authoring candidates and review surfaces. Candidate geometry can be judged without pretending it is accepted runtime source.
 
 ### Durable product guidance
 
@@ -40,7 +39,6 @@ This repository packages a framework-neutral icon catalogue, Astro presentation 
 - **Qualify the repository:** `npm test`.
 - **Exercise the real Astro consumer boundary:** `npm run astro:consumer`.
 - **Inspect the accepted catalogue fixture:** run `npm run fixtures`, then open `fixtures/contact-sheet.html`.
-- **Inspect unresolved product-family work:** open the applicable directory under `fixtures/reviews/`.
 
 ## Layout decisions worth keeping
 
@@ -48,7 +46,7 @@ This repository packages a framework-neutral icon catalogue, Astro presentation 
 - Curated selection metadata and visual fixture copies are distinct. Fixture SVGs prove presentation and never become the runtime brand source.
 - Product icon names use `<product>/<icon>` while generated source keys retain the `products/` storage prefix.
 - Generated files are committed when they are human review surfaces or distributed runtime data, but their source and regeneration command remain explicit.
-- Unresolved geometry stays outside `src/icons/` until visual selection. A branch may carry review fixtures without making them package truth.
+- Unresolved geometry stays outside `src/icons/` until visual selection. Bounded review evidence belongs to the contribution that seeks admission, not the runtime package.
 - Product-local Lucide choices stay direct references unless several Works products establish one shared semantic meaning.
 
 ## Related repositories

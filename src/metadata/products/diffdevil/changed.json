@@ -1,0 +1,22 @@
+{
+  "id": "diffdevil/changed",
+  "namespace": "diffdevil",
+  "name": "changed",
+  "status": "available",
+  "selectedSourceType": "works-provider-glyph",
+  "assetPath": "src/icons/products/diffdevil/changed.svg",
+  "intendedUse": "Replacement-aware Changed metrics in diffdevil reports, summaries, browser-extension projections, and dashboard analysis cards.",
+  "license": {
+    "spdx": "MIT",
+    "notes": "Original Wolfsblvt Works geometry."
+  },
+  "permittedColorModes": ["monochrome"],
+  "modifications": "Purpose-authored monochrome product glyph for replacement-aware review surface.",
+  "redistribution": {
+    "standing": "original-mit",
+    "vendoredBytes": true,
+    "notes": "Original geometry is distributed from this repository with the package source."
+  },
+  "contentHash": "95fd574020b071cef632ed9ef8b137b150a3cdf5b3fb447a3d7f952c218b4b2b",
+  "authoringNotes": "Accepted scan-frame geometry keeps separate addition and deletion facts inside one inspected change surface."
+}

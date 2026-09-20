@@ -25,11 +25,20 @@ test("brands resolve only through the curated catalogue", () => {
 });
 
 test("accepted product glyphs resolve while planned names remain unavailable", () => {
-  assert.equal(getProductIconMetadata("diffdevil/brand").status, "available");
-  const icon = resolveProductIcon("diffdevil/brand");
-  assert.equal(icon.id, "products/diffdevil/brand");
-  assert.equal(icon.viewBox, "0 0 24 24");
-  assert.match(icon.body, /M4 4l3 2\.25/);
+  const accepted = [
+    ["diffdevil/bands", /<rect x=\"3\" y=\"12\"/],
+    ["diffdevil/brand", /M4 4l3 2\.25/],
+    ["diffdevil/changed", /M8 3H6/],
+    ["diffdevil/raw-churn", /M4 7h6/],
+  ];
+
+  for (const [name, expectedBody] of accepted) {
+    assert.equal(getProductIconMetadata(name).status, "available");
+    const icon = resolveProductIcon(name);
+    assert.equal(icon.id, `products/${name}`);
+    assert.equal(icon.viewBox, "0 0 24 24");
+    assert.match(icon.body, expectedBody);
+  }
 
   assert.equal(getProductIconMetadata("wolfsblvt/works").status, "planned");
   assert.throws(

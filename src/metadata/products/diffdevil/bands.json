@@ -1,0 +1,22 @@
+{
+  "id": "diffdevil/bands",
+  "namespace": "diffdevil",
+  "name": "bands",
+  "status": "available",
+  "selectedSourceType": "works-provider-glyph",
+  "assetPath": "src/icons/products/diffdevil/bands.svg",
+  "intendedUse": "Configured numeric policy-band concepts and editor entry points in diffdevil interfaces.",
+  "license": {
+    "spdx": "MIT",
+    "notes": "Original Wolfsblvt Works geometry."
+  },
+  "permittedColorModes": ["monochrome"],
+  "modifications": "Purpose-authored monochrome product glyph for configured ordinal policy bands.",
+  "redistribution": {
+    "standing": "original-mit",
+    "vendoredBytes": true,
+    "notes": "Original geometry is distributed from this repository with the package source."
+  },
+  "contentHash": "776f6efd29c7e8bdb1949e242838670f26950c2bc2b9c6ba8554f7e506e39b47",
+  "authoringNotes": "Accepted segmented-rail geometry represents a declared scale and position without implying trend, health, risk, or replacing the live dynamic rail."
+}

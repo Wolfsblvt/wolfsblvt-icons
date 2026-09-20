@@ -2,7 +2,10 @@
 import type { ResolvedCustomIcon } from "../catalog/types.js";
 
 export const customIconData = Object.freeze({
+  "products/diffdevil/bands": { id: "products/diffdevil/bands", viewBox: "0 0 24 24", body: "<rect x=\"3\" y=\"12\" width=\"18\" height=\"6\" rx=\"1\" /><path d=\"M7.5 12v6\" /><path d=\"M12 12v6\" /><path d=\"M16.5 12v6\" /><circle cx=\"12\" cy=\"7\" r=\"1.5\" /><path d=\"M12 8.5V10\" />" },
   "products/diffdevil/brand": { id: "products/diffdevil/brand", viewBox: "0 0 24 24", body: "<path d=\"M4 4l3 2.25V9h10V6.25L20 4v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z\" /><path d=\"M12 9v11\" /><path d=\"M6.5 13h3\" /><path d=\"M14.5 13h3\" /><path d=\"M16 11.5v3\" />" },
+  "products/diffdevil/changed": { id: "products/diffdevil/changed", viewBox: "0 0 24 24", body: "<path d=\"M8 3H6a3 3 0 0 0-3 3v2\" /><path d=\"M16 3h2a3 3 0 0 1 3 3v2\" /><path d=\"M21 16v2a3 3 0 0 1-3 3h-2\" /><path d=\"M8 21H6a3 3 0 0 1-3-3v-2\" /><path d=\"M7 10h5\" /><path d=\"M9.5 7.5v5\" /><path d=\"M12 15h5\" />" },
+  "products/diffdevil/raw-churn": { id: "products/diffdevil/raw-churn", viewBox: "0 0 24 24", body: "<path d=\"M4 7h6\" /><path d=\"M7 4v6\" /><path d=\"M14 7h6\" /><path d=\"M4 17h6\" /><path d=\"M14 17h6\" />" },
 }) satisfies Readonly<
   Record<string, ResolvedCustomIcon>
 >;

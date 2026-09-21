@@ -70,7 +70,7 @@
     "prepare": "npm run build"
   },
   "dependencies": {
-    "@iconify-json/lucide": "1.2.131",
+    "@iconify-json/lucide": "1.2.133",
     "@iconify-json/simple-icons": "1.2.96"
   },
   "peerDependencies": {

@@ -27,7 +27,9 @@ This repository packages a framework-neutral icon catalogue, Astro presentation 
 ### Durable product guidance
 
 - `docs/product-families/` holds product-specific icon maps and custom-versus-upstream boundaries. Designers receive reusable decisions without turning product-local Lucide choices into package API.
-- `docs/` holds product, architecture, development, and icon-standard truth. Durable explanation stays distinct from implementation and active Work.
+- `docs/RELEASING.md` owns the first-package-release procedure and the route to its public account.
+- `docs/release-notes/` holds prepared public release bodies; a draft is not publication evidence.
+- `docs/` holds product, architecture, development, release, and icon-standard truth. Durable explanation stays distinct from implementation and active Work.
 
 ## Entry points
 
@@ -39,6 +41,7 @@ This repository packages a framework-neutral icon catalogue, Astro presentation 
 - **Qualify the repository:** `npm test`.
 - **Exercise the real Astro consumer boundary:** `npm run astro:consumer`.
 - **Inspect the accepted catalogue fixture:** run `npm run fixtures`, then open `fixtures/contact-sheet.html`.
+- **Prepare a release:** read `docs/RELEASING.md`; package publication and release-provider actions remain separate from source work.
 
 ## Layout decisions worth keeping
 

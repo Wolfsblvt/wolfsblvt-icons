@@ -16,6 +16,10 @@ This file carries the repository-local command surface, asset boundaries, and du
 
 Do not hand-edit `src/generated/custom-icons.ts`, `fixtures/contact-sheet.html`, or `docs/assets/readme/icon-pop.svg`; run `npm run generate`. Admit brands through metadata and current redistribution evidence before exposing them through `BrandIcon`. Works-authored SVGs must satisfy [`docs/ICON-STANDARD.md`](docs/ICON-STANDARD.md). Package publication, releases, new product-family geometry, and material changes to accepted glyphs remain separately authorized effects.
 
+## Release profile
+
+`@wolfsblvt/icons` serves Node and Astro developers who need one inspectable, locally bundled Works icon catalogue. The first package release is the explicitly selected `0.1.0` candidate; it is not a stability promise or a claim that every planned glyph is available. A GitHub Release is the leading public release-note surface after the separately authorized provider publication; its complete source and procedure live in [`docs/RELEASING.md`](docs/RELEASING.md). Use the repository's factual, developer-facing voice, credit material source authors, and carry `npm test` plus its packed-consumer proof before a release claim.
+
 ## Durable branch declaration
 
 ```text

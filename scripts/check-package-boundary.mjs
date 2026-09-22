@@ -1,9 +1,10 @@
 import { spawnSync } from "node:child_process";
+import { npmInvocation, parsePackManifest } from "./lib/npm-pack.mjs";
 
-const npm = process.platform === "win32" ? "npm.cmd" : "npm";
+const { command, prefixArguments } = npmInvocation();
 const result = spawnSync(
-  npm,
-  ["pack", "--dry-run", "--json", "--ignore-scripts"],
+  command,
+  [...prefixArguments, "pack", "--dry-run", "--json", "--ignore-scripts"],
   {
     encoding: "utf8",
     stdio: ["ignore", "pipe", "pipe"],
@@ -11,12 +12,12 @@ const result = spawnSync(
 );
 
 if (result.status !== 0) {
-  process.stderr.write(result.stderr);
-  process.stdout.write(result.stdout);
+  if (result.stderr) process.stderr.write(result.stderr);
+  if (result.stdout) process.stdout.write(result.stdout);
   process.exit(result.status ?? 1);
 }
 
-const [manifest] = JSON.parse(result.stdout);
+const manifest = parsePackManifest(result.stdout);
 const paths = manifest.files.map((file) => file.path).sort();
 const required = new Set([
   "LICENSE.md",

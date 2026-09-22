@@ -1,9 +1,16 @@
 import { readFile } from "node:fs/promises";
+import { resolve } from "node:path";
 
-const output = new URL(
+const defaultOutput = new URL(
   "../tests/fixtures/astro-consumer/dist/index.html",
   import.meta.url,
 );
+const outputArgument = process.argv
+  .slice(2)
+  .find((argument) => argument.startsWith("--output="));
+const output = outputArgument
+  ? resolve(outputArgument.slice("--output=".length))
+  : defaultOutput;
 const html = await readFile(output, "utf8");
 
 for (const id of [

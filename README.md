@@ -1,6 +1,6 @@
 # Wolfsblvt Icons
 
-[![Status: source ready](https://img.shields.io/badge/status-source%20ready-7c5cff)](docs/DEVELOPMENT.md#publication-boundary)
+[![Status: 0.1.0 candidate](https://img.shields.io/badge/status-0.1.0%20candidate-7c5cff)](docs/RELEASING.md)
 [![Node.js 22.12+](https://img.shields.io/badge/node-%E2%89%A522.12-43853d?logo=nodedotjs&logoColor=white)](package.json)
 [![Local assets](https://img.shields.io/badge/assets-local%20only-245b78)](docs/ARCHITECTURE.md#boundaries-and-integrations)
 
@@ -27,7 +27,7 @@ The generated [contact sheet](fixtures/contact-sheet.html) renders the starter U
 
 ## Try the source
 
-The repository is usable and qualified as source, but the npm package has **not** been published yet. The package remains `private: true` and versioned `0.0.0` until separate release work verifies control of the `@wolfsblvt` scope and the publication path.
+The repository is usable and qualified as source. The first public package candidate is `0.1.0`, but it has **not** been published to npm yet. Package availability, the `@wolfsblvt` scope, a tag, and a GitHub Release remain separate provider effects; until their readback, install from source.
 
 ```bash
 git clone https://github.com/Wolfsblvt/wolfsblvt-icons.git
@@ -129,6 +129,7 @@ Components default to decorative SVG with `aria-hidden="true"`. Supply `label` o
 - [Icon standard](docs/ICON-STANDARD.md) is the canonical source for selection, naming, authoring, brands, accessibility, and visual acceptance.
 - [Architecture](docs/ARCHITECTURE.md) traces catalogue resolution through Astro and generated custom geometry.
 - [Development](docs/DEVELOPMENT.md) owns bootstrap, commands, generated files, and common contribution paths.
+- [Releasing](docs/RELEASING.md) owns the 0.1.0 release procedure and its draft public account.
 - [Project map](docs/PROJECT-MAP.md) explains what lives where and why.
 - [Decisions](docs/DECISIONS.md) preserves the consequential choices and rejected alternatives.
 - [Third-party notices](THIRD_PARTY_NOTICES.md) records selected upstream material and fixture provenance.

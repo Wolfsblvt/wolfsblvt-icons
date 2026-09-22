@@ -2,7 +2,7 @@
 
 ## Supported surface
 
-The repository currently carries source for an unpublished `0.0.0` package. No npm release or support window exists yet. Security fixes therefore target the current maintained source rather than a published version matrix.
+The repository currently carries the unpublished `0.1.0` package candidate. No npm release or support window exists yet. Security fixes therefore target the current maintained source rather than a published version matrix.
 
 ## Report a vulnerability
 

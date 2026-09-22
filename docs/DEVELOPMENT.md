@@ -102,6 +102,6 @@ npm run clean
 
 This removes only build caches and package archives. It does not remove dependencies, the package lock, authored SVGs, metadata, or committed visual fixtures.
 
-## Publication boundary
+## Release boundary
 
-The package is intentionally `private: true` and versioned `0.0.0` until separately authorized npm publication work establishes the package account, release version, provenance flow, and release communication. Do not flip that guard, publish, tag, or create a GitHub release as ordinary development cleanup.
+The source candidate is `0.1.0`, but it is not npm-published. Publication, scope verification, provenance, tag creation, and GitHub Release creation are separate provider effects. [`RELEASING.md`](RELEASING.md) owns the exact procedure, post-publication readback, and draft release account; do not perform those effects as ordinary development cleanup.

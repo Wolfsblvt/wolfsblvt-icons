@@ -1,9 +1,8 @@
 {
   "name": "@wolfsblvt/icons",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "The curated icon system for Wolfsblvt Works products.",
   "type": "module",
-  "private": true,
   "license": "SEE LICENSE IN LICENSE.md",
   "author": "Wolfsblvt Works",
   "repository": {
@@ -63,10 +62,11 @@
     "generate": "node scripts/generate-custom-icons.mjs && node scripts/generate-contact-sheet.mjs",
     "generate:check": "node scripts/generate-custom-icons.mjs --check && node scripts/generate-contact-sheet.mjs --check",
     "pack:check": "node scripts/check-package-boundary.mjs",
+    "pack:consumer": "node scripts/check-packed-consumer.mjs",
     "test": "npm run verify",
     "test:unit": "node --test tests/*.test.mjs",
     "validate": "node scripts/validate-assets.mjs",
-    "verify": "npm run format:check && npm run build && npm run astro:check && npm run astro:consumer && npm run test:unit && npm run validate && npm run generate:check && npm run docs:check && npm run pack:check",
+    "verify": "npm run format:check && npm run build && npm run astro:check && npm run astro:consumer && npm run test:unit && npm run validate && npm run generate:check && npm run docs:check && npm run pack:check && npm run pack:consumer",
     "prepare": "npm run build"
   },
   "dependencies": {

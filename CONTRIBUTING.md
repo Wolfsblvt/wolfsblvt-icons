@@ -8,10 +8,10 @@ This guide explains how public contributions can improve `@wolfsblvt/icons` with
 
 Read the maintained source that owns the boundary you are changing:
 
-- [`docs/ICON-STANDARD.md`](docs/ICON-STANDARD.md) for naming, SVG geometry, brand admission, and visual review;
+- [`docs/icon-standard.md`](docs/icon-standard.md) for naming, SVG geometry, brand admission, and visual review;
 - [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md) for exact bootstrap and verification commands;
 - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for catalogue and adapter boundaries; and
-- [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) for current upstream material.
+- [`third-party-notices.md`](third-party-notices.md) for current upstream material.
 
 A direct Lucide icon does not need a new shared alias merely because one consumer uses it. A brand cannot enter the curated catalogue without current source, licence, trademark, guideline, and redistribution metadata. Do not submit copied path data as original work.
 

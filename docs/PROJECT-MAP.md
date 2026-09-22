@@ -35,7 +35,7 @@ This repository packages a framework-neutral icon catalogue, Astro presentation 
 
 - **Use the package:** `src/index.ts` and the exports declared in `package.json`.
 - **Use Astro components:** `src/astro/index.ts`.
-- **Understand icon admission and geometry:** `docs/ICON-STANDARD.md`.
+- **Understand icon admission and geometry:** `docs/icon-standard.md`.
 - **Understand diffdevil's family and ordinary icon map:** `docs/product-families/diffdevil.md`.
 - **Add or change catalogue behavior:** `src/catalog/`.
 - **Qualify the repository:** `npm test`.

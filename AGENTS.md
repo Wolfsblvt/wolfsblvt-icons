@@ -14,7 +14,7 @@ This file carries the repository-local command surface, asset boundaries, and du
 
 ## Repository boundaries
 
-Do not hand-edit `src/generated/custom-icons.ts`, `fixtures/contact-sheet.html`, or `docs/assets/readme/icon-pop.svg`; run `npm run generate`. Admit brands through metadata and current redistribution evidence before exposing them through `BrandIcon`. Works-authored SVGs must satisfy [`docs/ICON-STANDARD.md`](docs/ICON-STANDARD.md). Package publication, releases, new product-family geometry, and material changes to accepted glyphs remain separately authorized effects.
+Do not hand-edit `src/generated/custom-icons.ts`, `fixtures/contact-sheet.html`, or `docs/assets/readme/icon-pop.svg`; run `npm run generate`. Admit brands through metadata and current redistribution evidence before exposing them through `BrandIcon`. Works-authored SVGs must satisfy [`icon-standard.md`](docs/icon-standard.md). Package publication, releases, new product-family geometry, and material changes to accepted glyphs remain separately authorized effects.
 
 ## Release profile
 

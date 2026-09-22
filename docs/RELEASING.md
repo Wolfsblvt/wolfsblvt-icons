@@ -6,7 +6,7 @@ This guide owns the deliberate first-package-release procedure for `@wolfsblvt/i
 
 ## Release unit and standing
 
-The release unit is the `@wolfsblvt/icons` npm package for Node and Astro developers. Its public source remains [`Wolfsblvt/wolfsblvt-icons`](https://github.com/Wolfsblvt/wolfsblvt-icons); [`ICON-STANDARD.md`](ICON-STANDARD.md) remains the canonical visual and provenance contract.
+The release unit is the `@wolfsblvt/icons` npm package for Node and Astro developers. Its public source remains [`Wolfsblvt/wolfsblvt-icons`](https://github.com/Wolfsblvt/wolfsblvt-icons); [`icon-standard.md`](icon-standard.md) remains the canonical visual and provenance contract.
 
 `0.1.0` is the explicitly selected first package-release candidate. It exposes the existing framework-neutral catalogue, root exports, Astro adapter, curated GitHub and Discord entries, and accepted `diffdevil/*` family. It does not promise a stable API, npm availability before publication, or the still-unavailable `wolfsblvt/works` glyph.
 
@@ -17,7 +17,7 @@ The release body in [`release-notes/0.1.0.md`](release-notes/0.1.0.md) is the pr
 1. Re-resolve the intended `main` commit, package version, clean source state, and the current npm scope/package standing. A package name being configured locally does not prove the scope is usable or the version is available.
 2. Confirm that this exact source candidate is accepted. Later provider-effect Work must first establish and qualify one bounded GitHub-hosted publication route, including its npm trusted-publishing/OIDC boundary, before it can claim public provenance. A local source candidate does not authorize that route, npm, tag, or GitHub provider effects.
 3. Run `npm ci` and `npm test`. The root proof includes the package boundary and a clean temporary Astro consumer that installs the packed tarball, builds through the installed root and Astro exports, and confirms no runtime icon CDN reference.
-4. Inspect `npm pack --json --dry-run --ignore-scripts` for the exact contents. The package must include its built `dist/` output, source Astro components, `README.md`, `LICENSE.md`, `THIRD_PARTY_NOTICES.md`, and `package.json`, while excluding fixtures, tests, local build caches, and release-only documentation.
+4. Inspect `npm pack --json --dry-run --ignore-scripts` for the exact contents. The package must include its built `dist/` output, source Astro components, `README.md`, `LICENSE.md`, `third-party-notices.md`, and `package.json`, while excluding fixtures, tests, local build caches, and release-only documentation.
 5. Re-read the draft release account against the exact candidate. Keep its limitations, installation command, copyright/licence boundary, and contributor credit truthful.
 
 ## Publish and read back

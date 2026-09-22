@@ -8,7 +8,7 @@
 
 Lucide supplies the ordinary UI language. Brands enter through an explicit catalogue with provenance and usage metadata. Product glyphs live in coherent families under durable names. Everything is installed and bundled locally: no runtime icon CDN, icon font, tracking request, or mystery asset bucket.
 
-**[See the icons](#pop)** · [Try the source](#try-the-source) · [Use it with Astro](#astro-quick-start) · [Read the icon standard](docs/ICON-STANDARD.md)
+**[See the icons](#pop)** · [Try the source](#try-the-source) · [Use it with Astro](#astro-quick-start) · [Read the icon standard](docs/icon-standard.md)
 
 ## Pop
 
@@ -100,7 +100,7 @@ GitHub and Discord are the first entries because the diffdevil website is the fi
 
 ### Original glyphs belong to families
 
-Works-authored icons use stable `<product>/<icon>` names and live under `src/icons/products/`. Related concepts should be authored together when independent approximations would drift. The canonical [icon standard](docs/ICON-STANDARD.md) defines the 24×24 canvas, two-pixel stroke language, forbidden SVG machinery, visual comparison, provenance, and acceptance evidence.
+Works-authored icons use stable `<product>/<icon>` names and live under `src/icons/products/`. Related concepts should be authored together when independent approximations would drift. The canonical [icon standard](docs/icon-standard.md) defines the 24×24 canvas, two-pixel stroke language, forbidden SVG machinery, visual comparison, provenance, and acceptance evidence.
 
 The first accepted product family is diffdevil:
 
@@ -126,13 +126,13 @@ Components default to decorative SVG with `aria-hidden="true"`. Supply `label` o
 ## Documentation and development
 
 - [Product vision](docs/VISION.md) explains the complete destination and protected boundaries.
-- [Icon standard](docs/ICON-STANDARD.md) is the canonical source for selection, naming, authoring, brands, accessibility, and visual acceptance.
+- [Icon standard](docs/icon-standard.md) is the canonical source for selection, naming, authoring, brands, accessibility, and visual acceptance.
 - [Architecture](docs/ARCHITECTURE.md) traces catalogue resolution through Astro and generated custom geometry.
 - [Development](docs/DEVELOPMENT.md) owns bootstrap, commands, generated files, and common contribution paths.
 - [Releasing](docs/RELEASING.md) owns the 0.1.0 release procedure and its draft public account.
 - [Project map](docs/PROJECT-MAP.md) explains what lives where and why.
 - [Decisions](docs/DECISIONS.md) preserves the consequential choices and rejected alternatives.
-- [Third-party notices](THIRD_PARTY_NOTICES.md) records selected upstream material and fixture provenance.
+- [Third-party notices](third-party-notices.md) records selected upstream material and fixture provenance.
 - [Contributing](CONTRIBUTING.md) describes the public pull-request route and evidence expected from changes.
 - [Security](SECURITY.md) describes the current private-reporting and SVG trust boundaries without inventing a support SLA.
 
@@ -140,4 +140,4 @@ Wolfsblvt Icons is an open-source project from [Wolfsblvt Works](https://github.
 
 ## License
 
-Original work is licensed under the [MIT License](LICENSE.md); third-party icon data and marks retain the terms recorded in [Third-party notices](THIRD_PARTY_NOTICES.md) and per-asset metadata.
+Original work is licensed under the [MIT License](LICENSE.md); third-party icon data and marks retain the terms recorded in [Third-party notices](third-party-notices.md) and per-asset metadata.

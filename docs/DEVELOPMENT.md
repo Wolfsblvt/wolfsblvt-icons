@@ -53,7 +53,7 @@ npm run fixtures
 
 Then open `fixtures/contact-sheet.html`. It renders the starter catalogue at 16, 20, 24, and 32 pixels on light and dark surfaces. The generated file is review evidence, not a hosted application.
 
-Custom icon families require additional human comparison described in [`ICON-STANDARD.md`](ICON-STANDARD.md). Passing the structural validator is necessary and deliberately insufficient.
+Custom icon families require additional human comparison described in [`icon-standard.md`](icon-standard.md). Passing the structural validator is necessary and deliberately insufficient.
 
 ## Generated artifacts
 
@@ -81,12 +81,12 @@ A one-off Lucide glyph does not need a central alias. Consumers can use `lucide:
 3. Add complete metadata under `src/metadata/brands/`.
 4. Add the typed catalogue entry and `astro-icon` include slug.
 5. Add a visual fixture only when it materially improves review; do not grow a second vendored brand catalogue under `fixtures/`.
-6. Update `THIRD_PARTY_NOTICES.md` when distributed terms or copied material change.
+6. Update `third-party-notices.md` when distributed terms or copied material change.
 7. Run `npm test` and inspect the contact sheet.
 
 ## Add a Works-authored product icon
 
-1. Read [`ICON-STANDARD.md`](ICON-STANDARD.md).
+1. Read [`icon-standard.md`](icon-standard.md).
 2. Author `src/icons/products/<product>/<name>.svg` without width, height, fixed colour, transforms, or embedded accessibility text.
 3. Add matching metadata and set its status to `available` only when the geometry is accepted.
 4. Run `npm run generate`.

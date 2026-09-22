@@ -22,7 +22,7 @@ const paths = manifest.files.map((file) => file.path).sort();
 const required = new Set([
   "LICENSE.md",
   "README.md",
-  "THIRD_PARTY_NOTICES.md",
+  "third-party-notices.md",
   "package.json",
 ]);
 const errors = [];

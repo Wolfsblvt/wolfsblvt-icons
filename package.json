@@ -30,7 +30,7 @@
     "dist",
     "src",
     "LICENSE.md",
-    "THIRD_PARTY_NOTICES.md"
+    "third-party-notices.md"
   ],
   "exports": {
     ".": {

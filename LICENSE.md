@@ -12,4 +12,4 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 
 ## Third-party material
 
-The MIT grant above applies to original package code, documentation, and original Works-authored glyphs unless a file says otherwise. Third-party icon data, fixture copies, names, logos, and marks retain their own copyright, licence, trademark, and brand-guideline terms. See [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) and the machine-readable metadata under `src/metadata/`.
+The MIT grant above applies to original package code, documentation, and original Works-authored glyphs unless a file says otherwise. Third-party icon data, fixture copies, names, logos, and marks retain their own copyright, licence, trademark, and brand-guideline terms. See [`third-party-notices.md`](third-party-notices.md) and the machine-readable metadata under `src/metadata/`.

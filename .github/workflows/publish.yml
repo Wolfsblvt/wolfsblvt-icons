@@ -1,0 +1,93 @@
+name: Publish package
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Published package version to verify
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    if: github.event_name == 'push' && github.repository == 'Wolfsblvt/wolfsblvt-icons' && github.ref_type == 'tag'
+    permissions:
+      contents: read
+      id-token: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the release tag
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Use Node.js 24
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+
+      - name: Verify the tagged release source
+        env:
+          EXPECTED_TAG: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          package_name="$(node --input-type=module -e \"import manifest from './package.json' with { type: 'json' }; process.stdout.write(manifest.name)\")"
+          package_version="$(node --input-type=module -e \"import manifest from './package.json' with { type: 'json' }; process.stdout.write(manifest.version)\")"
+          test "$EXPECTED_TAG" = "v$package_version"
+          test -n "$package_name"
+          git fetch origin main --depth=1
+          git merge-base --is-ancestor "$GITHUB_SHA" origin/main
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify the package
+        run: npm test
+
+      - name: Inspect the publish tarball
+        run: npm run pack:check
+
+      - name: Publish from the tagged source
+        env:
+          NODE_AUTH_TOKEN: ${{ github.ref_name == 'v0.1.0' && secrets.NPM_PUBLISH_TOKEN || '' }}
+        run: |
+          set -euo pipefail
+          if [ "$GITHUB_REF_NAME" = "v0.1.0" ] && [ -n "$NODE_AUTH_TOKEN" ]; then
+            echo "Using the one-time CI bootstrap credential for 0.1.0."
+          fi
+          npm publish --provenance --access public
+
+  verify-published-package:
+    needs: publish
+    if: >-
+      always() && github.repository == 'Wolfsblvt/wolfsblvt-icons' &&
+      ((github.event_name == 'push' && needs.publish.result == 'success') ||
+      (github.event_name == 'workflow_dispatch' && inputs.version != ''))
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the verification source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Use Node.js 24
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+
+      - name: Verify the registry package and provenance
+        env:
+          PACKAGE_VERSION: ${{ github.event_name == 'push' && github.ref_name || inputs.version }}
+        run: |
+          set -euo pipefail
+          package_name="$(node --input-type=module -e \"import manifest from './package.json' with { type: 'json' }; process.stdout.write(manifest.name)\")"
+          package_version="${PACKAGE_VERSION#v}"
+          node scripts/check-packed-consumer.mjs --registry-package="$package_name@$package_version"

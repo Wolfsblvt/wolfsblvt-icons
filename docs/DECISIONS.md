@@ -28,6 +28,18 @@ The public package is `@wolfsblvt/icons`; typed catalogue and metadata APIs rema
 
 **Reopen if.** A second consumer demonstrates incompatible release, dependency, or runtime boundaries that cannot be served coherently by subpath exports.
 
+## Publish packages only from the direct GitHub-hosted route
+
+**Date:** 2026-09-22 · **Status:** Current
+
+`@wolfsblvt/icons` publishes only through `.github/workflows/publish.yml`, triggered by a version-matching immutable tag. The steady route uses npm trusted publishing from a GitHub-hosted runner with OIDC and provenance. Because npm can configure trusted publishing only after a package exists, `0.1.0` has one CI-only bootstrap repository secret referenced only by its `v0.1.0` workflow path; that source/runtime condition is not provider-enforced tag confinement. Provider setup immediately replaces it with the trusted publisher and removes/restricts the bootstrap credential.
+
+**Why.** Wolf selected CI-only publication. The route binds publication to inspectable source, the canonical suite, the package boundary and post-publication registry-package consumer/provenance proof while avoiding a standing local publish path or long-lived automation credential. Publication and registry verification remain independently runnable so a failed readback does not republish an immutable version.
+
+**Rejected.** Local interactive publishing, reusable release-workflow indirection, a permanent bypass-2FA token, publishing merely because a workflow file exists, and a release controller or version-bot estate.
+
+**Reopen if.** npm's trusted-publishing contract changes materially, or a later release needs a different concrete distribution boundary that still preserves CI-only publication and the source-to-registry evidence chain.
+
 ## Use Lucide for ordinary UI and curate brand sources
 
 **Date:** 2026-09-19 · **Status:** Current

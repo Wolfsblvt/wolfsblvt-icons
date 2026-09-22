@@ -104,4 +104,4 @@ This removes only build caches and package archives. It does not remove dependen
 
 ## Release boundary
 
-The source candidate is `0.1.0`, but it is not npm-published. Publication, scope verification, provenance, tag creation, and GitHub Release creation are separate provider effects. [`RELEASING.md`](RELEASING.md) owns the exact procedure, post-publication readback, and draft release account; do not perform those effects as ordinary development cleanup.
+The source candidate is `0.1.0`, but it is not npm-published. Publication runs only from the direct GitHub-hosted release workflow; scope verification, trusted-publisher setup, tag creation, and GitHub Release creation are separate provider effects. [`RELEASING.md`](RELEASING.md) owns the exact procedure, post-publication readback, bootstrap boundary, and draft release account; do not perform those effects as ordinary development cleanup.

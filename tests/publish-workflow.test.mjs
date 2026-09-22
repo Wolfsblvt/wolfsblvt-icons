@@ -12,6 +12,10 @@ const workflow = await readFile(
   new URL("../.github/workflows/publish.yml", import.meta.url),
   "utf8",
 );
+const consumerVerifier = await readFile(
+  new URL("../scripts/check-packed-consumer.mjs", import.meta.url),
+  "utf8",
+);
 const manifest = JSON.parse(
   await readFile(new URL("../package.json", import.meta.url), "utf8"),
 );
@@ -78,4 +82,8 @@ test("publish and registry verification have separate runnable paths", () => {
   );
   assert.doesNotMatch(workflow, /github\.event\.repository\.name/);
   assert.doesNotMatch(workflow, /workflow_call/);
+  assert.match(
+    consumerVerifier,
+    /"audit",\s*"signatures",\s*"--json",\s*"--include-attestations"/,
+  );
 });

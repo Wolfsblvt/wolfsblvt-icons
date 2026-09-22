@@ -151,7 +151,13 @@ try {
     const signatureResult = JSON.parse(
       run(
         npmCommand,
-        [...npmPrefixArguments, "audit", "signatures", "--json"],
+        [
+          ...npmPrefixArguments,
+          "audit",
+          "signatures",
+          "--json",
+          "--include-attestations",
+        ],
         { cwd: consumerRoot },
       ),
     );

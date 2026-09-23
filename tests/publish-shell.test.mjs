@@ -64,7 +64,10 @@ test(
   async () => {
     const root = await mkdtemp(path.join(os.tmpdir(), "icons-release-guard-"));
     const git = (...arguments_) => {
-      const result = spawnSync("git", arguments_, { cwd: root, encoding: "utf8" });
+      const result = spawnSync("git", arguments_, {
+        cwd: root,
+        encoding: "utf8",
+      });
       assertSuccess(result);
       return result.stdout.trim();
     };
@@ -93,7 +96,12 @@ test(
         }).status,
         0,
       );
-      const outsideMain = git("commit-tree", "HEAD^{tree}", "-m", "unaccepted root");
+      const outsideMain = git(
+        "commit-tree",
+        "HEAD^{tree}",
+        "-m",
+        "unaccepted root",
+      );
       assert.notEqual(
         runBlock("Verify the tagged release source", root, {
           ...environment,
@@ -112,7 +120,9 @@ for (const failures of [0, 2, 100]) {
     `registry readback is bounded after ${failures} unavailable reads`,
     shellOptions,
     async () => {
-      const root = await mkdtemp(path.join(os.tmpdir(), "icons-registry-wait-"));
+      const root = await mkdtemp(
+        path.join(os.tmpdir(), "icons-registry-wait-"),
+      );
       try {
         const bin = path.join(root, "bin");
         await mkdir(bin);

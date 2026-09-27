@@ -5,7 +5,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
   assertPublishedPackage,
-  assertPublishedProvenance,
+  assertTargetProvenanceAttestation,
   parseRegistryPackage,
 } from "./lib/published-package.mjs";
 import { npmInvocation, parsePackManifest } from "./lib/npm-pack.mjs";
@@ -22,6 +22,20 @@ const registryPackage = registryPackageArgument
       registryPackageArgument.slice("--registry-package=".length),
     )
   : null;
+const expectProvenanceArgument = process.argv.find((argument) =>
+  argument.startsWith("--expect-provenance="),
+);
+const expectProvenanceValue = expectProvenanceArgument?.slice(
+  "--expect-provenance=".length,
+);
+if (
+  expectProvenanceValue !== undefined &&
+  expectProvenanceValue !== "true" &&
+  expectProvenanceValue !== "false"
+) {
+  throw new Error("--expect-provenance requires true or false.");
+}
+const expectProvenance = expectProvenanceValue !== "false";
 const rootPackage = JSON.parse(
   await readFile(path.join(repositoryRoot, "package.json"), "utf8"),
 );
@@ -62,6 +76,7 @@ async function getPackageSource() {
         "repository",
         "license",
         "dist.tarball",
+        "dist.integrity",
         "--json",
         "--registry=https://registry.npmjs.org",
       ]),
@@ -148,20 +163,25 @@ try {
     assertPublishedPackage(installedPackage, expectedRegistryPackage, {
       requireRegistryMetadata: false,
     });
-    const signatureResult = JSON.parse(
-      run(
-        npmCommand,
-        [
-          ...npmPrefixArguments,
-          "audit",
-          "signatures",
-          "--json",
-          "--include-attestations",
-        ],
-        { cwd: consumerRoot },
-      ),
-    );
-    assertPublishedProvenance(signatureResult, expectedRegistryPackage);
+    if (expectProvenance) {
+      const signatureResult = JSON.parse(
+        run(
+          npmCommand,
+          [
+            ...npmPrefixArguments,
+            "audit",
+            "signatures",
+            "--json",
+            "--include-attestations",
+          ],
+          { cwd: consumerRoot },
+        ),
+      );
+      assertTargetProvenanceAttestation(
+        signatureResult,
+        expectedRegistryPackage,
+      );
+    }
   }
 
   const astroEntrypoint = path.join(
@@ -181,8 +201,12 @@ try {
   const source = registryPackage
     ? `registry package ${registryPackage.spec}`
     : "the packed local tarball";
+  const provenance =
+    registryPackage && !expectProvenance
+      ? " The selected version intentionally has no hosted-build provenance."
+      : "";
   console.log(
-    `Installed ${source} and built a clean Astro consumer from its installed exports.`,
+    `Installed ${source} and built a clean Astro consumer from its installed exports.${provenance}`,
   );
 } finally {
   await rm(temporaryRoot, { recursive: true, force: true });

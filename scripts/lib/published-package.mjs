@@ -55,9 +55,14 @@ export function assertPublishedPackage(
       "Published package is missing a public registry tarball URL.",
     );
   }
+  if (!published.dist?.integrity?.startsWith("sha512-")) {
+    throw new Error(
+      "Published package is missing its registry integrity value.",
+    );
+  }
 }
 
-export function assertPublishedProvenance(signatureResult, expected) {
+export function assertTargetProvenanceAttestation(signatureResult, expected) {
   const verifiedPackage = signatureResult.verified?.find(
     (candidate) =>
       candidate.name === expected.name &&
@@ -65,7 +70,7 @@ export function assertPublishedProvenance(signatureResult, expected) {
   );
   if (!verifiedPackage?.attestations?.provenance) {
     throw new Error(
-      `npm audit signatures did not verify provenance for ${expected.spec}.`,
+      `npm audit signatures did not verify a target attestation for ${expected.spec}.`,
     );
   }
 }

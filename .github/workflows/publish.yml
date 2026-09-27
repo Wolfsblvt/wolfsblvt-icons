@@ -16,7 +16,11 @@ permissions:
 
 jobs:
   publish:
-    if: github.event_name == 'push' && github.repository == 'Wolfsblvt/wolfsblvt-icons' && github.ref_type == 'tag'
+    if: >-
+      github.event_name == 'push' &&
+      github.repository == 'Wolfsblvt/wolfsblvt-icons' &&
+      github.ref_type == 'tag' &&
+      github.ref_name != 'v0.1.0'
     permissions:
       contents: read
       id-token: write
@@ -34,16 +38,19 @@ jobs:
           registry-url: https://registry.npmjs.org
           package-manager-cache: false
 
+      - name: Use npm 11.20.0
+        run: npm install --global npm@11.20.0 --ignore-scripts
+
       - name: Verify the tagged release source
         env:
           EXPECTED_TAG: ${{ github.ref_name }}
         run: |
           set -euo pipefail
-          package_name="$(node --input-type=module -e \"import manifest from './package.json' with { type: 'json' }; process.stdout.write(manifest.name)\")"
-          package_version="$(node --input-type=module -e \"import manifest from './package.json' with { type: 'json' }; process.stdout.write(manifest.version)\")"
+          package_name="$(node -p "require('./package.json').name")"
+          package_version="$(node -p "require('./package.json').version")"
           test "$EXPECTED_TAG" = "v$package_version"
           test -n "$package_name"
-          git fetch origin main --depth=1
+          git fetch origin main
           git merge-base --is-ancestor "$GITHUB_SHA" origin/main
 
       - name: Install dependencies
@@ -56,21 +63,16 @@ jobs:
         run: npm run pack:check
 
       - name: Publish from the tagged source
-        env:
-          NODE_AUTH_TOKEN: ${{ github.ref_name == 'v0.1.0' && secrets.NPM_PUBLISH_TOKEN || '' }}
-        run: |
-          set -euo pipefail
-          if [ "$GITHUB_REF_NAME" = "v0.1.0" ] && [ -n "$NODE_AUTH_TOKEN" ]; then
-            echo "Using the one-time CI bootstrap credential for 0.1.0."
-          fi
-          npm publish --provenance --access public
+        run: npm publish --provenance --access public
 
   verify-published-package:
     needs: publish
     if: >-
       always() && github.repository == 'Wolfsblvt/wolfsblvt-icons' &&
-      ((github.event_name == 'push' && needs.publish.result == 'success') ||
-      (github.event_name == 'workflow_dispatch' && inputs.version != ''))
+      ((github.event_name == 'push' &&
+        ((github.ref_name == 'v0.1.0' && needs.publish.result == 'skipped') ||
+         (github.ref_name != 'v0.1.0' && needs.publish.result == 'success'))) ||
+       (github.event_name == 'workflow_dispatch' && inputs.version != ''))
     runs-on: ubuntu-latest
     steps:
       - name: Check out the verification source
@@ -83,11 +85,30 @@ jobs:
           registry-url: https://registry.npmjs.org
           package-manager-cache: false
 
-      - name: Verify the registry package and provenance
+      - name: Use npm 11.20.0
+        run: npm install --global npm@11.20.0 --ignore-scripts
+
+      - name: Verify the registry artifact and target attestation
         env:
           PACKAGE_VERSION: ${{ github.event_name == 'push' && github.ref_name || inputs.version }}
         run: |
           set -euo pipefail
-          package_name="$(node --input-type=module -e \"import manifest from './package.json' with { type: 'json' }; process.stdout.write(manifest.name)\")"
+          package_name="$(node -p "require('./package.json').name")"
           package_version="${PACKAGE_VERSION#v}"
-          node scripts/check-packed-consumer.mjs --registry-package="$package_name@$package_version"
+          for attempt in $(seq 1 31); do
+            if npm view "$package_name@$package_version" version --registry=https://registry.npmjs.org --fetch-retries=0 --fetch-timeout=10000 >/dev/null 2>&1; then
+              break
+            fi
+            if [ "$attempt" -eq 31 ]; then
+              echo "Registry readback remains unavailable. Reconcile the attempt and rerun verification; do not republish."
+              exit 1
+            fi
+            sleep 30
+          done
+          expect_provenance=true
+          if [ "$package_version" = "0.1.0" ]; then
+            expect_provenance=false
+          fi
+          npm run pack:consumer -- \
+            --registry-package="$package_name@$package_version" \
+            --expect-provenance="$expect_provenance"

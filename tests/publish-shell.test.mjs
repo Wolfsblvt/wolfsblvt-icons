@@ -59,7 +59,7 @@ test("every literal publication run block parses as Bash", shellOptions, () => {
 });
 
 test(
-  "the actual release guard accepts main history and rejects the wrong tag or source",
+  "the actual later-release guard accepts main history and rejects the wrong tag or source",
   shellOptions,
   async () => {
     const root = await mkdtemp(path.join(os.tmpdir(), "icons-release-guard-"));
@@ -78,21 +78,21 @@ test(
       git("config", "commit.gpgsign", "false");
       await writeFile(
         path.join(root, "package.json"),
-        JSON.stringify({ name: "@wolfsblvt/icons", version: "0.1.0" }),
+        JSON.stringify({ name: "@wolfsblvt/icons", version: "0.2.0" }),
       );
       git("add", ".");
       git("commit", "-m", "release candidate");
       const release = git("rev-parse", "HEAD");
       git("commit", "--allow-empty", "-m", "later main work");
       git("remote", "add", "origin", root);
-      const environment = { EXPECTED_TAG: "v0.1.0", GITHUB_SHA: release };
+      const environment = { EXPECTED_TAG: "v0.2.0", GITHUB_SHA: release };
       assertSuccess(
         runBlock("Verify the tagged release source", root, environment),
       );
       assert.notEqual(
         runBlock("Verify the tagged release source", root, {
           ...environment,
-          EXPECTED_TAG: "v0.2.0",
+          EXPECTED_TAG: "v0.3.0",
         }).status,
         0,
       );
@@ -135,13 +135,20 @@ for (const failures of [0, 2, 100]) {
           path.join(bin, "npm"),
           `#!/bin/bash
 set -eu
-test "$1" = view
-count=0
-if [ -f "$FIXTURE_COUNT" ]; then count=$(cat "$FIXTURE_COUNT"); fi
-count=$((count + 1))
-printf '%s' "$count" > "$FIXTURE_COUNT"
-if [ "$count" -le "$FIXTURE_FAILURES" ]; then exit 1; fi
-printf '0.1.0\\n'
+if [ "$1" = view ]; then
+  count=0
+  if [ -f "$FIXTURE_COUNT" ]; then count=$(cat "$FIXTURE_COUNT"); fi
+  count=$((count + 1))
+  printf '%s' "$count" > "$FIXTURE_COUNT"
+  if [ "$count" -le "$FIXTURE_FAILURES" ]; then exit 1; fi
+  printf '0.1.0\\n'
+  exit 0
+fi
+if [ "$1" = run ] && [ "$2" = pack:consumer ] && [ "$3" = -- ]; then
+  shift 3
+  exec node scripts/check-packed-consumer.mjs "$@"
+fi
+exit 2
 `,
           { mode: 0o755 },
         );
@@ -151,7 +158,7 @@ printf '0.1.0\\n'
         await writeFile(
           path.join(root, "scripts", "check-packed-consumer.mjs"),
           'import { writeFileSync } from "node:fs";\n' +
-            'writeFileSync("consumer-argument", process.argv[2]);\n',
+            'writeFileSync("consumer-arguments", JSON.stringify(process.argv.slice(2)));\n',
         );
         const countPath = path.join(root, "attempts");
         const result = runBlock(
@@ -168,16 +175,22 @@ printf '0.1.0\\n'
         if (failures < 31) {
           assertSuccess(result);
           assert.equal(count, failures + 1);
-          assert.equal(
-            await readFile(path.join(root, "consumer-argument"), "utf8"),
-            "--registry-package=@wolfsblvt/icons@0.1.0",
+          assert.deepEqual(
+            JSON.parse(
+              await readFile(path.join(root, "consumer-arguments"), "utf8"),
+            ),
+            [
+              "--registry-package=@wolfsblvt/icons@0.1.0",
+              "--expect-provenance=false",
+            ],
           );
         } else {
           assert.notEqual(result.status, 0);
           assert.equal(count, 31);
-          await assert.rejects(readFile(path.join(root, "consumer-argument")), {
-            code: "ENOENT",
-          });
+          await assert.rejects(
+            readFile(path.join(root, "consumer-arguments")),
+            { code: "ENOENT" },
+          );
         }
       } finally {
         await rm(root, { recursive: true, force: true });

@@ -16,7 +16,11 @@ permissions:
 
 jobs:
   publish:
-    if: github.event_name == 'push' && github.repository == 'Wolfsblvt/wolfsblvt-icons' && github.ref_type == 'tag'
+    if: >-
+      github.event_name == 'push' &&
+      github.repository == 'Wolfsblvt/wolfsblvt-icons' &&
+      github.ref_type == 'tag' &&
+      github.ref_name != 'v0.1.0'
     permissions:
       contents: read
       id-token: write
@@ -34,8 +38,8 @@ jobs:
           registry-url: https://registry.npmjs.org
           package-manager-cache: false
 
-      - name: Use npm 11.19.1
-        run: npm install --global npm@11.19.1 --ignore-scripts
+      - name: Use npm 11.20.0
+        run: npm install --global npm@11.20.0 --ignore-scripts
 
       - name: Verify the tagged release source
         env:
@@ -59,21 +63,16 @@ jobs:
         run: npm run pack:check
 
       - name: Publish from the tagged source
-        env:
-          NODE_AUTH_TOKEN: ${{ github.ref_name == 'v0.1.0' && secrets.NPM_PUBLISH_TOKEN || '' }}
-        run: |
-          set -euo pipefail
-          if [ "$GITHUB_REF_NAME" = "v0.1.0" ] && [ -n "$NODE_AUTH_TOKEN" ]; then
-            echo "The authorized one-time bootstrap credential is available for 0.1.0."
-          fi
-          npm publish --provenance --access public
+        run: npm publish --provenance --access public
 
   verify-published-package:
     needs: publish
     if: >-
       always() && github.repository == 'Wolfsblvt/wolfsblvt-icons' &&
-      ((github.event_name == 'push' && needs.publish.result == 'success') ||
-      (github.event_name == 'workflow_dispatch' && inputs.version != ''))
+      ((github.event_name == 'push' &&
+        ((github.ref_name == 'v0.1.0' && needs.publish.result == 'skipped') ||
+         (github.ref_name != 'v0.1.0' && needs.publish.result == 'success'))) ||
+       (github.event_name == 'workflow_dispatch' && inputs.version != ''))
     runs-on: ubuntu-latest
     steps:
       - name: Check out the verification source
@@ -86,8 +85,8 @@ jobs:
           registry-url: https://registry.npmjs.org
           package-manager-cache: false
 
-      - name: Use npm 11.19.1
-        run: npm install --global npm@11.19.1 --ignore-scripts
+      - name: Use npm 11.20.0
+        run: npm install --global npm@11.20.0 --ignore-scripts
 
       - name: Verify the registry package and provenance
         env:
@@ -106,4 +105,10 @@ jobs:
             fi
             sleep 30
           done
-          node scripts/check-packed-consumer.mjs --registry-package="$package_name@$package_version"
+          expect_provenance=true
+          if [ "$package_version" = "0.1.0" ]; then
+            expect_provenance=false
+          fi
+          npm run pack:consumer -- \
+            --registry-package="$package_name@$package_version" \
+            --expect-provenance="$expect_provenance"

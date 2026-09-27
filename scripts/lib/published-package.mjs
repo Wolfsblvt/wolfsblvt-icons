@@ -55,6 +55,11 @@ export function assertPublishedPackage(
       "Published package is missing a public registry tarball URL.",
     );
   }
+  if (!published.dist?.integrity?.startsWith("sha512-")) {
+    throw new Error(
+      "Published package is missing its registry integrity value.",
+    );
+  }
 }
 
 export function assertPublishedProvenance(signatureResult, expected) {

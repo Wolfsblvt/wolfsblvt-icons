@@ -51,7 +51,14 @@ function assertSuccess(result) {
 }
 
 test("every literal publication run block parses as Bash", shellOptions, () => {
-  assert.ok(blocks.size >= 3, "No publication run blocks were extracted");
+  assert.ok(
+    blocks.has("Verify the tagged release source"),
+    "Missing tagged-source run block",
+  );
+  assert.ok(
+    blocks.has("Verify the registry package and provenance"),
+    "Missing registry-verification run block",
+  );
   for (const [name, input] of blocks) {
     const result = spawnSync("bash", ["-n"], { input, encoding: "utf8" });
     assert.equal(result.status, 0, `${name}: ${result.stderr}`);

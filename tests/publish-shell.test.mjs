@@ -56,7 +56,7 @@ test("every literal publication run block parses as Bash", shellOptions, () => {
     "Missing tagged-source run block",
   );
   assert.ok(
-    blocks.has("Verify the registry package and provenance"),
+    blocks.has("Verify the registry artifact and target attestation"),
     "Missing registry-verification run block",
   );
   for (const [name, input] of blocks) {
@@ -169,7 +169,7 @@ exit 2
         );
         const countPath = path.join(root, "attempts");
         const result = runBlock(
-          "Verify the registry package and provenance",
+          "Verify the registry artifact and target attestation",
           root,
           {
             PATH: `${bin}${path.delimiter}${process.env.PATH}`,

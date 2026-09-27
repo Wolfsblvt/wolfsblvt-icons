@@ -5,7 +5,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
   assertPublishedPackage,
-  assertPublishedProvenance,
+  assertTargetProvenanceAttestation,
   parseRegistryPackage,
 } from "./lib/published-package.mjs";
 import { npmInvocation, parsePackManifest } from "./lib/npm-pack.mjs";
@@ -177,7 +177,10 @@ try {
           { cwd: consumerRoot },
         ),
       );
-      assertPublishedProvenance(signatureResult, expectedRegistryPackage);
+      assertTargetProvenanceAttestation(
+        signatureResult,
+        expectedRegistryPackage,
+      );
     }
   }
 

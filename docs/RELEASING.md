@@ -23,13 +23,13 @@ The publishing and verification paths select Node 24 and npm **11.20.0**. That i
 
 ## First publication: one human-authenticated bootstrap
 
-npm requires an existing package before Trusted Publishing or staged publishing can be configured. The Works route for this package is therefore one human-authenticated publication of the real `0.1.0` artifact, followed immediately by the repository-bound publisher used for every later release. No npm publishing token or GitHub publish secret is created. The bounded cost is explicit: `0.1.0` will not carry npm's hosted-build provenance.
+npm requires an existing package before Trusted Publishing or staged publishing can be configured. The Works route for this package is therefore one human-authenticated publication of the real `0.1.0` artifact, followed immediately by the repository-bound publisher used for every later release. No separate CI publishing token or GitHub publish secret is created. `npm login` creates a local authenticated credential with publishing rights; its custody is part of this first operation. The bounded cost is explicit: `0.1.0` will not carry npm's hosted-build provenance.
 
 Carry the first publication as one reconciled sequence:
 
 1. Use an exact clean checkout of the accepted `main` commit. Create local tag `v0.1.0` at that commit, verify the tag and `HEAD` agree, and **do not push the tag yet**. Pushing it before npm publication would start registry verification against a package that does not exist.
 2. Run the complete release checks above. Produce the exact tarball with `npm pack --json --ignore-scripts`; retain the returned filename and `integrity` value as the local artifact receipt.
-3. Authenticate through `npm login --auth-type=web` and npm's 2FA route. Read back the intended account with `npm whoami`. Do not expose browser/session credentials or recovery material.
+3. Select a protected, separate npm user configuration path outside the repository for this bounded operation. Set `NPM_CONFIG_USERCONFIG` to that path in the operator shell before `npm login --auth-type=web`, and keep it selected for `npm whoami`, publication, and trust setup. This preserves any pre-existing workstation configuration, including the currently rejected CLI credential. Authenticate through npm's browser and 2FA route, then read back the intended account with `npm whoami`. Do not display the configuration, session credential, or recovery material.
 4. Publish the inspected tarball, not a newly rebuilt implicit artifact:
 
    ```sh
@@ -40,11 +40,12 @@ Carry the first publication as one reconciled sequence:
 
 5. Reconcile the exact `@wolfsblvt/icons@0.1.0` result before any retry. Compare npm's `dist.integrity` with the retained pack manifest; inspect the public metadata/tarball and install the registry version in the clean Astro consumer.
 6. Configure npm Trusted Publishing for **GitHub Actions** with owner `Wolfsblvt`, repository `wolfsblvt-icons`, workflow filename `publish.yml`, no Environment, and direct publishing allowed. Read back all additive configurations.
-7. Set package publishing access to **Require two-factor authentication and disallow tokens**. No standing fallback token or repository secret remains.
-8. Push the already-created immutable `v0.1.0` tag. The workflow deliberately skips publication for that one version and performs registry/integrity/consumer verification without requiring a nonexistent hosted provenance attestation.
-9. Create the GitHub Release from the immutable tag using the exact prepared body, then read back the release/tag/body association.
+7. Set package publishing access to **Require two-factor authentication and disallow tokens**. No standing fallback CI token or repository secret remains.
+8. After trust and access readback, end the bounded local login with `npm logout` under the same `NPM_CONFIG_USERCONFIG`. Confirm `npm whoami` no longer authenticates there. npm logout invalidates the token-backed session; removing a local file alone would not revoke it. If a human administration session is deliberately retained instead, name its custodian, rights, and recovery posture in the [icons publication Return](https://github.com/Wolfsblvt/emergency-meeting/issues/529). It is not the recurring release publisher.
+9. Push the already-created immutable `v0.1.0` tag. The workflow deliberately skips publication for that one version and performs registry/integrity/consumer verification without requiring a nonexistent hosted provenance attestation.
+10. Create the GitHub Release from the immutable tag using the exact prepared body, then read back the release/tag/body association.
 
-A failed or ambiguous publish is reconciled with npm's exact package/version state before another write. Do not change the version, move the tag, or push it merely to manufacture a green run. The first-version local session is not retained as a recurring publishing route.
+A failed or ambiguous publish is reconciled with npm's exact package/version state before another write. Do not change the version, move the tag, or push it merely to manufacture a green run. Preserve the isolated login's custody until the authorized attempt and trust setup are reconciled, then carry step 8; do not silently leave a local publishing capability behind.
 
 ## Ordinary later releases: direct Trusted Publishing
 
@@ -54,8 +55,9 @@ For every legitimate version after `0.1.0`:
 2. Run the canonical checks and inspect the exact package contents.
 3. Create and push the immutable matching `v<package-version>` tag on accepted `main` source.
 4. Observe the direct GitHub-hosted `Publish package` job. It verifies tag/version and `main` ancestry, runs the canonical package proof, and calls `npm publish --provenance --access public` through npm Trusted Publishing/OIDC. No `NODE_AUTH_TOKEN` or npm publishing secret is used.
-5. The independent verification path waits boundedly for registry availability, reads exact metadata and integrity, installs the registry version in the clean Astro consumer, and verifies npm's provenance for the target package.
-6. Create and read back the GitHub Release only after the package result is reconciled.
+5. The independent verification path waits boundedly for registry availability, reads exact metadata and integrity, installs the registry version in the clean Astro consumer, and verifies that npm supplied a valid provenance attestation for the target package. Its green result does not compare the attestation's source identity with this release.
+6. Before claiming source association or creating the GitHub Release, inspect [npm's verified provenance view](https://docs.npmjs.com/viewing-package-provenance/) for this exact version. Compare its repository with `Wolfsblvt/wolfsblvt-icons`, its source commit with the accepted immutable `v<package-version>` tag, and its calling build file with `.github/workflows/publish.yml`. Record those three readbacks in the release Return. A mismatch stops the source-association and Release claim for judgment; a visible provenance badge alone is insufficient.
+7. Create and read back the GitHub Release only after the package result and source association are reconciled.
 
 The manual workflow dispatch is verification-only for an already-published version. It never repeats publication. Configuration readback proves only configuration; the first real post-`0.1.0` release supplies end-to-end OIDC evidence.
 
@@ -75,7 +77,7 @@ GitHub Release presents the correct audience account
 
 npm may scan a package before availability. The verification job makes 31 bounded availability attempts, 30 seconds apart, with npm's internal fetch retries disabled and a 10-second request timeout. A timeout means reconciliation and a verification-only rerun, not another publish.
 
-`npm audit signatures --json --include-attestations` is required only for versions published through the hosted OIDC route. A successful audit of unrelated dependencies does not prove provenance for this package. `0.1.0` is intentionally verified through source/tag, exact integrity, registry artifact, and clean consumer behavior without claiming hosted provenance.
+`npm audit signatures --json --include-attestations` is required only for versions published through the hosted OIDC route. The verification job checks a valid target-package attestation, while the release operator checks its repository, source commit, and calling workflow as step 6 requires. A successful audit of unrelated dependencies or a target attestation without that comparison does not prove this release's source association. `0.1.0` is intentionally verified through source/tag, exact integrity, registry artifact, and clean consumer behavior without claiming hosted provenance.
 
 ## Correction and recovery
 

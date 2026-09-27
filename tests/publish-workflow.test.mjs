@@ -4,7 +4,7 @@ import { readFile } from "node:fs/promises";
 
 import {
   assertPublishedPackage,
-  assertPublishedProvenance,
+  assertTargetProvenanceAttestation,
   parseRegistryPackage,
 } from "../scripts/lib/published-package.mjs";
 
@@ -20,7 +20,7 @@ const manifest = JSON.parse(
   await readFile(new URL("../package.json", import.meta.url), "utf8"),
 );
 
-test("registry verification keeps the exact published package identity", () => {
+test("registry verification keeps exact package identity and target attestation", () => {
   const expected = {
     ...parseRegistryPackage(`${manifest.name}@${manifest.version}`),
     license: manifest.license,
@@ -68,11 +68,11 @@ test("registry verification keeps the exact published package identity", () => {
     /missing its registry integrity/,
   );
   assert.throws(
-    () => assertPublishedProvenance({ verified: [] }, expected),
-    /did not verify provenance/,
+    () => assertTargetProvenanceAttestation({ verified: [] }, expected),
+    /did not verify a target attestation/,
   );
   assert.doesNotThrow(() =>
-    assertPublishedProvenance(
+    assertTargetProvenanceAttestation(
       {
         verified: [
           {

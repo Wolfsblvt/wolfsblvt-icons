@@ -37,6 +37,7 @@ Carry the first publication as one reconciled sequence:
    ```
 
    The explicit provenance override is required because `package.json` enables provenance for ordinary later releases. It prevents a local operation from pretending it can supply GitHub-hosted provenance.
+
 5. Reconcile the exact `@wolfsblvt/icons@0.1.0` result before any retry. Compare npm's `dist.integrity` with the retained pack manifest; inspect the public metadata/tarball and install the registry version in the clean Astro consumer.
 6. Configure npm Trusted Publishing for **GitHub Actions** with owner `Wolfsblvt`, repository `wolfsblvt-icons`, workflow filename `publish.yml`, no Environment, and direct publishing allowed. Read back all additive configurations.
 7. Set package publishing access to **Require two-factor authentication and disallow tokens**. No standing fallback token or repository secret remains.

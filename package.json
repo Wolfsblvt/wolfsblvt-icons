@@ -58,7 +58,7 @@
     "docs:check": "node scripts/check-doc-links.mjs",
     "fixtures": "node scripts/generate-contact-sheet.mjs",
     "format": "prettier --write .",
-    "format:check": "prettier --write docs/RELEASING.md tests/publish-workflow.test.mjs && git diff -- docs/RELEASING.md tests/publish-workflow.test.mjs && exit 1",
+    "format:check": "prettier --check .",
     "generate": "node scripts/generate-custom-icons.mjs && node scripts/generate-contact-sheet.mjs",
     "generate:check": "node scripts/generate-custom-icons.mjs --check && node scripts/generate-contact-sheet.mjs --check",
     "pack:check": "node scripts/check-package-boundary.mjs",

@@ -7,7 +7,7 @@ This record identifies the upstream icon and framework material selected by `@wo
 ## Lucide
 
 - **Use:** ordinary UI icon language and the `lucide:<name>` escape route
-- **Dependency:** `@iconify-json/lucide` 1.2.131
+- **Dependency:** `@iconify-json/lucide` 1.2.133
 - **Upstream:** [Lucide](https://lucide.dev/)
 - **Licence:** ISC
 - **Repository fixture copies:** `settings.svg` and `badge-check.svg`, retained only to generate visual qualification surfaces and excluded from the npm package; exact source revisions and SHA-256 hashes are recorded in [`fixtures/source-icons/manifest.json`](fixtures/source-icons/manifest.json)

@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { spawnSync } from "node:child_process";
 import { npmInvocation, parsePackManifest } from "./lib/npm-pack.mjs";
 
@@ -19,6 +20,9 @@ if (result.status !== 0) {
 
 const manifest = parsePackManifest(result.stdout);
 const paths = manifest.files.map((file) => file.path).sort();
+const packageJson = JSON.parse(readFileSync("package.json", "utf8"));
+const packageLock = JSON.parse(readFileSync("package-lock.json", "utf8"));
+const notices = readFileSync("third-party-notices.md", "utf8");
 const required = new Set([
   "LICENSE.md",
   "README.md",
@@ -26,6 +30,46 @@ const required = new Set([
   "package.json",
 ]);
 const errors = [];
+const dependencyClaims = [
+  ...notices.matchAll(/^- \*\*Dependency:\*\* `([^`]+)` (\S+)$/gm),
+];
+
+if (dependencyClaims.length === 0) {
+  errors.push("third-party notices contain no dependency-version claims");
+}
+
+for (const [, name, claimedVersion] of dependencyClaims) {
+  const declaredVersion =
+    packageJson.dependencies?.[name] ?? packageJson.devDependencies?.[name];
+  const lockedDeclaration =
+    packageLock.packages?.[""]?.dependencies?.[name] ??
+    packageLock.packages?.[""]?.devDependencies?.[name];
+  const resolvedVersion =
+    packageLock.packages?.[`node_modules/${name}`]?.version;
+
+  if (declaredVersion === undefined) {
+    errors.push(`notice dependency ${name} is not declared in package.json`);
+    continue;
+  }
+
+  if (claimedVersion !== declaredVersion) {
+    errors.push(
+      `notice dependency ${name} claims ${claimedVersion}, but package.json declares ${declaredVersion}`,
+    );
+  }
+
+  if (lockedDeclaration !== declaredVersion) {
+    errors.push(
+      `package-lock.json root declaration for ${name} does not match package.json`,
+    );
+  }
+
+  if (resolvedVersion !== declaredVersion) {
+    errors.push(
+      `package-lock.json resolved version for ${name} does not match package.json`,
+    );
+  }
+}
 
 for (const path of required) {
   if (!paths.includes(path)) {

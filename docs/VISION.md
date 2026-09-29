@@ -4,6 +4,10 @@
 
 `@wolfsblvt/icons` is the shared visual-language package for Wolfsblvt Works products. This Vision preserves the destination: one trustworthy place where ordinary interface icons, third-party brands, and original product glyphs become coherent, reviewable choices instead of repeated one-off SVG decisions. The current document is **Provisional** until Wolf approves this exact canonical wording; the selected product direction and package boundary are already established.
 
+## Origin
+
+Wolfsblvt Icons began when Wolf decided Wolfsblvt Works products should share a deliberate icon language instead of each site or application inventing its own choices or settling for unrelated approximations. He selected Lucide for ordinary interface symbols, Simple Icons as the default source for third-party brands subject to current accuracy, rights and his taste, and coherent Works-authored families when missing concepts needed to belong together. DiffDevil’s website became the first real consumer, turning that shared direction into one maintained public source rather than another local icon cupboard.
+
 ## The experience
 
 A product author should be able to ask for `settings`, `github`, or `karaokebarr/disc-burned` and receive the intended icon without knowing which file, upstream library, legal source, or optical correction sits underneath it. The name should express product meaning. The package should carry the rest.

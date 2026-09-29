@@ -71,18 +71,12 @@ async function getPackageSource() {
         ...npmPrefixArguments,
         "view",
         registryPackage.spec,
-        "name",
-        "version",
-        "repository",
-        "license",
-        "dist.tarball",
-        "dist.integrity",
         "--json",
         "--registry=https://registry.npmjs.org",
       ]),
     );
     assertPublishedPackage(metadata, expectedRegistryPackage);
-    return registryPackage.spec;
+    return registryPackage.version;
   }
 
   const packOutput = run(npmCommand, [

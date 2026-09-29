@@ -110,7 +110,6 @@ test("first publication is verification-only and later tags publish through OIDC
   assert.doesNotMatch(workflow, /github\.event\.repository\.name/);
   assert.doesNotMatch(workflow, /workflow_call/);
 
-  assert.match(consumerVerifier, /"dist\.integrity"/);
   assert.match(consumerVerifier, /expectProvenanceValue !== "false"/);
   assert.match(
     consumerVerifier,

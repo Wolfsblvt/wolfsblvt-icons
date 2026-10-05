@@ -70,8 +70,8 @@
     "prepare": "npm run build"
   },
   "dependencies": {
-    "@iconify-json/lucide": "1.2.133",
-    "@iconify-json/simple-icons": "1.2.96"
+    "@iconify-json/lucide": "1.2.138",
+    "@iconify-json/simple-icons": "1.2.98"
   },
   "peerDependencies": {
     "astro": ">=7.0.0 <8.0.0",

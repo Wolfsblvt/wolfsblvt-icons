@@ -26,7 +26,19 @@ test("brands resolve only through the curated catalogue", () => {
 
 test("accepted product glyphs resolve while planned names remain unavailable", () => {
   const accepted = [
-    ["diffdevil/bands", /<rect x=\"3\" y=\"12\"/],
+    ["borrowed-coast/at-war", /M4 18V6l5 2-5 2/],
+    ["borrowed-coast/beacon", /M9 20h6l-1-9/],
+    ["borrowed-coast/chart", /M4 3C4 5\.8/],
+    ["borrowed-coast/control", /M7 19V5l8 3/],
+    ["borrowed-coast/deep-hull-strait", /M3 4v5h5v6/],
+    ["borrowed-coast/guest-mooring", /M3 7h5v4/],
+    ["borrowed-coast/harbor", /M3 7h5v4/],
+    ["borrowed-coast/nations", /M5 20V6l5 2/],
+    ["borrowed-coast/no-accord", /M3 20h6/],
+    ["borrowed-coast/protected-peace", /M8 14c2-2/],
+    ["borrowed-coast/tide-phase", /M6 3v18/],
+    ["borrowed-coast/watch", /M4 17c4-6/],
+    ["diffdevil/bands", /<rect x="3" y="12"/],
     ["diffdevil/brand", /M4 4l3 2\.25/],
     ["diffdevil/changed", /M8 3H6/],
     ["diffdevil/raw-churn", /M4 7h6/],

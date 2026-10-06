@@ -1,0 +1,22 @@
+{
+  "id": "borrowed-coast/tide-phase",
+  "namespace": "borrowed-coast",
+  "name": "tide-phase",
+  "status": "available",
+  "selectedSourceType": "works-provider-glyph",
+  "assetPath": "src/icons/products/borrowed-coast/tide-phase.svg",
+  "intendedUse": "Current tide phase and water-level context on the chart and tide record.",
+  "license": {
+    "spdx": "MIT",
+    "notes": "Original Wolfsblvt Works geometry."
+  },
+  "permittedColorModes": ["monochrome"],
+  "modifications": "Purpose-authored monochrome Night Chart state glyph for tide phase.",
+  "redistribution": {
+    "standing": "original-mit",
+    "vendoredBytes": true,
+    "notes": "Original geometry is distributed from this repository with the package source."
+  },
+  "contentHash": "3a1d5a4c4e405d53174df486c5e9ea1fb1b6c686555fff51ffc309bfb38210f5",
+  "authoringNotes": "A marked tide staff meets a live waterline so the glyph describes measured coastal water rather than borrowing moon-phase imagery."
+}

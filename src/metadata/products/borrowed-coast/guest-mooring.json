@@ -1,0 +1,22 @@
+{
+  "id": "borrowed-coast/guest-mooring",
+  "namespace": "borrowed-coast",
+  "name": "guest-mooring",
+  "status": "available",
+  "selectedSourceType": "works-provider-glyph",
+  "assetPath": "src/icons/products/borrowed-coast/guest-mooring.svg",
+  "intendedUse": "Protected guest-ark mooring at a host harbor.",
+  "license": {
+    "spdx": "MIT",
+    "notes": "Original Wolfsblvt Works geometry."
+  },
+  "permittedColorModes": ["monochrome"],
+  "modifications": "Purpose-authored monochrome Night Chart agreement glyph for guest mooring.",
+  "redistribution": {
+    "standing": "original-mit",
+    "vendoredBytes": true,
+    "notes": "Original geometry is distributed from this repository with the package source."
+  },
+  "contentHash": "b2d6b506f785bf5b8a490fc86e884918ef57fb4c0a5c53444e31f9e3e504e24a",
+  "authoringNotes": "A guest hull sits inside the shared harbor basin and remains visibly tethered as a distinct protected asset rather than collapsing into a generic anchor."
+}

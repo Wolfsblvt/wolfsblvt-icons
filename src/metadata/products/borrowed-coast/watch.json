@@ -1,0 +1,22 @@
+{
+  "id": "borrowed-coast/watch",
+  "namespace": "borrowed-coast",
+  "name": "watch",
+  "status": "available",
+  "selectedSourceType": "works-provider-glyph",
+  "assetPath": "src/icons/products/borrowed-coast/watch.svg",
+  "intendedUse": "Watch view mode for the nation’s current lawful observation and visible watchlights.",
+  "license": {
+    "spdx": "MIT",
+    "notes": "Original Wolfsblvt Works geometry."
+  },
+  "permittedColorModes": ["monochrome"],
+  "modifications": "Purpose-authored monochrome Night Chart mode glyph for the watch view.",
+  "redistribution": {
+    "standing": "original-mit",
+    "vendoredBytes": true,
+    "notes": "Original geometry is distributed from this repository with the package source."
+  },
+  "contentHash": "7f1d42e456ca9217c5a0855de4c5d6a3b5dc3d60ac04eb1e881bb0f405c1c0bb",
+  "authoringNotes": "A small watchlight throws layered arcs over water. It replaces the generic eye, which implied omniscience rather than situated lawful observation."
+}

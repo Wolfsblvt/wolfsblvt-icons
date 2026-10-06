@@ -1,0 +1,22 @@
+{
+  "id": "borrowed-coast/harbor",
+  "namespace": "borrowed-coast",
+  "name": "harbor",
+  "status": "available",
+  "selectedSourceType": "works-provider-glyph",
+  "assetPath": "src/icons/products/borrowed-coast/harbor.svg",
+  "intendedUse": "Harbor place marker on Borrowed Coast charts.",
+  "license": {
+    "spdx": "MIT",
+    "notes": "Original Wolfsblvt Works geometry."
+  },
+  "permittedColorModes": ["monochrome"],
+  "modifications": "Purpose-authored monochrome Night Chart place glyph for harbors.",
+  "redistribution": {
+    "standing": "original-mit",
+    "vendoredBytes": true,
+    "notes": "Original geometry is distributed from this repository with the package source."
+  },
+  "contentHash": "587be4aec017ab5f21915902657bc91859d3bc1af4ce9e34a8680a357f054f2b",
+  "authoringNotes": "The open basin and narrow approaches read as chart geography, not as an anchor or generic building."
+}

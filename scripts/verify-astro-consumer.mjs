@@ -18,6 +18,18 @@ for (const id of [
   "ui-direct",
   "brand-github",
   "brand-discord",
+  "product-borrowed-coast-at-war",
+  "product-borrowed-coast-beacon",
+  "product-borrowed-coast-chart",
+  "product-borrowed-coast-control",
+  "product-borrowed-coast-deep-hull-strait",
+  "product-borrowed-coast-guest-mooring",
+  "product-borrowed-coast-harbor",
+  "product-borrowed-coast-nations",
+  "product-borrowed-coast-no-accord",
+  "product-borrowed-coast-protected-peace",
+  "product-borrowed-coast-tide-phase",
+  "product-borrowed-coast-watch",
   "product-diffdevil-brand",
   "product-diffdevil-changed",
   "product-diffdevil-raw-churn",
@@ -29,9 +41,9 @@ for (const id of [
 }
 
 const svgCount = html.match(/<svg\b/g)?.length ?? 0;
-if (svgCount < 8) {
+if (svgCount < 20) {
   throw new Error(
-    `Expected at least eight inline SVGs in the Astro consumer output; found ${svgCount}.`,
+    `Expected at least twenty inline SVGs in the Astro consumer output; found ${svgCount}.`,
   );
 }
 

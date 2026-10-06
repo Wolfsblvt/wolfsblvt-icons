@@ -1,0 +1,22 @@
+{
+  "id": "borrowed-coast/nations",
+  "namespace": "borrowed-coast",
+  "name": "nations",
+  "status": "available",
+  "selectedSourceType": "works-provider-glyph",
+  "assetPath": "src/icons/products/borrowed-coast/nations.svg",
+  "intendedUse": "Nations view mode for control, territory, standings, and nation overlays.",
+  "license": {
+    "spdx": "MIT",
+    "notes": "Original Wolfsblvt Works geometry."
+  },
+  "permittedColorModes": ["monochrome"],
+  "modifications": "Purpose-authored monochrome Night Chart mode glyph for the nations view.",
+  "redistribution": {
+    "standing": "original-mit",
+    "vendoredBytes": true,
+    "notes": "Original geometry is distributed from this repository with the package source."
+  },
+  "contentHash": "981398e57778c89c000a02d2e1f320d4e2eac76f2dae4789379613f4179bfa69",
+  "authoringNotes": "Several differently placed pennants inhabit one shared coast line; the mode is intentionally not represented by one generic flag."
+}

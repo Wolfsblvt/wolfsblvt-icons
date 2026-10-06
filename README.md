@@ -16,14 +16,14 @@ Lucide supplies the ordinary UI language. Brands enter through an explicit catal
 
 The starter catalogue is deliberately small. It proves the three important routes without copying whole upstream collections into a municipal archive:
 
-| Lane           | Public names                      | Source                                                       |
-| -------------- | --------------------------------- | ------------------------------------------------------------ |
-| Semantic UI    | `settings`, `verified`, `warning` | Curated aliases over Lucide                                  |
-| Direct UI      | `lucide:badge-check`              | Explicit Lucide escape route                                 |
-| Brands         | `github`, `discord`               | Curated Simple Icons entries                                 |
-| Product glyphs | `diffdevil/*`, `wolfsblvt/works`  | Works-authored; diffdevil available, Wolfsblvt Works planned |
+| Lane           | Public names                                         | Source                                                               |
+| -------------- | ---------------------------------------------------- | -------------------------------------------------------------------- |
+| Semantic UI    | `settings`, `verified`, `warning`                    | Curated aliases over Lucide                                          |
+| Direct UI      | `lucide:badge-check`                                 | Explicit Lucide escape route                                         |
+| Brands         | `github`, `discord`                                  | Curated Simple Icons entries                                         |
+| Product glyphs | `borrowed-coast/*`, `diffdevil/*`, `wolfsblvt/works` | Works-authored; game and diff families available, Works mark planned |
 
-The generated [contact sheet](fixtures/contact-sheet.html) renders the starter UI and brand references at 16, 20, 24, and 32 pixels on light and dark surfaces, beside circle and square density references. Product-glyph selection evidence remains with the contribution that admits or changes that geometry.
+The generated [contact sheet](fixtures/contact-sheet.html) renders the starter UI and brand references at 16, 20, 24, and 32 pixels on light and dark surfaces, beside circle and square density references. Product-glyph selection evidence remains with the contribution that admits or changes that geometry; the accepted [Borrowed Coast family sheet](docs/product-families/borrowed-coast-contact-sheet.svg) is one such surface.
 
 ## Try the source
 
@@ -78,13 +78,14 @@ import { BrandIcon, ProductIcon, UiIcon } from "@wolfsblvt/icons/astro";
 <UiIcon name="settings" />
 <UiIcon name="lucide:heart" label="Favourite" />
 <BrandIcon name="github" label="GitHub" />
+<ProductIcon name="borrowed-coast/chart" label="Chart" />
 <ProductIcon name="diffdevil/brand" />
 <ProductIcon name="diffdevil/changed" label="Changed" />
 <ProductIcon name="diffdevil/raw-churn" label="Raw churn" />
 <ProductIcon name="diffdevil/bands" label="Policy bands" />
 ```
 
-The final four lines render the accepted monochrome diffdevil product family from generated local geometry.
+The product lines render accepted monochrome family geometry from generated local data.
 
 ## One system, three different obligations
 
@@ -102,12 +103,10 @@ GitHub and Discord are the first entries because the diffdevil website is the fi
 
 Works-authored icons use stable `<product>/<icon>` names and live under `src/icons/products/`. Related concepts should be authored together when independent approximations would drift. The canonical [icon standard](docs/icon-standard.md) defines the 24×24 canvas, two-pixel stroke language, forbidden SVG machinery, visual comparison, provenance, and acceptance evidence.
 
-The first accepted product family is diffdevil:
+Accepted families include:
 
-- `diffdevil/brand` carries compact product identity;
-- `diffdevil/changed` names replacement-aware review surface;
-- `diffdevil/raw-churn` names independent raw additions and deletions; and
-- `diffdevil/bands` names a configured ordinal policy scale without replacing the live dynamic rail.
+- [Borrowed Coast](docs/product-families/borrowed-coast.md), whose Night Chart marks carry view modes, nation standings, places, tide and physical route meaning without inheriting misleading generic nautical stand-ins; and
+- [diffdevil](docs/product-families/diffdevil.md), whose brand and capability glyphs distinguish replacement-aware change, raw churn and configured policy bands.
 
 `wolfsblvt/works` remains a reserved compact umbrella glyph for social and footer references where the formal lockup is wrong. It stays unavailable until its own visual design is selected.
 

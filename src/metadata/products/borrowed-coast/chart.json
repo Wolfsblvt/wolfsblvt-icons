@@ -1,0 +1,22 @@
+{
+  "id": "borrowed-coast/chart",
+  "namespace": "borrowed-coast",
+  "name": "chart",
+  "status": "available",
+  "selectedSourceType": "works-provider-glyph",
+  "assetPath": "src/icons/products/borrowed-coast/chart.svg",
+  "intendedUse": "Chart view mode for geography, channels, coasts, shallows, and navigable water.",
+  "license": {
+    "spdx": "MIT",
+    "notes": "Original Wolfsblvt Works geometry."
+  },
+  "permittedColorModes": ["monochrome"],
+  "modifications": "Purpose-authored monochrome Night Chart mode glyph for the default chart view.",
+  "redistribution": {
+    "standing": "original-mit",
+    "vendoredBytes": true,
+    "notes": "Original geometry is distributed from this repository with the package source."
+  },
+  "contentHash": "71b6bcc21159a293ca387b07cd351892184879d5a3e0047d1fe6ee6f09c7664c",
+  "authoringNotes": "Three asymmetric rounded coast contours replace folded-map geometry; the curves were revised after Wolf rejected hard angular coast edges."
+}

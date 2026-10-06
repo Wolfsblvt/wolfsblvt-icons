@@ -1,0 +1,22 @@
+{
+  "id": "borrowed-coast/no-accord",
+  "namespace": "borrowed-coast",
+  "name": "no-accord",
+  "status": "available",
+  "selectedSourceType": "works-provider-glyph",
+  "assetPath": "src/icons/products/borrowed-coast/no-accord.svg",
+  "intendedUse": "No Accord standing between two nations with no general peace protection.",
+  "license": {
+    "spdx": "MIT",
+    "notes": "Original Wolfsblvt Works geometry."
+  },
+  "permittedColorModes": ["monochrome"],
+  "modifications": "Purpose-authored monochrome Night Chart relation glyph for unprotected coexistence.",
+  "redistribution": {
+    "standing": "original-mit",
+    "vendoredBytes": true,
+    "notes": "Original geometry is distributed from this repository with the package source."
+  },
+  "contentHash": "90ce5bca1d108f962bb2bbd11bce156e014f8cf48f31cae286feb824fe24dfb1",
+  "authoringNotes": "Two facing nation pennants stand across open water. The gap is deliberate: No Accord is a complete unprotected state, not a missing or pending relationship."
+}

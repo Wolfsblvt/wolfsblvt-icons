@@ -1,0 +1,22 @@
+{
+  "id": "borrowed-coast/beacon",
+  "namespace": "borrowed-coast",
+  "name": "beacon",
+  "status": "available",
+  "selectedSourceType": "works-provider-glyph",
+  "assetPath": "src/icons/products/borrowed-coast/beacon.svg",
+  "intendedUse": "Beacon place marker and watchlight reference on Borrowed Coast charts.",
+  "license": {
+    "spdx": "MIT",
+    "notes": "Original Wolfsblvt Works geometry."
+  },
+  "permittedColorModes": ["monochrome"],
+  "modifications": "Purpose-authored monochrome Night Chart place glyph for beacons.",
+  "redistribution": {
+    "standing": "original-mit",
+    "vendoredBytes": true,
+    "notes": "Original geometry is distributed from this repository with the package source."
+  },
+  "contentHash": "bab2dde297232cd75019ae582a34f25763ab511e4ddc6ae9c3a0c6db6648aa8f",
+  "authoringNotes": "A compact beacon tower throws three restrained light marks while remaining legible as chart notation rather than a decorative lighthouse illustration."
+}

@@ -1,0 +1,210 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1472" viewBox="0 0 1600 1472" role="img" aria-labelledby="title desc">
+<title id="title">Borrowed Coast Night Chart icon family contact sheet</title>
+<desc id="desc">The twelve accepted Borrowed Coast glyphs at 16, 20, 24 and 32 pixels on light and dark surfaces, with circle and square density references.</desc>
+<style>.ui{font-family:"Segoe UI",sans-serif}.mono{font-family:Consolas,monospace}.serif{font-family:Georgia,serif}.icon{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.muted{opacity:.55}.rule{stroke:currentColor;opacity:.18}</style>
+<defs>
+<symbol id="i-at-war" viewBox="0 0 24 24"><path d="M4 18V6l5 2-5 2" /><path d="M20 18V6l-5 2 5 2" /><path d="M8 13l8 7" /><path d="M16 13l-8 7" /></symbol>
+<symbol id="i-beacon" viewBox="0 0 24 24"><path d="M9 20h6l-1-9h-4l-1 9Z" /><path d="M9 11h6" /><path d="M12 4v3" /><path d="M5 8l3 2" /><path d="M19 8l-3 2" /><path d="M5 21h14" /></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 3C4 5.8 4.2 7.4 5.7 8.7C6.9 9.7 7.5 10.5 7.5 11.8C7.5 13.2 6.5 14 5.5 15.1C4.3 16.5 4 18.1 4 21" /><path d="M20 3C20 5.6 19.7 7 18.5 8.3C17.5 9.4 17 10.4 17 11.8C17 13.2 17.8 14.1 18.6 15.1C19.6 16.4 20 17.9 20 21" /><path d="M10.5 4C12.5 5.3 11.8 7.4 13 8.9C14 10.3 13.8 12 12.7 13.7C11.7 15.3 11.4 17.3 13 20" /></symbol>
+<symbol id="i-control" viewBox="0 0 24 24"><path d="M7 19V5l8 3-8 3" /><path d="M3 20c3-3 6-3 9 0s6 3 9 0" /><path d="M12 17v3" /></symbol>
+<symbol id="i-deep-hull-strait" viewBox="0 0 24 24"><path d="M3 4v5h5v6H3v5" /><path d="M21 4v5h-5v6h5v5" /><path d="M10 5h4v7l-2 4-2-4V5Z" /><path d="M8 11h8" /></symbol>
+<symbol id="i-guest-mooring" viewBox="0 0 24 24"><path d="M3 7h5v4c0 3 1.8 5 4 5s4-2 4-5V7h5" /><path d="M9 12h6l-1 3h-4l-1-3Z" /><path d="M10.5 9h3v3" /><path d="M15 12l3-3" /><circle cx="19" cy="8" r="1" /></symbol>
+<symbol id="i-harbor" viewBox="0 0 24 24"><path d="M3 7h5v4c0 3 1.8 5 4 5s4-2 4-5V7h5" /><path d="M3 11h3" /><path d="M21 11h-3" /></symbol>
+<symbol id="i-nations" viewBox="0 0 24 24"><path d="M5 20V6l5 2-5 2" /><path d="M12 20V4l6 2-6 2" /><path d="M19 20v-8l-4 2 4 2" /><path d="M3 20c3-2 6-2 9 0s6 2 9 0" /></symbol>
+<symbol id="i-no-accord" viewBox="0 0 24 24"><path d="M4 18V6l5 2-5 2" /><path d="M20 18V6l-5 2 5 2" /><path d="M3 20h6" /><path d="M15 20h6" /></symbol>
+<symbol id="i-protected-peace" viewBox="0 0 24 24"><path d="M4 18V6l5 2-5 2" /><path d="M20 18V6l-5 2 5 2" /><path d="M8 14c2-2 6-2 8 0" /><path d="M8 18c2-2 6-2 8 0" /></symbol>
+<symbol id="i-tide-phase" viewBox="0 0 24 24"><path d="M6 3v18" /><path d="M6 7h3" /><path d="M6 12h3" /><path d="M6 17h3" /><path d="M10 15c2-2 4 2 6 0s4-2 6 0" /></symbol>
+<symbol id="i-watch" viewBox="0 0 24 24"><path d="M4 17c4-6 12-6 16 0" /><path d="M6 19c4-3 8-3 12 0" /><circle cx="12" cy="14" r="2" /><path d="M12 4v4" /><path d="M7 7l2 2" /><path d="M17 7l-2 2" /></symbol>
+<g id="r-at-war">
+<line class="rule" x1="0" y1="78" x2="660" y2="78"/>
+<text class="mono" x="0" y="36" fill="currentColor" font-size="15">at-war</text>
+<use class="icon" href="#i-at-war" x="310" y="25" width="16" height="16"/>
+<text class="ui muted" x="318" y="66" text-anchor="middle" fill="currentColor" font-size="11">16</text>
+<use class="icon" href="#i-at-war" x="396" y="23" width="20" height="20"/>
+<text class="ui muted" x="406" y="66" text-anchor="middle" fill="currentColor" font-size="11">20</text>
+<use class="icon" href="#i-at-war" x="482" y="21" width="24" height="24"/>
+<text class="ui muted" x="494" y="66" text-anchor="middle" fill="currentColor" font-size="11">24</text>
+<use class="icon" href="#i-at-war" x="572" y="17" width="32" height="32"/>
+<text class="ui muted" x="588" y="66" text-anchor="middle" fill="currentColor" font-size="11">32</text>
+</g>
+<g id="r-beacon">
+<line class="rule" x1="0" y1="78" x2="660" y2="78"/>
+<text class="mono" x="0" y="36" fill="currentColor" font-size="15">beacon</text>
+<use class="icon" href="#i-beacon" x="310" y="25" width="16" height="16"/>
+<text class="ui muted" x="318" y="66" text-anchor="middle" fill="currentColor" font-size="11">16</text>
+<use class="icon" href="#i-beacon" x="396" y="23" width="20" height="20"/>
+<text class="ui muted" x="406" y="66" text-anchor="middle" fill="currentColor" font-size="11">20</text>
+<use class="icon" href="#i-beacon" x="482" y="21" width="24" height="24"/>
+<text class="ui muted" x="494" y="66" text-anchor="middle" fill="currentColor" font-size="11">24</text>
+<use class="icon" href="#i-beacon" x="572" y="17" width="32" height="32"/>
+<text class="ui muted" x="588" y="66" text-anchor="middle" fill="currentColor" font-size="11">32</text>
+</g>
+<g id="r-chart">
+<line class="rule" x1="0" y1="78" x2="660" y2="78"/>
+<text class="mono" x="0" y="36" fill="currentColor" font-size="15">chart</text>
+<use class="icon" href="#i-chart" x="310" y="25" width="16" height="16"/>
+<text class="ui muted" x="318" y="66" text-anchor="middle" fill="currentColor" font-size="11">16</text>
+<use class="icon" href="#i-chart" x="396" y="23" width="20" height="20"/>
+<text class="ui muted" x="406" y="66" text-anchor="middle" fill="currentColor" font-size="11">20</text>
+<use class="icon" href="#i-chart" x="482" y="21" width="24" height="24"/>
+<text class="ui muted" x="494" y="66" text-anchor="middle" fill="currentColor" font-size="11">24</text>
+<use class="icon" href="#i-chart" x="572" y="17" width="32" height="32"/>
+<text class="ui muted" x="588" y="66" text-anchor="middle" fill="currentColor" font-size="11">32</text>
+</g>
+<g id="r-control">
+<line class="rule" x1="0" y1="78" x2="660" y2="78"/>
+<text class="mono" x="0" y="36" fill="currentColor" font-size="15">control</text>
+<use class="icon" href="#i-control" x="310" y="25" width="16" height="16"/>
+<text class="ui muted" x="318" y="66" text-anchor="middle" fill="currentColor" font-size="11">16</text>
+<use class="icon" href="#i-control" x="396" y="23" width="20" height="20"/>
+<text class="ui muted" x="406" y="66" text-anchor="middle" fill="currentColor" font-size="11">20</text>
+<use class="icon" href="#i-control" x="482" y="21" width="24" height="24"/>
+<text class="ui muted" x="494" y="66" text-anchor="middle" fill="currentColor" font-size="11">24</text>
+<use class="icon" href="#i-control" x="572" y="17" width="32" height="32"/>
+<text class="ui muted" x="588" y="66" text-anchor="middle" fill="currentColor" font-size="11">32</text>
+</g>
+<g id="r-deep-hull-strait">
+<line class="rule" x1="0" y1="78" x2="660" y2="78"/>
+<text class="mono" x="0" y="36" fill="currentColor" font-size="15">deep-hull-strait</text>
+<use class="icon" href="#i-deep-hull-strait" x="310" y="25" width="16" height="16"/>
+<text class="ui muted" x="318" y="66" text-anchor="middle" fill="currentColor" font-size="11">16</text>
+<use class="icon" href="#i-deep-hull-strait" x="396" y="23" width="20" height="20"/>
+<text class="ui muted" x="406" y="66" text-anchor="middle" fill="currentColor" font-size="11">20</text>
+<use class="icon" href="#i-deep-hull-strait" x="482" y="21" width="24" height="24"/>
+<text class="ui muted" x="494" y="66" text-anchor="middle" fill="currentColor" font-size="11">24</text>
+<use class="icon" href="#i-deep-hull-strait" x="572" y="17" width="32" height="32"/>
+<text class="ui muted" x="588" y="66" text-anchor="middle" fill="currentColor" font-size="11">32</text>
+</g>
+<g id="r-guest-mooring">
+<line class="rule" x1="0" y1="78" x2="660" y2="78"/>
+<text class="mono" x="0" y="36" fill="currentColor" font-size="15">guest-mooring</text>
+<use class="icon" href="#i-guest-mooring" x="310" y="25" width="16" height="16"/>
+<text class="ui muted" x="318" y="66" text-anchor="middle" fill="currentColor" font-size="11">16</text>
+<use class="icon" href="#i-guest-mooring" x="396" y="23" width="20" height="20"/>
+<text class="ui muted" x="406" y="66" text-anchor="middle" fill="currentColor" font-size="11">20</text>
+<use class="icon" href="#i-guest-mooring" x="482" y="21" width="24" height="24"/>
+<text class="ui muted" x="494" y="66" text-anchor="middle" fill="currentColor" font-size="11">24</text>
+<use class="icon" href="#i-guest-mooring" x="572" y="17" width="32" height="32"/>
+<text class="ui muted" x="588" y="66" text-anchor="middle" fill="currentColor" font-size="11">32</text>
+</g>
+<g id="r-harbor">
+<line class="rule" x1="0" y1="78" x2="660" y2="78"/>
+<text class="mono" x="0" y="36" fill="currentColor" font-size="15">harbor</text>
+<use class="icon" href="#i-harbor" x="310" y="25" width="16" height="16"/>
+<text class="ui muted" x="318" y="66" text-anchor="middle" fill="currentColor" font-size="11">16</text>
+<use class="icon" href="#i-harbor" x="396" y="23" width="20" height="20"/>
+<text class="ui muted" x="406" y="66" text-anchor="middle" fill="currentColor" font-size="11">20</text>
+<use class="icon" href="#i-harbor" x="482" y="21" width="24" height="24"/>
+<text class="ui muted" x="494" y="66" text-anchor="middle" fill="currentColor" font-size="11">24</text>
+<use class="icon" href="#i-harbor" x="572" y="17" width="32" height="32"/>
+<text class="ui muted" x="588" y="66" text-anchor="middle" fill="currentColor" font-size="11">32</text>
+</g>
+<g id="r-nations">
+<line class="rule" x1="0" y1="78" x2="660" y2="78"/>
+<text class="mono" x="0" y="36" fill="currentColor" font-size="15">nations</text>
+<use class="icon" href="#i-nations" x="310" y="25" width="16" height="16"/>
+<text class="ui muted" x="318" y="66" text-anchor="middle" fill="currentColor" font-size="11">16</text>
+<use class="icon" href="#i-nations" x="396" y="23" width="20" height="20"/>
+<text class="ui muted" x="406" y="66" text-anchor="middle" fill="currentColor" font-size="11">20</text>
+<use class="icon" href="#i-nations" x="482" y="21" width="24" height="24"/>
+<text class="ui muted" x="494" y="66" text-anchor="middle" fill="currentColor" font-size="11">24</text>
+<use class="icon" href="#i-nations" x="572" y="17" width="32" height="32"/>
+<text class="ui muted" x="588" y="66" text-anchor="middle" fill="currentColor" font-size="11">32</text>
+</g>
+<g id="r-no-accord">
+<line class="rule" x1="0" y1="78" x2="660" y2="78"/>
+<text class="mono" x="0" y="36" fill="currentColor" font-size="15">no-accord</text>
+<use class="icon" href="#i-no-accord" x="310" y="25" width="16" height="16"/>
+<text class="ui muted" x="318" y="66" text-anchor="middle" fill="currentColor" font-size="11">16</text>
+<use class="icon" href="#i-no-accord" x="396" y="23" width="20" height="20"/>
+<text class="ui muted" x="406" y="66" text-anchor="middle" fill="currentColor" font-size="11">20</text>
+<use class="icon" href="#i-no-accord" x="482" y="21" width="24" height="24"/>
+<text class="ui muted" x="494" y="66" text-anchor="middle" fill="currentColor" font-size="11">24</text>
+<use class="icon" href="#i-no-accord" x="572" y="17" width="32" height="32"/>
+<text class="ui muted" x="588" y="66" text-anchor="middle" fill="currentColor" font-size="11">32</text>
+</g>
+<g id="r-protected-peace">
+<line class="rule" x1="0" y1="78" x2="660" y2="78"/>
+<text class="mono" x="0" y="36" fill="currentColor" font-size="15">protected-peace</text>
+<use class="icon" href="#i-protected-peace" x="310" y="25" width="16" height="16"/>
+<text class="ui muted" x="318" y="66" text-anchor="middle" fill="currentColor" font-size="11">16</text>
+<use class="icon" href="#i-protected-peace" x="396" y="23" width="20" height="20"/>
+<text class="ui muted" x="406" y="66" text-anchor="middle" fill="currentColor" font-size="11">20</text>
+<use class="icon" href="#i-protected-peace" x="482" y="21" width="24" height="24"/>
+<text class="ui muted" x="494" y="66" text-anchor="middle" fill="currentColor" font-size="11">24</text>
+<use class="icon" href="#i-protected-peace" x="572" y="17" width="32" height="32"/>
+<text class="ui muted" x="588" y="66" text-anchor="middle" fill="currentColor" font-size="11">32</text>
+</g>
+<g id="r-tide-phase">
+<line class="rule" x1="0" y1="78" x2="660" y2="78"/>
+<text class="mono" x="0" y="36" fill="currentColor" font-size="15">tide-phase</text>
+<use class="icon" href="#i-tide-phase" x="310" y="25" width="16" height="16"/>
+<text class="ui muted" x="318" y="66" text-anchor="middle" fill="currentColor" font-size="11">16</text>
+<use class="icon" href="#i-tide-phase" x="396" y="23" width="20" height="20"/>
+<text class="ui muted" x="406" y="66" text-anchor="middle" fill="currentColor" font-size="11">20</text>
+<use class="icon" href="#i-tide-phase" x="482" y="21" width="24" height="24"/>
+<text class="ui muted" x="494" y="66" text-anchor="middle" fill="currentColor" font-size="11">24</text>
+<use class="icon" href="#i-tide-phase" x="572" y="17" width="32" height="32"/>
+<text class="ui muted" x="588" y="66" text-anchor="middle" fill="currentColor" font-size="11">32</text>
+</g>
+<g id="r-watch">
+<line class="rule" x1="0" y1="78" x2="660" y2="78"/>
+<text class="mono" x="0" y="36" fill="currentColor" font-size="15">watch</text>
+<use class="icon" href="#i-watch" x="310" y="25" width="16" height="16"/>
+<text class="ui muted" x="318" y="66" text-anchor="middle" fill="currentColor" font-size="11">16</text>
+<use class="icon" href="#i-watch" x="396" y="23" width="20" height="20"/>
+<text class="ui muted" x="406" y="66" text-anchor="middle" fill="currentColor" font-size="11">20</text>
+<use class="icon" href="#i-watch" x="482" y="21" width="24" height="24"/>
+<text class="ui muted" x="494" y="66" text-anchor="middle" fill="currentColor" font-size="11">24</text>
+<use class="icon" href="#i-watch" x="572" y="17" width="32" height="32"/>
+<text class="ui muted" x="588" y="66" text-anchor="middle" fill="currentColor" font-size="11">32</text>
+</g>
+</defs>
+<rect width="1600" height="1472" fill="#08111c"/>
+<text class="ui" x="50" y="60" fill="#f2b544" font-size="15" letter-spacing="3">WOLFSBLVT ICONS · BORROWED COAST</text>
+<text class="serif" x="50" y="116" fill="#e8e1cc" font-size="42">Night Chart marks</text>
+<text class="ui" x="50" y="150" fill="#aeb8ba" font-size="18">16 · 20 · 24 · 32 px · light and dark · relation, mode, place, tide and route grammar</text>
+<rect x="40" y="170" width="740" height="1247" rx="22" fill="#f8f5ec"/>
+<text class="ui" x="70" y="212" fill="#18202a" font-size="18" font-weight="700">Light</text>
+<use href="#r-at-war" transform="translate(70 236)" color="#18202a"/>
+<use href="#r-beacon" transform="translate(70 330)" color="#18202a"/>
+<use href="#r-chart" transform="translate(70 424)" color="#18202a"/>
+<use href="#r-control" transform="translate(70 518)" color="#18202a"/>
+<use href="#r-deep-hull-strait" transform="translate(70 612)" color="#18202a"/>
+<use href="#r-guest-mooring" transform="translate(70 706)" color="#18202a"/>
+<use href="#r-harbor" transform="translate(70 800)" color="#18202a"/>
+<use href="#r-nations" transform="translate(70 894)" color="#18202a"/>
+<use href="#r-no-accord" transform="translate(70 988)" color="#18202a"/>
+<use href="#r-protected-peace" transform="translate(70 1082)" color="#18202a"/>
+<use href="#r-tide-phase" transform="translate(70 1176)" color="#18202a"/>
+<use href="#r-watch" transform="translate(70 1270)" color="#18202a"/>
+<rect x="820" y="170" width="740" height="1247" rx="22" fill="#111b28" stroke="#334252"/>
+<text class="ui" x="850" y="212" fill="#edf1ec" font-size="18" font-weight="700">Dark</text>
+<use href="#r-at-war" transform="translate(850 236)" color="#edf1ec"/>
+<use href="#r-beacon" transform="translate(850 330)" color="#edf1ec"/>
+<use href="#r-chart" transform="translate(850 424)" color="#edf1ec"/>
+<use href="#r-control" transform="translate(850 518)" color="#edf1ec"/>
+<use href="#r-deep-hull-strait" transform="translate(850 612)" color="#edf1ec"/>
+<use href="#r-guest-mooring" transform="translate(850 706)" color="#edf1ec"/>
+<use href="#r-harbor" transform="translate(850 800)" color="#edf1ec"/>
+<use href="#r-nations" transform="translate(850 894)" color="#edf1ec"/>
+<use href="#r-no-accord" transform="translate(850 988)" color="#edf1ec"/>
+<use href="#r-protected-peace" transform="translate(850 1082)" color="#edf1ec"/>
+<use href="#r-tide-phase" transform="translate(850 1176)" color="#edf1ec"/>
+<use href="#r-watch" transform="translate(850 1270)" color="#edf1ec"/>
+<g color="#18202a">
+<text class="mono" x="70" y="1400" fill="currentColor" font-size="15">density references</text>
+<circle cx="386" cy="1398" r="12" fill="none" stroke="currentColor" stroke-width="2"/>
+<rect x="462" y="1386" width="24" height="24" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+<text class="ui muted" x="386" y="1426" text-anchor="middle" fill="currentColor" font-size="11">circle</text>
+<text class="ui muted" x="474" y="1426" text-anchor="middle" fill="currentColor" font-size="11">square</text>
+</g>
+<g color="#edf1ec">
+<text class="mono" x="850" y="1400" fill="currentColor" font-size="15">density references</text>
+<circle cx="1166" cy="1398" r="12" fill="none" stroke="currentColor" stroke-width="2"/>
+<rect x="1242" y="1386" width="24" height="24" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+<text class="ui muted" x="1166" y="1426" text-anchor="middle" fill="currentColor" font-size="11">circle</text>
+<text class="ui muted" x="1254" y="1426" text-anchor="middle" fill="currentColor" font-size="11">square</text>
+</g>
+<text class="ui" x="50" y="1454" fill="#aeb8ba" font-size="14">Compared in the owning co-design against the prototype’s Lucide map, eye, flag, shield, swords, anchor, hourglass and lock stand-ins. Geometry is original.</text>
+</svg>

@@ -36,6 +36,7 @@ This repository packages a framework-neutral icon catalogue, Astro presentation 
 - **Use the package:** `src/index.ts` and the exports declared in `package.json`.
 - **Use Astro components:** `src/astro/index.ts`.
 - **Understand icon admission and geometry:** `docs/icon-standard.md`.
+- **Understand Borrowed Coast's Night Chart family:** `docs/product-families/borrowed-coast.md`.
 - **Understand diffdevil's family and ordinary icon map:** `docs/product-families/diffdevil.md`.
 - **Understand the Wolfsblvt Works umbrella glyphs:** `docs/product-families/wolfsblvt.md`.
 - **Add or change catalogue behavior:** `src/catalog/`.
@@ -55,6 +56,7 @@ This repository packages a framework-neutral icon catalogue, Astro presentation 
 
 ## Related repositories
 
+- [`Wolfsblvt/borrowed-coast`](https://github.com/Wolfsblvt/borrowed-coast) consumes the Night Chart game family after package admission and an exact dependency route is available.
 - [`Wolfsblvt/diffdevil`](https://github.com/Wolfsblvt/diffdevil) is the first intended consumer.
 - [`Wolfsblvt/wolfsblvt.works`](https://github.com/Wolfsblvt/wolfsblvt.works), the Works website, consumes the `wolfsblvt/*` family.
 - [`Wolfsblvt/Wolfsblvt`](https://github.com/Wolfsblvt/Wolfsblvt) is the planned public home for the Wolfsblvt Works umbrella identity.

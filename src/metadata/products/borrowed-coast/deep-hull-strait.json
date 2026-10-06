@@ -1,0 +1,22 @@
+{
+  "id": "borrowed-coast/deep-hull-strait",
+  "namespace": "borrowed-coast",
+  "name": "deep-hull-strait",
+  "status": "available",
+  "selectedSourceType": "works-provider-glyph",
+  "assetPath": "src/icons/products/borrowed-coast/deep-hull-strait.svg",
+  "intendedUse": "A strait whose navigability is constrained for deep-hull vessels by depth or tide.",
+  "license": {
+    "spdx": "MIT",
+    "notes": "Original Wolfsblvt Works geometry."
+  },
+  "permittedColorModes": ["monochrome"],
+  "modifications": "Purpose-authored monochrome Night Chart route glyph for deep-hull straits.",
+  "redistribution": {
+    "standing": "original-mit",
+    "vendoredBytes": true,
+    "notes": "Original geometry is distributed from this repository with the package source."
+  },
+  "contentHash": "2149b2691f93f3287d92cc48cd88e2e6579fb784afe8e6ca31dae38c9e082c84",
+  "authoringNotes": "Opposing coasts create the strait while a deep keel and threshold line express the vessel-specific restriction instead of an administrative padlock."
+}

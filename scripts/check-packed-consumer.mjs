@@ -54,6 +54,9 @@ function run(command, arguments_, options = {}) {
     cwd: options.cwd ?? repositoryRoot,
     encoding: "utf8",
     stdio: "pipe",
+    // `npm audit signatures --json --include-attestations` prints every installed package's attestation bundles,
+    // which outgrows the 1 MiB default and fails the spawn with ENOBUFS.
+    maxBuffer: 64 * 1024 * 1024,
   });
 
   if (result.status === 0) return result.stdout;

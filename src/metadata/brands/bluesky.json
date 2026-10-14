@@ -1,0 +1,29 @@
+{
+  "id": "bluesky",
+  "status": "available",
+  "selectedSourceType": "simple-icons",
+  "iconifyName": "simple-icons:bluesky",
+  "sourceUrl": "https://github.com/simple-icons/simple-icons/blob/develop/icons/bluesky.svg",
+  "retrievedAt": "2026-10-14",
+  "upstream": {
+    "package": "@iconify-json/simple-icons",
+    "version": "1.2.96",
+    "slug": "bluesky",
+    "assetRevision": "5bcd9d683f802c8b66d7384a9d2df4d634946170"
+  },
+  "license": {
+    "spdx": "CC0-1.0",
+    "notes": "The selected geometry is consumed from the Simple Icons Iconify data package."
+  },
+  "trademarkNotes": "Bluesky names and marks remain the property of Bluesky Social PBC; inclusion does not imply endorsement.",
+  "brandGuidelinesUrl": "https://bsky.social/about/press",
+  "permittedColorModes": ["monochrome"],
+  "brandColor": null,
+  "modifications": "None; rendered from the installed Iconify collection.",
+  "redistribution": {
+    "standing": "dependency-reference",
+    "vendoredBytes": false,
+    "notes": "The package stores selection metadata and resolves geometry from its dependency."
+  },
+  "contentHash": null
+}

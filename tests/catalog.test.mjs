@@ -21,6 +21,7 @@ test("explicit Lucide names remain available without a central alias", () => {
 
 test("brands resolve only through the curated catalogue", () => {
   assert.equal(getBrand("github").iconifyName, "simple-icons:github");
+  assert.equal(getBrand("bluesky").iconifyName, "simple-icons:bluesky");
   assert.throws(() => getBrand("npm"), /admitted to the curated catalogue/);
 });
 
@@ -52,7 +53,11 @@ test("Astro integration options include catalogue icons and explicit Lucide extr
   const options = createAstroIconOptions({
     extraLucide: ["heart", "settings"],
   });
-  assert.deepEqual(options.include["simple-icons"], ["discord", "github"]);
+  assert.deepEqual(options.include["simple-icons"], [
+    "bluesky",
+    "discord",
+    "github",
+  ]);
   assert.ok(options.include.lucide.includes("heart"));
   assert.equal(
     options.include.lucide.filter((name) => name === "settings").length,

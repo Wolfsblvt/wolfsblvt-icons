@@ -1,10 +1,12 @@
+import blueskyJson from "../metadata/brands/bluesky.json" with { type: "json" };
 import discordJson from "../metadata/brands/discord.json" with { type: "json" };
 import githubJson from "../metadata/brands/github.json" with { type: "json" };
 import type { BrandMetadata, IconColorMode } from "./types.js";
 
-export type BrandName = "discord" | "github";
+export type BrandName = "bluesky" | "discord" | "github";
 
 export const brandCatalog = Object.freeze({
+  bluesky: blueskyJson as BrandMetadata,
   discord: discordJson as BrandMetadata,
   github: githubJson as BrandMetadata,
 }) satisfies Readonly<Record<BrandName, BrandMetadata>>;

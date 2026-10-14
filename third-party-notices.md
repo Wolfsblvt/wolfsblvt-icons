@@ -14,7 +14,7 @@ This record identifies the upstream icon and framework material selected by `@wo
 
 ## Simple Icons
 
-- **Use:** curated third-party brand geometry for GitHub and Discord
+- **Use:** curated third-party brand geometry for GitHub, Discord and Bluesky
 - **Dependency:** `@iconify-json/simple-icons` 1.2.96
 - **Upstream:** [Simple Icons](https://simpleicons.org/)
 - **Licence:** CC0-1.0 for the icon data

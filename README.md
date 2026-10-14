@@ -20,7 +20,7 @@ The starter catalogue is deliberately small. It proves the three important route
 | -------------- | --------------------------------- | ---------------------------- |
 | Semantic UI    | `settings`, `verified`, `warning` | Curated aliases over Lucide  |
 | Direct UI      | `lucide:badge-check`              | Explicit Lucide escape route |
-| Brands         | `github`, `discord`               | Curated Simple Icons entries |
+| Brands         | `github`, `discord`, `bluesky`    | Curated Simple Icons entries |
 | Product glyphs | `diffdevil/*`, `wolfsblvt/*`      | Works-authored and available |
 
 The generated [contact sheet](fixtures/contact-sheet.html) renders the starter UI and brand references at 16, 20, 24, and 32 pixels on light and dark surfaces, beside circle and square density references. Product-glyph selection evidence remains with the contribution that admits or changes that geometry.
@@ -96,7 +96,7 @@ Repeated Works meanings receive semantic aliases such as `settings` and `verifie
 
 `BrandIcon` resolves only admitted catalogue entries. Each entry records its selected source, exact upstream revision, licence, trademark note, current guideline route, permitted colour modes, modifications, redistribution standing, and content hash when bytes are vendored.
 
-GitHub and Discord are the first entries because the diffdevil website is the first intended consumer. Their geometry is read from the installed Simple Icons collection rather than copied into the runtime package.
+GitHub and Discord are the first entries because the diffdevil website is the first intended consumer; Bluesky followed for the Wolfsblvt Works website's community links. Their geometry is read from the installed Simple Icons collection rather than copied into the runtime package.
 
 ### Original glyphs belong to families
 

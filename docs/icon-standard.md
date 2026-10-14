@@ -21,7 +21,7 @@ Names are API:
 
 - shared semantic UI alias: `settings`, `verified`, `warning`;
 - direct ordinary glyph: `lucide:badge-check`;
-- curated brand: `github`, `discord`;
+- curated brand: `github`, `discord`, `bluesky`;
 - original product glyph: `diffdevil/brand`, `karaokebarr/disc-burned`.
 
 Consumers never address repository file paths. Product names use `<product>/<icon>` with stable lowercase kebab-case segments. Renaming or repurposing an admitted name is a compatibility change, not file tidying.
@@ -119,7 +119,7 @@ Package components default to decorative output with `aria-hidden="true"`. Use a
 
 ## Presentation modes
 
-All UI and current product icons inherit `currentColor`. A brand entry may permit `monochrome`, `brand`, or both, but the component rejects modes absent from metadata. The starter GitHub and Discord entries deliberately permit monochrome only; exact official colour presentation can be added later with current brand evidence rather than remembered hex folklore.
+All UI and current product icons inherit `currentColor`. A brand entry may permit `monochrome`, `brand`, or both, but the component rejects modes absent from metadata. The GitHub, Discord and Bluesky entries deliberately permit monochrome only; exact official colour presentation can be added later with current brand evidence rather than remembered hex folklore.
 
 ## Validation and generation
 

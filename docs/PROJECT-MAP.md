@@ -37,6 +37,7 @@ This repository packages a framework-neutral icon catalogue, Astro presentation 
 - **Use Astro components:** `src/astro/index.ts`.
 - **Understand icon admission and geometry:** `docs/icon-standard.md`.
 - **Understand diffdevil's family and ordinary icon map:** `docs/product-families/diffdevil.md`.
+- **Understand the Wolfsblvt Works umbrella glyphs:** `docs/product-families/wolfsblvt.md`.
 - **Add or change catalogue behavior:** `src/catalog/`.
 - **Qualify the repository:** `npm test`.
 - **Exercise the real Astro consumer boundary:** `npm run astro:consumer`.
@@ -55,4 +56,5 @@ This repository packages a framework-neutral icon catalogue, Astro presentation 
 ## Related repositories
 
 - [`Wolfsblvt/diffdevil`](https://github.com/Wolfsblvt/diffdevil) is the first intended consumer.
+- [`Wolfsblvt/wolfsblvt.works`](https://github.com/Wolfsblvt/wolfsblvt.works), the Works website, consumes the `wolfsblvt/*` family.
 - [`Wolfsblvt/Wolfsblvt`](https://github.com/Wolfsblvt/Wolfsblvt) is the planned public home for the Wolfsblvt Works umbrella identity.

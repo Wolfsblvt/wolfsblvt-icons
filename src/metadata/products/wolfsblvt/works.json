@@ -2,21 +2,21 @@
   "id": "wolfsblvt/works",
   "namespace": "wolfsblvt",
   "name": "works",
-  "status": "planned",
+  "status": "available",
   "selectedSourceType": "works-provider-glyph",
   "assetPath": "src/icons/products/wolfsblvt/works.svg",
-  "intendedUse": "Compact Wolfsblvt Works umbrella identity for social and footer icon slots where the formal lockup is unsuitable.",
+  "intendedUse": "Compact Wolfsblvt Works umbrella identity for social, provider, project-picker and footer icon slots where the formal lockup is unsuitable.",
   "license": {
     "spdx": "MIT",
-    "notes": "Applies only after original geometry is authored and accepted."
+    "notes": "Original Wolfsblvt Works geometry."
   },
   "permittedColorModes": ["monochrome"],
-  "modifications": "No geometry exists in this repository cut.",
+  "modifications": "Icon-slot translation of the Works mark from the marks and sponsor-assets return: the two open corners and the offset dot at (12.8, 13), redrawn on the 24 grid with 2px round strokes. The return's fixed width and height were removed.",
   "redistribution": {
-    "standing": "original-mit-when-authored",
-    "vendoredBytes": false,
-    "notes": "The namespace and contract are reserved; final geometry is separate bounded visual-authoring work."
+    "standing": "original-mit",
+    "vendoredBytes": true,
+    "notes": "Original geometry is distributed from this repository with the package source. The full WOLFSBLVT / WORKS lockups and the coloured mark remain reserved Works identity outside this package."
   },
-  "contentHash": null,
-  "authoringNotes": "Create a compact interface glyph, not a replacement for the WOLFSBLVT / WORKS lockup or a generic WW monogram by default."
+  "contentHash": "e1cd452c53136abafeafd73f58ebdbe3f64e632099abd0b5acec82972b122395",
+  "authoringNotes": "Keeps the mark's own construction (two corners that do not close, one dot off centre) instead of a WW monogram, so the glyph reads as the Works maker mark beside GitHub and Discord without replacing the lockup."
 }

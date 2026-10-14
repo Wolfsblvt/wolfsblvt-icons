@@ -51,7 +51,7 @@ This is not:
 - a promise that every icon family will share identical geometry; or
 - a reason to centralise product-specific art before a real consumer earns it.
 
-`diffdevil/brand` is the first accepted custom canary and proves the full authored-geometry route. `wolfsblvt/works` remains the next reserved canary; its final geometry must not be inferred from a placeholder.
+`diffdevil/brand` was the first accepted custom canary and proved the full authored-geometry route. `wolfsblvt/works` followed with geometry translated from the selected Works marks, not inferred from a placeholder.
 
 ## Long horizon
 

@@ -24,12 +24,14 @@ test("brands resolve only through the curated catalogue", () => {
   assert.throws(() => getBrand("npm"), /admitted to the curated catalogue/);
 });
 
-test("accepted product glyphs resolve while planned names remain unavailable", () => {
+test("accepted product glyphs resolve and unknown names are refused", () => {
   const accepted = [
     ["diffdevil/bands", /<rect x=\"3\" y=\"12\"/],
     ["diffdevil/brand", /M4 4l3 2\.25/],
     ["diffdevil/changed", /M8 3H6/],
     ["diffdevil/raw-churn", /M4 7h6/],
+    ["wolfsblvt/signpost", /M12 13\.6v8\.4/],
+    ["wolfsblvt/works", /<circle cx=\"12\.8\" cy=\"13\" r=\"1\"/],
   ];
 
   for (const [name, expectedBody] of accepted) {
@@ -40,10 +42,9 @@ test("accepted product glyphs resolve while planned names remain unavailable", (
     assert.match(icon.body, expectedBody);
   }
 
-  assert.equal(getProductIconMetadata("wolfsblvt/works").status, "planned");
   assert.throws(
-    () => resolveProductIcon("wolfsblvt/works"),
-    /no approved geometry yet/,
+    () => resolveProductIcon("wolfsblvt/unknown"),
+    /Unknown product icon/,
   );
 });
 

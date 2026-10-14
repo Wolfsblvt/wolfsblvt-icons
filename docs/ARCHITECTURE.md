@@ -43,7 +43,7 @@ Consumers cannot use `BrandIcon` as an unrestricted Simple Icons gateway. Adding
 3. `scripts/generate-custom-icons.mjs` validates the SVG and writes body data to `src/generated/custom-icons.ts`.
 4. `ProductIcon` resolves `<product>/<icon>` and renders the body directly into an accessible SVG shell.
 
-The initial custom canaries are still planned, so their resolver fails loudly rather than returning invented geometry.
+A name whose metadata is still `planned` fails loudly in the resolver rather than returning invented geometry.
 
 ## Data and storage
 

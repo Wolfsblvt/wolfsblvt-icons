@@ -2,7 +2,7 @@
 
 ## Meaning
 
-This standard defines how `@wolfsblvt/icons` selects, names, authors, validates, reviews, and presents icons. It owns the visual contract for Works-authored geometry, the admission evidence for third-party brands, the accessibility boundary of package components, and the human qualification that automation cannot replace. `diffdevil/brand` is the first accepted product glyph; the Wolfsblvt Works canary remains reserved metadata rather than implied geometry.
+This standard defines how `@wolfsblvt/icons` selects, names, authors, validates, reviews, and presents icons. It owns the visual contract for Works-authored geometry, the admission evidence for third-party brands, the accessibility boundary of package components, and the human qualification that automation cannot replace. `diffdevil/brand` was the first accepted product glyph; the Wolfsblvt Works family (`wolfsblvt/works`, `wolfsblvt/signpost`) followed from the selected Works identity.
 
 ## Source hierarchy
 
@@ -74,7 +74,7 @@ The accepted compact glyph translates the established horned, split `− / +` id
 
 The compact glyph should act as a provider or social identity for Wolfsblvt Works without replacing the formal `WOLFSBLVT / WORKS` lockup. A `WW` monogram is not automatically the answer. The shape should feel like an umbrella maker mark, remain legible beside GitHub and Discord, and avoid drifting into animal-food or pet-product imagery.
 
-The Wolfsblvt Works constraints are not accepted geometry. Its final path requires its own bounded visual contribution.
+The accepted `wolfsblvt/works` geometry is the icon-slot translation of the Works mark: its two open corners and the offset dot. [The family map](product-families/wolfsblvt.md) records its selection and the separate `wolfsblvt/signpost` glyph.
 
 ## Brand admission metadata
 

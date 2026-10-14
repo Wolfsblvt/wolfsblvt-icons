@@ -16,12 +16,12 @@ Lucide supplies the ordinary UI language. Brands enter through an explicit catal
 
 The starter catalogue is deliberately small. It proves the three important routes without copying whole upstream collections into a municipal archive:
 
-| Lane           | Public names                      | Source                                                       |
-| -------------- | --------------------------------- | ------------------------------------------------------------ |
-| Semantic UI    | `settings`, `verified`, `warning` | Curated aliases over Lucide                                  |
-| Direct UI      | `lucide:badge-check`              | Explicit Lucide escape route                                 |
-| Brands         | `github`, `discord`               | Curated Simple Icons entries                                 |
-| Product glyphs | `diffdevil/*`, `wolfsblvt/works`  | Works-authored; diffdevil available, Wolfsblvt Works planned |
+| Lane           | Public names                      | Source                       |
+| -------------- | --------------------------------- | ---------------------------- |
+| Semantic UI    | `settings`, `verified`, `warning` | Curated aliases over Lucide  |
+| Direct UI      | `lucide:badge-check`              | Explicit Lucide escape route |
+| Brands         | `github`, `discord`               | Curated Simple Icons entries |
+| Product glyphs | `diffdevil/*`, `wolfsblvt/*`      | Works-authored and available |
 
 The generated [contact sheet](fixtures/contact-sheet.html) renders the starter UI and brand references at 16, 20, 24, and 32 pixels on light and dark surfaces, beside circle and square density references. Product-glyph selection evidence remains with the contribution that admits or changes that geometry.
 
@@ -109,7 +109,10 @@ The first accepted product family is diffdevil:
 - `diffdevil/raw-churn` names independent raw additions and deletions; and
 - `diffdevil/bands` names a configured ordinal policy scale without replacing the live dynamic rail.
 
-`wolfsblvt/works` remains a reserved compact umbrella glyph for social and footer references where the formal lockup is wrong. It stays unavailable until its own visual design is selected.
+The Wolfsblvt Works family follows ([family map](docs/product-families/wolfsblvt.md)):
+
+- `wolfsblvt/works` is the compact umbrella identity for social, footer and picker slots where the formal lockup is wrong; and
+- `wolfsblvt/signpost` is the pencil-sketched wayfinding glyph from the Works website's personal navigation.
 
 ## Accessibility
 

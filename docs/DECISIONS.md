@@ -8,13 +8,25 @@ This record carries the durable product, package, licensing, and integration cho
 
 **Date:** 2026-09-19 · **Status:** Current
 
-The package reserves custom product names without placeholder geometry. Wolf has selected and accepted the first complete family: `diffdevil/brand`, `diffdevil/changed`, `diffdevil/raw-churn`, and `diffdevil/bands` are available. `wolfsblvt/works` remains planned without geometry.
+The package reserves custom product names without placeholder geometry. Wolf has selected and accepted the first complete family: `diffdevil/brand`, `diffdevil/changed`, `diffdevil/raw-churn`, and `diffdevil/bands` are available. The Wolfsblvt Works family followed on 2026-10-14 (see below).
 
 **Why.** Stable names, metadata, validation, and adapter boundaries may exist before a silhouette, but runtime geometry waits for actual visual judgment. The brand glyph preserves direct ancestry to the horned split `− / +` identity. The three capability glyphs exist only where an ordinary Lucide icon would blur a product-specific distinction: replacement-aware Changed, independent raw churn, and configured numeric bands.
 
 **Rejected.** Temporary generic shapes, unrelated feature icons presented as brand identity, using `file-diff` as though it meant replacement-aware Changed, gauges or charts that turn bands into risk or trend, and a custom icon zoo for ordinary interface nouns. Once consumed, placeholders and blurred meanings become compatibility debt with astonishing efficiency.
 
 **Reopen if.** A material change to an accepted diffdevil meaning, another genuinely product-specific recurring concept, or a selected final Wolfsblvt Works glyph earns bounded visual qualification and explicit product acceptance.
+
+## Admit the Wolfsblvt Works family from the selected Works identity
+
+**Date:** 2026-10-14 · **Status:** Current
+
+`wolfsblvt/works` and `wolfsblvt/signpost` are available. The Works glyph is the icon-slot translation already drawn in the Works marks return: the mark's two open corners and its offset dot on the 24 grid. The signpost is option C from the Works website's finishing sheet, the sketched three-board glyph with narrowed, offset upper boards that Wolf selected for the site's personal navigation.
+
+**Why.** Wolf directed that every reusable icon the Works website uses lives in this package and reaches the site through it, rather than as a one-time local copy. Both glyphs come from completed owner-selected identity work, so admission carries their geometry rather than inventing a new silhouette. The signpost is a Works wayfinding mark, not a reskin of `lucide:signpost`; ordinary directional UI keeps Lucide.
+
+**Rejected.** A `WW` monogram for the umbrella glyph; inlining the signpost in the website until a later family round; replacing `lucide:signpost` globally with the sketched glyph.
+
+**Reopen if.** The Works marks change materially, or a second Works surface needs a wayfinding meaning the sketched signpost does not carry.
 
 ## Use one package with a framework-neutral core and Astro adapter
 

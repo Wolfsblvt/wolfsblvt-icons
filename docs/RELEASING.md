@@ -8,9 +8,9 @@ This guide owns the deliberate release procedure for `@wolfsblvt/icons`: the exa
 
 The release unit is the public `@wolfsblvt/icons` npm package for Node and Astro consumers. Its source remains [`Wolfsblvt/wolfsblvt-icons`](https://github.com/Wolfsblvt/wolfsblvt-icons); [`icon-standard.md`](icon-standard.md) remains the canonical visual and provenance contract.
 
-`0.1.0` is the selected first package-release candidate. It exposes the existing framework-neutral catalogue, root exports, Astro adapter, curated GitHub and Discord entries, and accepted `diffdevil/*` family. It does not promise a stable API, npm availability before publication, or the still-unavailable `wolfsblvt/works` glyph.
+`0.1.0` was the first package release: the framework-neutral catalogue, root exports, Astro adapter, curated GitHub and Discord entries, and accepted `diffdevil/*` family. `0.2.0` adds the Wolfsblvt Works family (`wolfsblvt/works`, `wolfsblvt/signpost`). Neither promises a stable API.
 
-The body in [`release-notes/0.1.0.md`](release-notes/0.1.0.md) is the prepared leading GitHub Release account. It remains a draft until publication and consumer readback succeed; do not project its availability wording before then.
+Each version's leading GitHub Release account is prepared under [`release-notes/`](release-notes/). A body remains a draft until publication and consumer readback succeed; do not project its availability wording before then.
 
 ## Before every release
 

@@ -1,0 +1,22 @@
+{
+  "id": "borrowed-coast/control",
+  "namespace": "borrowed-coast",
+  "name": "control",
+  "status": "available",
+  "selectedSourceType": "works-provider-glyph",
+  "assetPath": "src/icons/products/borrowed-coast/control.svg",
+  "intendedUse": "Nation control or supported-control claim over a harbor or coast.",
+  "license": {
+    "spdx": "MIT",
+    "notes": "Original Wolfsblvt Works geometry."
+  },
+  "permittedColorModes": ["monochrome"],
+  "modifications": "Purpose-authored monochrome Night Chart state glyph for control.",
+  "redistribution": {
+    "standing": "original-mit",
+    "vendoredBytes": true,
+    "notes": "Original geometry is distributed from this repository with the package source."
+  },
+  "contentHash": "f4152031cca88b1f2260388550d1ac088b261d4f4028e90beaf8443c8a0a7531",
+  "authoringNotes": "A nation pennant is planted over a coast line so control remains legible without relying on nation colour or a detached generic flag."
+}

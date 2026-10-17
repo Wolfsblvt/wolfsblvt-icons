@@ -1,0 +1,22 @@
+{
+  "id": "borrowed-coast/at-war",
+  "namespace": "borrowed-coast",
+  "name": "at-war",
+  "status": "available",
+  "selectedSourceType": "works-provider-glyph",
+  "assetPath": "src/icons/products/borrowed-coast/at-war.svg",
+  "intendedUse": "At War standing between two nations after a hostile commitment or public declaration.",
+  "license": {
+    "spdx": "MIT",
+    "notes": "Original Wolfsblvt Works geometry."
+  },
+  "permittedColorModes": ["monochrome"],
+  "modifications": "Purpose-authored monochrome Night Chart relation glyph for active war.",
+  "redistribution": {
+    "standing": "original-mit",
+    "vendoredBytes": true,
+    "notes": "Original geometry is distributed from this repository with the package source."
+  },
+  "contentHash": "425097d807f6a52e30f968d6b4bcffc4f6ce520b2c45343d9399b5e4afe3f909",
+  "authoringNotes": "Two facing nation pennants remain fixed across the standing triptych; crossing hostile courses replace the open water between them."
+}

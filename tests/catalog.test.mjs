@@ -43,6 +43,7 @@ test("accepted product glyphs resolve and unknown names are refused", () => {
     ["diffdevil/brand", /M4 4l3 2\.25/],
     ["diffdevil/changed", /M8 3H6/],
     ["diffdevil/raw-churn", /M4 7h6/],
+    ["tunneltend/brand", /M3\.5 8\.5 9 3a3\.5 3\.5/],
     ["wolfsblvt/signpost", /M12 13\.6v8\.4/],
     ["wolfsblvt/works", /<circle cx=\"12\.8\" cy=\"13\" r=\"1\"/],
   ];

@@ -16,12 +16,12 @@ Lucide supplies the ordinary UI language. Brands enter through an explicit catal
 
 The starter catalogue is deliberately small. It proves the three important routes without copying whole upstream collections into a municipal archive:
 
-| Lane           | Public names                                     | Source                       |
-| -------------- | ------------------------------------------------ | ---------------------------- |
-| Semantic UI    | `settings`, `verified`, `warning`                | Curated aliases over Lucide  |
-| Direct UI      | `lucide:badge-check`                             | Explicit Lucide escape route |
-| Brands         | `github`, `discord`, `bluesky`                   | Curated Simple Icons entries |
-| Product glyphs | `borrowed-coast/*`, `diffdevil/*`, `wolfsblvt/*` | Works-authored and available |
+| Lane           | Public names                                                     | Source                       |
+| -------------- | ---------------------------------------------------------------- | ---------------------------- |
+| Semantic UI    | `settings`, `verified`, `warning`                                | Curated aliases over Lucide  |
+| Direct UI      | `lucide:badge-check`                                             | Explicit Lucide escape route |
+| Brands         | `github`, `discord`, `bluesky`                                   | Curated Simple Icons entries |
+| Product glyphs | `borrowed-coast/*`, `diffdevil/*`, `tunneltend/*`, `wolfsblvt/*` | Works-authored and available |
 
 The generated [contact sheet](fixtures/contact-sheet.html) renders the starter UI and brand references at 16, 20, 24, and 32 pixels on light and dark surfaces, beside circle and square density references. Product-glyph selection evidence remains with the contribution that admits or changes that geometry; the accepted [Borrowed Coast family sheet](docs/product-families/borrowed-coast-contact-sheet.svg) is one such surface.
 
@@ -107,6 +107,8 @@ Accepted families include:
 
 - [Borrowed Coast](docs/product-families/borrowed-coast.md), whose Night Chart marks carry view modes, nation standings, places, tide and physical route meaning without inheriting misleading generic nautical stand-ins; and
 - [diffdevil](docs/product-families/diffdevil.md), whose brand and capability glyphs distinguish replacement-aware change, raw churn and configured policy bands.
+
+- [TunnelTend](docs/product-families/tunneltend.md), whose compact `tunneltend/brand` glyph is The Fold from TunnelTend's own brand bundle, for picker, link and provider-style slots.
 
 The Wolfsblvt Works family follows ([family map](docs/product-families/wolfsblvt.md)):
 

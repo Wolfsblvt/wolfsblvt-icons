@@ -38,6 +38,7 @@ This repository packages a framework-neutral icon catalogue, Astro presentation 
 - **Understand icon admission and geometry:** `docs/icon-standard.md`.
 - **Understand Borrowed Coast's Night Chart family:** `docs/product-families/borrowed-coast.md`.
 - **Understand diffdevil's family and ordinary icon map:** `docs/product-families/diffdevil.md`.
+- **Understand TunnelTend's compact glyph:** `docs/product-families/tunneltend.md`.
 - **Understand the Wolfsblvt Works umbrella glyphs:** `docs/product-families/wolfsblvt.md`.
 - **Add or change catalogue behavior:** `src/catalog/`.
 - **Qualify the repository:** `npm test`.

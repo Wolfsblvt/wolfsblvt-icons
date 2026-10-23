@@ -15,6 +15,7 @@ import diffdevilBandsJson from "../metadata/products/diffdevil/bands.json" with 
 import diffdevilBrandJson from "../metadata/products/diffdevil/brand.json" with { type: "json" };
 import diffdevilChangedJson from "../metadata/products/diffdevil/changed.json" with { type: "json" };
 import diffdevilRawChurnJson from "../metadata/products/diffdevil/raw-churn.json" with { type: "json" };
+import tunneltendBrandJson from "../metadata/products/tunneltend/brand.json" with { type: "json" };
 import wolfsblvtSignpostJson from "../metadata/products/wolfsblvt/signpost.json" with { type: "json" };
 import wolfsblvtWorksJson from "../metadata/products/wolfsblvt/works.json" with { type: "json" };
 import type { ProductIconMetadata, ResolvedCustomIcon } from "./types.js";
@@ -36,6 +37,7 @@ export type ProductIconName =
   | "diffdevil/brand"
   | "diffdevil/changed"
   | "diffdevil/raw-churn"
+  | "tunneltend/brand"
   | "wolfsblvt/signpost"
   | "wolfsblvt/works";
 
@@ -60,6 +62,7 @@ export const productIconCatalog = Object.freeze({
   "diffdevil/brand": diffdevilBrandJson as ProductIconMetadata,
   "diffdevil/changed": diffdevilChangedJson as ProductIconMetadata,
   "diffdevil/raw-churn": diffdevilRawChurnJson as ProductIconMetadata,
+  "tunneltend/brand": tunneltendBrandJson as ProductIconMetadata,
   "wolfsblvt/signpost": wolfsblvtSignpostJson as ProductIconMetadata,
   "wolfsblvt/works": wolfsblvtWorksJson as ProductIconMetadata,
 }) satisfies Readonly<Record<ProductIconName, ProductIconMetadata>>;

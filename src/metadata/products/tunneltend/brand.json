@@ -1,0 +1,22 @@
+{
+  "id": "tunneltend/brand",
+  "namespace": "tunneltend",
+  "name": "brand",
+  "status": "available",
+  "selectedSourceType": "works-provider-glyph",
+  "assetPath": "src/icons/products/tunneltend/brand.svg",
+  "intendedUse": "Compact TunnelTend identity (The Fold) for project pickers, product links, provider-style rows and other icon slots where the formal lockup is unsuitable.",
+  "license": {
+    "spdx": "MIT",
+    "notes": "Wolfsblvt Works geometry. The paths are the approved The Fold tintable master from Wolfsblvt/tunneltend, drawn by the same maker."
+  },
+  "permittedColorModes": ["monochrome"],
+  "modifications": "None to the path data. The tintable master (brand/bundle/tunneltend/assets/mark-primary/on-light-tintable.svg at Wolfsblvt/tunneltend@09d53a473de6db9b29ad1aa67e44252dc8a82bc4, SHA-256 f0b34ebf99cc899c559e8e4992985caca8e01f3f455d45c1e45759ef8262b77c) already uses the 24 grid, 2px round strokes and currentColor; only the XML layout was reformatted.",
+  "redistribution": {
+    "standing": "original-mit",
+    "vendoredBytes": true,
+    "notes": "Distributed from this repository with the package source. The coloured Fold, wordmark, lockups, favicon and application icon remain TunnelTend's own identity assets in its brand bundle; the package carries only the monochrome line glyph."
+  },
+  "contentHash": "e3bf40597ae13b5a254f2c120def35f68dfe863e40f09961bd074af708f547ba",
+  "authoringNotes": "The Fold is two independent rounded paths nested in a stable turn, with the inner stroke deliberately asymmetrical. Never mirror it, close either path, add a third line or read it as status. TunnelTend's favicon variant (2.35px stroke, shorter tails) is not carried because the icon standard fixes 2px strokes."
+}

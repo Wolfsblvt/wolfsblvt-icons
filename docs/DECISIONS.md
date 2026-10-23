@@ -28,6 +28,18 @@ The package reserves custom product names without placeholder geometry. Wolf has
 
 **Reopen if.** The Works marks change materially, or a second Works surface needs a wayfinding meaning the sketched signpost does not carry.
 
+## Admit `tunneltend/brand` from TunnelTend's approved Fold
+
+**Date:** 2026-10-24 · **Status:** Current
+
+`tunneltend/brand` is available. Its geometry is the tintable master of The Fold from TunnelTend's brand bundle, carried with unchanged path data because that master already satisfies the 24 grid, 2px round-stroke, `currentColor` contract.
+
+**Why.** The Works website's contact picker shows each product's glyph from this package, and `0.4.0` carried none for TunnelTend. Wolf directed that this repository is open to everyone to update, fix and publish rather than coordinating the glyph through another room. Admission carries already approved identity geometry, so no new silhouette was designed.
+
+**Rejected.** A Lucide `cable`, `plug` or `route` stand-in (describes a tunnel without being TunnelTend, and TunnelTend's identity rules reject VPN, lock and proxy imagery); redrawing the Fold; carrying the 2.35px favicon variant, which the 2px icon standard does not allow.
+
+**Reopen if.** The Fold changes in TunnelTend's brand bundle, or a second compact TunnelTend meaning (status, a service state) earns its own product-specific glyph.
+
 ## Use one package with a framework-neutral core and Astro adapter
 
 **Date:** 2026-09-19 · **Status:** Current
